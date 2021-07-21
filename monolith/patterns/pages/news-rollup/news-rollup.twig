@@ -1,0 +1,60 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@banner' with { 
+    banner: {
+      image: banner.image, 
+      campus: banner.campus 
+    }
+  } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { slab: { variant: 'slab--no-bottom-padding' } } %}
+    {% block slab_content %}
+      {% include '@grid' with { grid: cta_slab.grid } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { slab: { 
+    section_intro: {
+      heading: { level: 2, headline: 'News' }
+    } 
+  } } %}
+    {% block slab_content %}
+      {% include '@teaser-collection' with { teaser_collection: news_slab.teaser_collection } %}
+    {% endblock %}
+    {% block slab_cta %}
+      {% include '@button' with { button: { label: 'More News' } } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { slab: { variant: 'slab--gray' } } %}
+    {% block slab_content %}
+      {% embed '@with-sidebar' %}
+        {% block with_sidebar_main %}
+          {% include '@heading' with { heading: { level: 2, headline: 'Publications' } } %}
+          {% include '@teaser-collection' with { teaser_collection: sidebar_main.teaser_collection } %}
+          {% include '@button' with { button: { label: 'See All Publications', variant: 'button--content' } } %}
+        {% endblock %}
+        {% block with_sidebar_aside %}
+          {% include '@heading' with { heading: { level: 2, headline: 'Upcoming Events' } } %}
+          {% include '@teaser-collection' with { teaser_collection: sidebar_aside.teaser_collection } %}
+          {% include '@button' with { button: { label: 'See All Events', variant: 'button--content' } } %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { 
+    slab: { 
+      variant: 'slab--no-top-padding slab--no-bottom-padding slab--tab-overlay' 
+    } 
+  } %}
+    {% block slab_content %}
+      {% include '@tabs--tabs-by-campus' with { 
+        tabs: {
+          variant: 'campuses', 
+          items: tabs_slab.items 
+        }
+      } %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% include '@footer' %}

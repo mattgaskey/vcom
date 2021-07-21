@@ -1,0 +1,5 @@
+<ul class="tag-list list--horizontal {{ tag_list.variant }}">
+  {% for item in tag_list.items %}
+    <li>{% include '@link' with { link: item.link } %}</li>
+  {% endfor %}
+</ul>

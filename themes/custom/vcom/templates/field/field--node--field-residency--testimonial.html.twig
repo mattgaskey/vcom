@@ -1,0 +1,8 @@
+{% if items %}
+  <div>
+    <span class="font-bold">Residenc{% if items|length > 1 %}ies{% else %}y{% endif %}</span>: 
+    {% for item in items %}
+      {{ item.content }}{% if loop.index < items|length %}, {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

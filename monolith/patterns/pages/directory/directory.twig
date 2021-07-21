@@ -1,0 +1,36 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@banner' with { 
+    banner: {
+      image: banner.image, 
+      campus: banner.campus 
+    }
+  } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { slab: {
+    variant: 'slab--no-bottom-padding',
+    section_intro: { heading: { level: 1, headline: 'Carolinas Clinical Faculty & Staff' } }
+  } } %}
+    {% block slab_content %}
+      {% include '@photo-table' with { photo_table: photo_table } %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% embed '@slab' with { slab: {
+  variant: 'slab--no-bottom-padding',
+  section_intro: { heading: { level: 2, headline: 'Meet Our Staff' } }
+} } %}
+  {% block slab_content %}
+    {% include '@faculty-directory' with { faculty_directory: faculty_directory } %}
+  {% endblock %}
+{% endembed %}
+{% embed '@slab' with { slab: {
+  section_intro: { heading: { level: 2, headline: 'Meet Our Faculty' } }
+} } %}
+  {% block slab_content %}
+    {% include '@faculty-directory' with { faculty_directory: faculty_directory } %}
+  {% endblock %}
+{% endembed %}
+{% include '@footer' %}

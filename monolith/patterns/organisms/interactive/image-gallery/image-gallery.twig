@@ -1,0 +1,32 @@
+<div class="image-gallery">
+    <!-- image-gallery__block-sizer empty element, used by masonry image layout -->
+    <div class="image-gallery__block-sizer"></div>
+    {% for item in image_gallery.items %}
+        {% if is_render_array(item) %}
+            {% set media = item['#paragraph'].field_media.entity %}
+            {% set source = media.getSource() %}
+            {% if source.getPluginId() == 'video_embed_field' %}
+                {% set popup = media.field_media_video_embed_field.value %}
+                {% set popup_class = 'iframe' %}
+            {% else %}
+                {% set popup = media.field_media_image.entity.uri.value|resize('gallery_item') %}
+                {% set popup_class = 'image' %}
+            {% endif %}
+        {% else %}
+            {% set popup = "https://magicyeti.us/800/600" %}
+            {% set popup_class = "image" %}
+        {% endif %}
+        {% if popup %}
+        <div class="image-gallery__block">
+            <a class="image-gallery__popup-launcher {{ popup_class }}" href="{{ popup }}">
+                {% if is_render_array(item) %}
+                    {{ item }}
+                {% else %}
+                    {% include '@figure' with { figure: item.figure, image: item.image, hg: item.hg, p: item.p, cite: item.cite } %}
+                {% endif %}
+            </a>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+

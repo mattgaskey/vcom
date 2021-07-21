@@ -1,0 +1,7 @@
+<div class="teaser-collection {{ teaser_collection.variant }} grid">
+  {% block teasers %}
+    {% for item in teaser_collection.items %}
+      {% include '@teaser' with { teaser: item.teaser } %}
+    {% endfor %}
+  {% endblock %}
+</div>

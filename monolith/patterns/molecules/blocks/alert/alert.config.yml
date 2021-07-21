@@ -1,0 +1,44 @@
+collated: true
+name: Alert
+default: Major
+context:
+  alert:
+    heading:
+      level: 2
+      headline: Major Alert
+    p: 
+      content: This alert style can be used for major news and evacuation alerts.
+    type:
+      variant: alert--major
+      link: 
+        label: More information
+        variant: link--default
+      icon:
+        glyph: ic--major_alert
+        label: Major Alert
+        variant: icon--no-label      
+variants:
+  - name: Minor
+    context:
+      alert:
+        heading:
+          headline: Minor Alert
+        p: 
+          content: This alert style can be used for minor alerts.
+        type:
+          variant: alert--minor
+          icon:
+            glyph: ic--minor_alert
+            label: Minor Alert  
+  - name: Clear
+    context:
+      alert:
+        heading:
+          headline: All Clear
+        p: 
+          content: This alert style can be used to signal an all clear status.
+        type:
+          variant: alert--clear    
+          icon:
+            glyph: ic--check_successful
+            label: All Clear

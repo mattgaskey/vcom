@@ -1,0 +1,49 @@
+name: carousel
+status: wip
+display: 
+  max-width: 35rem
+context:
+  carousel:
+    variant: 'carousel--single'
+    panes:
+      - block:
+          pattern: \@figure
+        figure:
+          media: \@image
+        p: "@p.p"
+        cite: "@cite.cite"
+        image: "@image.image"
+      - block:
+          pattern: \@figure
+        figure:
+          media: \@image
+        p: "@p.p"
+        cite: "@cite.cite"
+        image: "@image.image"
+      - block:
+          pattern: \@figure
+        figure:
+          media: \@image
+        p: "@p.p"
+        cite: "@cite.cite"
+        image: "@image.image"
+      - block:
+          pattern: \@figure
+        figure:
+          media: \@image
+        p: "@p.p"
+        cite: "@cite.cite"
+        image: "@image.image"
+      - block:
+          pattern: \@figure
+        figure:
+          media: \@image
+        p: "@p.p"
+        cite: "@cite.cite"
+        image: "@image.image"                                
+variants:
+  - name: centered
+    context:
+      carousel:
+        variant: 'carousel--centered'
+      

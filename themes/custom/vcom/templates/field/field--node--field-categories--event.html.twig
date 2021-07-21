@@ -1,0 +1,8 @@
+{% if items %}
+<div>
+  <span class="font-bold">Tags: </span>
+  {% for item in items %}
+    <span class="taxonomy">{{ item.content }}</span>{% if loop.index < items|length %}, {% endif %}
+  {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,52 @@
+id: rmlcsv
+label: Import Residency Match Locations
+migration_group: repeatable
+source:
+  plugin: csv
+  path: "private://csv_import/rml.csv"
+  delimiter: ","
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - location
+    - specality
+    - class
+    - campus
+  column_names:
+    - location: location
+    - specality: specality
+    - type: type
+    - city: city
+    - state: state
+    - campus: campus
+    - class: class
+process:
+  field_class_year: class
+  field_location: location
+  field_speciality: specality
+  field_city: city
+  field_state: state
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find campus"
+
+destination:
+  plugin: entity:field_group
+  default_bundle: rml
+  overwrite_properties:
+    - field_capmpus
+    - field_state
+    - field_city
+    - field_specialty
+    - field_location
+    - field_class_year

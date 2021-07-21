@@ -1,0 +1,5 @@
+<div class="body {{ body.variant }} editorial">
+  {% for item in body.items %}
+    {% include item.pattern with item.pattern_context %} 
+  {% endfor %}
+</div>

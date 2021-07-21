@@ -1,0 +1,12 @@
+{% extends 'base.twig' %}
+
+{% set media_grid_columns = [ "@media-with-caption", "@media-with-caption", "@media-with-caption"] %}
+
+{% block main_content %}
+    {% include '@' ~ page_header|default('hero-page-header') %}
+    {% include '@breadcrumb-slab' %}
+    {% include '@carousel-slab' with { carousel_style: "carousel--center" } %}
+    {% include '@sidebar-editorial' %}        
+    {% include '@block-columns' with { columns: 3, grid_columns: media_grid_columns, media_pattern: '@nice-video', media: 'video', icon: 'video', slab_variant: 'slab--blocks'} %}
+{% endblock %}
+

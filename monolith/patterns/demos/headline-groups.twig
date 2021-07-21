@@ -1,0 +1,32 @@
+{% embed '@slab' with {slab_variant : 'slab--newcity-white'} %}
+    {% block slab_content %}
+        <h2>Headline Groups</h2>
+
+        <p>
+            These are the default headline group styles. 
+            To include a headline group in a patternlab pattern, use <code>@headline-group</code>.
+        </p>
+
+        {% set sub = "Subhead" %}
+        {% set super = "Superhead" %}
+        {% for i in 0 .. 6 %}
+            {% if i == 0 %}
+                {% set tag = 'div' %}
+                {% set head = "Nonsemantic headline" %}
+            {% else %}
+                {% set tag = 'h' ~ i %}
+                {% set head = "Headline level " ~ i %}
+            {% endif %}
+            {% include '@headline-group' with { hg: { tag: tag, headline: head } } only %}
+            <hr />
+            {% include '@headline-group' with { hg: { tag: tag, super: super, headline: head } } only %}
+            <hr />
+            {% include '@headline-group' with { hg: { tag: tag, sub: sub, headline: head } } only %}
+            <hr />
+            {% include '@headline-group' with { hg: { tag: tag, super: super, sub: sub, headline: head } } only %}
+            <hr />
+        {% endfor %}
+    {% endblock %}
+{% endembed %}
+
+

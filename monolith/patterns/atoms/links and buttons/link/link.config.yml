@@ -1,0 +1,32 @@
+collated: true
+context:
+  link:
+    label: Default Link
+    url: "#"
+    variant: link--default
+variants:
+  - name: Underlined Link
+    context:
+      link:
+        label: Underlined Link
+        variant: link--underlined
+  - name: Fancy Link
+    context:
+      link:
+        label: Fancy Link
+        variant: link--fancy
+  - name: Button Link
+    context:
+      link:
+        label: Button Link
+        variant: link--button
+  - name: Default List Link
+    context:
+      link:
+        label: Default List Link
+        variant: link--default-list
+  - name: Fancy List Link
+    context:
+      link:
+        label: Fancy List Link
+        variant: link--fancy-list

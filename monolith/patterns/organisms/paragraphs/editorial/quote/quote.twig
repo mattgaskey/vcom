@@ -1,0 +1,29 @@
+<div class="quote {{ quote.variant }} {% if quote.img is not empty %}quote--with-media{% endif %}">
+  {% if quote.img is not empty %}
+  {% block quote_image %}
+  <img src="{{ quote.img.src }}" alt="{{ quote.img.alt }}">
+  {% endblock %}
+  {% endif %}
+  {% block quote_body %}
+  <div class="quote__body editorial">
+    <div class="quote__body--quote">
+      {% block quote_text %}
+        {% include '@p' with { p: quote.p } %}
+      {% endblock %}
+    </div>
+    {% if quote.cite %}
+      {% block quote_cite %}
+      <div class="quote__meta">
+        <span class="quote__meta--name">{% include '@cite' with { cite: quote.cite.name } %}</span>{% if quote.cite.attr[0] is not empty %}<span class="quote__meta--sep">, </span>{% endif %}
+        <span class="quote__meta--attr">{% include '@cite' with { cite: quote.cite.attr } %}</span>
+      </div>
+      {% endblock %}
+      {% if quote.link is not empty %}
+        {% block quote_link %}
+          {% include '@link' with { link: quote.link } %}
+        {% endblock %}
+      {% endif %}
+    {% endif %}
+  </div>
+  {% endblock %}
+</div>

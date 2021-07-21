@@ -1,0 +1,7 @@
+customizations.search:
+  path: '/search'
+  defaults:
+    _controller: '\Drupal\customizations\Controller\GoogleCustomSearchController::search'
+    _title: 'Search'
+  requirements: 
+    _permission: 'access content'

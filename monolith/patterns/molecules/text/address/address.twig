@@ -1,0 +1,13 @@
+<div class="vcard {{ address.variant }}">
+  <div class="adr">
+    {% if address.heading_link is not empty %}<a href={{ address.heading_link.url }} class="heading--linked {{ address.heading_link.variant }}">{{ address.heading_link.label }}</a>{% endif %}
+    {% if address.addr.street is not empty %}<span class="street-address">{{ address.addr.street }}</span>{% endif %}
+    {% if address.addr.locality is not empty %}<span class="locality">{{ address.addr.locality }},</span>{% endif %}
+    {% if address.addr.region is not empty %}<span class="region">{{ address.addr.region }}</span>{% endif %}
+    {% if address.addr.postal_code is not empty %}<span class="postal-code">{{ address.addr.postal_code }}</span>{% endif %}
+    {% if address.directions_link is not empty %}<a href={{ address.directions_link.url }} class="directions {{ address.directions_link.variant }}">{{ address.directions_link.label }}</a>{% endif %}
+    {% if address.addr.phone is not empty %}<div class="phone"><span>Phone: </span>{{ address.addr.phone }}</div>{% endif %}
+    {% if address.addr.fax is not empty %}<div class="fax"><span>Fax: </span>{{ address.addr.fax }}</div>{% endif %}
+    {% if address.addr.hours is not empty %}<div class="hours"><span>Hours: </span>{{ address.addr.hours }}</div>{% endif %}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+name: sep
+title: Separator
+collated: true
+status: wip
+context: 
+  sep:
+variants:
+  - name: Dash
+    context:
+      sep:
+        variant: 'sep--dash'
+  - name: Pipe
+    context:
+      sep:
+        variant: 'sep--pipe'

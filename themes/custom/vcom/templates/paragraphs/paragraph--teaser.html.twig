@@ -1,0 +1,16 @@
+{% set teaser_variant = '' %}
+{% if content.field_variant[0] is empty %}
+  {% set teaser_variant = 'teaser--publication' %}
+{% else %}
+  {% set teaser_variant = content.field_variant|render|striptags|trim %}
+{% endif %}
+{% embed '@fractal/teaser.twig' with {
+  teaser: {
+    link: { url: content.field_link[0]['#url_title'] },
+    image: content.field_media,
+    heading: content.field_headline,
+    p: content.field_description,
+    variant: teaser_variant
+  }
+} %}
+{% endembed %}

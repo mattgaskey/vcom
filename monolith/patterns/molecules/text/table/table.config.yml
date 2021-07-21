@@ -1,0 +1,16 @@
+name: table
+status: wip
+default: Unresponsive
+context: 
+  table:
+    caption: This is the table caption. It should be included, even if it is not visible, for accessibility purposes.
+    variant: table--content
+variants:
+  - name: columnize
+    context:
+      table:
+        responsive_strategy: 'table-wrapper--columnize'
+  - name: overflow
+    context:
+      table:
+        responsive_strategy: 'table-wrapper--overflow'

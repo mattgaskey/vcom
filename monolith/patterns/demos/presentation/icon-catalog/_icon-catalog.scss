@@ -1,0 +1,12 @@
+.icon-catalog {
+  ul {
+    li {
+      @apply mb-20;
+      .icon--no-label {
+        .icon__label {
+          display: inline-block !important;
+        }
+      }
+    }
+  }
+}

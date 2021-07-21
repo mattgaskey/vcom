@@ -1,0 +1,29 @@
+status: wip
+context:
+  contact_info:
+    fields:
+      - slug: name
+        label: Name
+        content: Alfred E. Newman
+      - slug: jobtitle
+        label: Job Title
+        content: Associate Professor
+      - slug: orgunit
+        label: College or Department
+        content: 
+          title: College of Paper Folding Puzzles
+          url: http://www.example.com
+      - slug: office
+        label: Office Number
+        content: 347 Donner Bldg.
+      - slug: phone
+        label: Phone Number
+        content:
+          title: 555-555-1212
+          url: "tel:15555551212"
+      - slug: email
+        label: Email
+        content:
+          url: "mailto:newman@example.com"
+          title: newman@example.com
+

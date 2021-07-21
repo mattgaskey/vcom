@@ -1,0 +1,36 @@
+name: Faculty Directory
+context:
+  faculty_directory:
+    items:
+      - faculty_info:
+        name:
+          value: Adrienne Z. Ables, PharmD, MS, FNAOME
+        title:
+          items:
+            - Assistant Dean for Faculty Development
+            - Phramacology Faculty
+            - Professor of Phramacology
+        contact:
+          campus: Virginia Campus
+          office: 118
+          phone: 339-333-4958
+      - faculty_info:
+        name:
+          value: Lesa Bolin, BS
+        title:
+          items:
+            - Director for Medical Education
+        contact:
+          campus: Virginia Campus
+          office: 128
+          phone: 339-333-4931
+      - faculty_info:
+        name:
+          value: Carolina Foster, BA
+        title:
+          items:
+            - Medical Education Specialist
+        contact:
+          campus: Virginia Campus
+          office: 218
+          phone: 339-333-4338

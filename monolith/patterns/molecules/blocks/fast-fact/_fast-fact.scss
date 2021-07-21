@@ -1,0 +1,38 @@
+.fast-fact {
+  @supports(display: grid) {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    grid-row-gap: 1rem;
+    grid-template-areas: 
+      "stat stat stat stat"
+      "fact fact fact icon";
+  
+    &__stat {
+      grid-area: stat;
+    }
+
+    &__description {
+      grid-area: fact;
+      @apply text-right pr-10;
+    }
+
+    &__icon {
+      grid-area: icon;
+    }
+  }
+  @supports not (display: grid) {
+    @apply flex flex-col flex-no-wrap justify-center items-center;
+  }
+  .fast-fact__stat {
+    @apply text-9xl font-bold leading-none;
+  }
+  .fast-fact__icon {
+    .icon--big {
+      .icon__glyph {
+        font-size: 4rem;
+      }
+    }
+  }
+}

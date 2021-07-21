@@ -1,0 +1,28 @@
+name: icon
+status: wip
+collated: true
+display: 
+  max-width: 400px;
+  margin: 0 auto;
+context:
+  icon:
+    glyph: ic--home
+    label: Home 
+variants:
+  - name: Big
+    context:
+      icon:
+        variant: icon--big
+  - name: Stacked
+    context:
+      icon:
+        variant: icon--stacked
+  - name: Reversed
+    context:
+      icon:
+        variant: icon--reversed
+  - name: Icon No Label
+    context:
+      icon:
+        variant: icon--no-label
+  

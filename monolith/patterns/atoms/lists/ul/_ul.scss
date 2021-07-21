@@ -1,0 +1,30 @@
+.list--vertical {
+  @include list-vertical;
+}
+
+.list--horizontal {
+  @include list-horizontal;
+}
+
+.list--columns {
+  column-count: 1;
+  column-gap: 5px;
+  @screen md {
+    column-count: 2;
+  }
+  @screen lg {
+    column-count: 3;
+  }
+  @screen xl {
+    column-count: 4;
+  }
+}
+
+.list--bullets {
+  list-style-position: initial;
+  @apply ml-20 list-disc;
+  ul {
+    @extend .list--bullets;
+  }
+}
+

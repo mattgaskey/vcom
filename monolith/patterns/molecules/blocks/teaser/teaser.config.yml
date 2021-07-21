@@ -1,0 +1,180 @@
+status: wip
+context:
+  teaser:
+    heading: 
+      headline: This is the teaser headline, which can often be somewhat long, detailed, and wordy
+      level: 3
+      variant: 'teaser__heading'
+    content_meta:
+      taxonomy: "@taxonomy.taxonomy"
+      datetime: "@content-meta.content_meta.datetime"
+    link: 
+      url: http://www.example.com
+      title: Teaser
+variants:
+  - name: with Description
+    context:
+      teaser:
+        p: "@p--plain.p"
+  - name: with Image
+    context:
+      teaser:
+        image: "@image.image"
+  - name: Archive
+    context:
+      teaser:
+        variant: 'teaser--archive'
+        heading:
+          level: 3
+          headline: Article Title That's Long and Wraps Around
+        content_meta: false
+        event_meta: false
+        p: 
+          content: Short description of what the article is about and what types of tips will be shared with readers.
+  - name: Archive with Image
+    context:
+      teaser:
+        variant: 'teaser--archive teaser--archive-with-image'
+        heading:
+          level: 3
+          headline: Article Title That's Long and Wraps Around
+        content_meta: false
+        event_meta: false
+        p: 
+          content: Short description of what the article is about and what types of tips will be shared with readers.
+        image: "@image.image"
+  - name: Campus Virginia
+    context:
+      teaser:
+        variant: 'teaser--campus virginia'
+        content_meta: false
+        event_meta: false
+        image: "@image.image"
+        heading:
+          headline: Blacksburg, VA
+  - name: Campus Carolinas
+    context:
+      teaser:
+        variant: 'teaser--campus carolinas'
+        content_meta: false
+        event_meta: false
+        image: "@image.image"
+        heading:
+          headline: Spartanburg, SC
+  - name: Campus Auburn
+    context:
+      teaser:
+        variant: 'teaser--campus auburn'
+        content_meta: false
+        event_meta: false
+        image: "@image.image"
+        heading:
+          headline: Auburn, AL
+  - name: Campus Louisiana
+    context:
+      teaser:
+        variant: 'teaser--campus louisiana'
+        content_meta: false
+        event_meta: false
+        image: "@image.image"
+        heading:
+          headline: Monroe, LA   
+  - name: Card
+    context:
+      teaser:
+        variant: 'teaser--card'
+        content_meta: false
+        event_meta: false
+        heading:
+          headline: Teaser Card Headline
+        p: '@p--brief.p'
+  - name: Card with Image
+    context:
+      teaser:
+        variant: 'teaser--card'
+        content_meta: false
+        event_meta: false
+        heading:
+          headline: Teaser Card Headline
+        p: '@p--brief.p'
+        image: "@image.image"
+  - name: Card with Image and Headline Only
+    context:
+      teaser:
+        variant: 'teaser--card'
+        content_meta: false
+        event_meta: false
+        heading:
+          headline: Visit a Campus
+        image: "@image.image"
+  - name: Card without Heavy Border
+    context:
+      teaser:
+        variant: 'teaser--card teaser--card-without-heavy-bottom'
+        content_meta: false
+        event_meta: false
+        heading:
+          headline: Hispanic Community Medical Outreach
+        image: "@image.image"
+  - name: Event
+    context:
+      teaser:
+        event_meta: "@event-meta.event_meta"
+        content_meta: false
+  - name: Event Archive
+    context:
+      teaser:
+        dateblock: "@dateblock.dateblock"
+        daterange: "@daterange.daterange"
+        content_meta: false
+        heading:
+          headline: A really great event is coming soon
+        variant: 'teaser--event'
+  - name: News with Image and Headline
+    context:
+      teaser:
+        variant: 'teaser--news'
+        image: "@image.image"
+        datetime:
+          when: now
+          format: F j, Y
+          machine: Y-m-d\TH:i:s
+  - name: News with No Image
+    context:
+      teaser:
+        variant: 'teaser--news teaser--no-image'
+        p: "@p--plain.p"
+        datetime: false
+        content_meta: false
+  - name: Overlay Teaser
+    context:
+      teaser:
+        variant: 'teaser--overlay views-row'
+        content_meta:
+          taxonomy:
+            tag: Category Label
+        image: "@image.image"
+  - name: Overlay Teaser with Description
+    context:
+      teaser:
+        variant: 'teaser--overlay views-row'
+        content_meta:
+          taxonomy:
+            tag: Category Label
+        p: "@p--plain.p"
+        image: "@image.image"
+  - name: Publication
+    context:
+      teaser:
+        variant: 'teaser--publication'
+        content_meta: false
+        event_meta: false
+        p: '@p--brief.p'
+  - name: Publication with Image
+    context: 
+      teaser:
+        variant: 'teaser--publication'
+        content_meta: false
+        event_meta: false
+        p: '@p--brief.p'
+        image: '@image.image'

@@ -1,0 +1,5 @@
+{% if items %}
+  {% for item in items %}
+    <li>{{ item.content|injectclass('button') }}</li>
+  {% endfor %}
+{% endif %}

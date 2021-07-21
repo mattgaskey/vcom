@@ -1,0 +1,29 @@
+<div class="faculty-info {{ faculty_info.variant }} grid grid--large lg:grid--wide-gutters py-20 border-b-1 border-orange-700">
+  <div class="faculty-info__name">
+    <a href="{{ faculty_info.name.url|default('#') }}"class="link--default text-maroon underline">{{ faculty_info.name.value }}</a>
+  </div>
+  <div class="faculty-info__title">
+    {% for item in faculty_info.title.items %}
+      <div class="faculty-info__title--title">
+        {{ item }}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="faculty-info__contact">
+    <div class="faculty-info__contact--campus">
+      {% if faculty_info.contact.campus %}
+        <strong>Campus: </strong>{{ faculty_info.contact.campus }}
+      {% endif %}
+    </div>
+    <div class="faculty-info__contact--office">
+      {% if faculty_info.contact.office %}
+        <strong>Office: </strong>{{ faculty_info.contact.office }}
+      {% endif %}
+    </div>
+    <div class="faculty-info__contact--phone">
+      {% if faculty_info.contact.phone %}
+        <strong>Phone: </strong>{{ faculty_info.contact.phone }}
+      {% endif %}
+    </div>
+  </div>
+</div>

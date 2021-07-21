@@ -1,0 +1,12 @@
+name: Body
+context:
+  body:
+    items:
+      - pattern: \@heading
+        pattern_context:
+          heading:
+            level: 2
+            headline: Body Content
+      - pattern: \@p
+        pattern_context: 
+          p: "@p.p"

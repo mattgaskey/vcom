@@ -1,0 +1,18 @@
+context:
+  campuses:
+    - virginia:
+      variant: virginia
+      button:
+        label: virginia
+    - carolinas:
+      variant: carolinas
+      button:
+        label: carolinas
+    - auburn:
+      variant: auburn
+      button:
+        label: auburn
+    - louisiana:
+      variant: louisiana
+      button:
+        label: louisiana

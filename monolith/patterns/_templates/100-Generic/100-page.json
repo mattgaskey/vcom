@@ -1,0 +1,8 @@
+{
+    "with_cta" : true,
+    "cta_type" : "mixed",
+    "secondary_image" : true,
+    "sub" : "With a text page header",
+    "head" : "Generic page Display",
+    "page_header" : "text-page-header"
+}

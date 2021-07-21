@@ -1,0 +1,29 @@
+<?php
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+function vcom_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $bdfn = $variables['elements'];
+  // Block suggestions for custom block bundles.
+  if (isset($bdfn['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $bdfn['content']['#block_content']->bundle());
+  }
+
+  // add a block theme suggestion based on the base plugin id and current region
+  // which lets us do things like style menu blocks depending on which region they are in  
+  $block = Block::load($bdfn['#id']);
+  $region = $block->getRegion();
+  array_splice($suggestions, 2, 0, 'block__' . $bdfn["#base_plugin_id"] . '__' . $region);
+}
+
+// Load the files from the lib folder
+require_once 'lib/block.inc';
+require_once 'lib/page.inc';
+require_once 'lib/page-title.inc';
+require_once 'lib/field.inc';
+require_once 'lib/paragraph.inc';
+require_once 'lib/node.inc';

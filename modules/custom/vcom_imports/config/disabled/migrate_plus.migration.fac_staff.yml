@@ -1,0 +1,168 @@
+id: fac_staff
+label: Import Faculty and Staff (Newer)
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'public://staff_import/staff_full.json'
+  item_selector: directory
+  fields:
+    - name: body
+      label: Body
+      selector: body
+    - name: code
+      label: Employee Code
+      selector: code
+    - name: first
+      label: First Name
+      selector: first
+    - name: middle
+      label: Middle Name
+      selector: middle
+    - name: last
+      label: Last Name
+      selector: last
+    - name: preferred
+      label: Preferred Name
+      selector: preferred_name
+    - name: cv
+      label: CV
+      selector: cv
+    - name: degree
+      label: Degree
+      selector: degree_abbreviations
+    - name: campus
+      label: Campus
+      selector: campus
+    - name: title
+      label: Position
+      selector: position
+    - name: status
+      label: Status
+      selector: status
+    - name: staff_group
+      label: Status
+      selector: staff_group
+    - name: department
+      label: Status
+      selector: department
+    - name: office
+      label: Office
+      selector: office
+    - name: email
+      label: Email
+      selector: email
+    - name: fax
+      label: Fax
+      selector: fax
+    - name: phone
+      label: Phone
+      selector: phone
+    - name: filename
+      label: Photo
+      selector: photo
+    - name: activities
+      label: Activities
+      selector: activities
+    - name: awards
+      label: Awards
+      selector: awards
+  ids:
+    code:
+      type: string
+process:
+  field_paragraphs:
+    - plugin: skip_on_empty
+      method: process
+      source: body    
+    - plugin: save_editorial_paragraph
+  field_name/given: first
+  field_name/family: last
+  field_name/middle: middle
+  field_name/credentials: degree
+  field_job_title: title
+  field_employee_code: code
+  field_preferred_first: preferred
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus 
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find campus"
+  field_staff_group:
+    - plugin: skip_on_empty
+      method: row
+      source: staff_group 
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: staff_group
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find staff_group"
+  field_department:
+    - plugin: skip_on_empty
+      method: row
+      source: department 
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: department
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find staff_group"      
+  field_media:
+    - plugin: skip_on_empty
+      method: process
+      source: filename
+    - plugin: addmedia
+      media_source: "public://staff_import/photos/"
+      media_destination: "public://person/"
+  field_email: email
+  field_phone: phone
+  field_office: office
+  field_fax: fax
+  field_awards: awards
+  field_activities: activities
+  field_cv: 
+    - plugin: skip_on_empty
+      method: process
+      source: cv
+    - plugin: addmedia
+      media_source: "public://staff_import/cv/"
+      media_destination: "public://person/cv/"    
+
+destination:
+  plugin: entity:node
+  default_bundle: person
+  overwrite_properties:
+    - field_activities
+    - field_address
+    - field_awards
+    - field_campus
+    - field_department
+    - field_email
+    - field_job_title
+    - field_name/credentials
+    - field_name/family
+    - field_name/given
+    - field_name/middle
+    - field_phone
+    - field_preferred_first
+    - field_staff_group
+    - field_office
+    - field_fax
+    - field_paragraphs
+    - field_cv

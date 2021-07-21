@@ -1,0 +1,9 @@
+<ul class="button-collection {{ button_collection.variant }} {{ button_collection.button_variant }} min-w-full flex flex-row flex-wrap">
+  {% block buttons %}
+    {% for item in button_collection.items %}
+      <li>
+        {% include '@button' with { button: { variant: item.button_variant, label: item.button_text } } %}
+      </li>
+    {% endfor %}
+  {% endblock %}
+</ul>

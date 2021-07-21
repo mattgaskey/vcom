@@ -1,0 +1,179 @@
+$virginia: #83003f;
+$virginiaLight: #c17f9f;
+$carolinas: #c45400;
+$carolinasLight: #f3bb90;
+$auburn: #1f3d7b;
+$auburnLight: #8f9ebd;
+$louisiana: #6d6e71;
+$louisianaLight: #b6b6b8;
+
+@mixin campus($color, $colorLight:null, $secondaryColor:null) {
+  // Default button styling
+  .button,
+  &.button {
+    @apply text-white;
+    background-color: $color;
+    border-color: $color;
+    &:hover {
+      @apply bg-transparent font-bold;
+      color: $color;
+    }
+    
+    // Ghost content button styling
+    &.button--ghost {
+      @apply text-white border-1 border-white bg-transparent;
+      &:hover {
+        @apply bg-white;
+        color: $color;
+      }
+    }
+  }
+
+  // Social Media Buttons 
+  .social-media-links {
+    .icon {
+      background-color: $color;
+      &:hover {
+        .ic:before {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  // Campus Specific Tabs
+  &[role='tab'] {
+    background-color: $color;
+    &:hover {
+      background-color: $color;
+      @apply opacity-80;
+    }
+    &[aria-selected='true'] {
+      color: $color;
+      border-color: $color;
+    }
+  }
+
+  // Campus Address Footer Links
+  .vcard {
+    .heading--linked {
+      color: $colorLight;
+    }
+  }
+
+  // Feature Block
+  &.feature--campus {
+    &.feature--dark {
+      @apply border-b-6;
+      background-color: $color;
+      border-color: $secondaryColor;
+      .button {
+        @extend .button--ghost;
+        @apply text-white border-1 border-white bg-transparent;
+        &:hover {
+          @apply bg-white;
+          color: $color;
+          
+        }
+        &.button--ghost {
+          @apply text-white border-1 border-white;
+          color: white !important;
+          border-width: 1px !important;
+          border-color: white !important;
+          background-color: transparent !important;
+          &:hover {
+            background-color: white !important;
+            color: $color !important;
+          }
+        }
+      }
+    }
+    &:not(.feature--dark) {
+      .feature__inset {
+        @apply border-b-6;
+        border-color: $color;
+      }
+    }
+  }
+  
+  // Fast Facts
+  &.fast-fact {
+    .fast-fact__stat, .fast-fact__icon {
+      color: $color;
+    }
+    .fast-fact__description {
+      a {
+        color: $color !important;
+      }
+    }
+  }
+
+  // Teasers
+  &.teaser.teaser--campus {
+    .teaser__content {
+      background-color: $color;
+    }
+  }
+
+  // Page Banners
+  .page__banner,
+  &.page__banner {
+    background-color: $secondaryColor;
+    border-color: $color;
+    &.hero__content {
+      border-color: $secondaryColor;
+    }
+  }
+
+  // Section Nav
+  .section-nav {
+    border-bottom: 8px $color solid;
+  }
+
+  // Quotes
+  &.quote {
+    .quote__body.editorial {
+      border-color: $secondaryColor;
+      a {
+        color: $color;
+      }
+    }
+  }
+
+  // Display style headshots
+  .display,
+  &.display {
+    figcaption {
+      background-color: $color;
+    }
+    &:hover {
+      figcaption {
+        background-color: transparentize($color, .4);
+        .font-bold {
+          @apply underline;
+        }
+      }
+    }
+  }
+
+  // Person page overrides 
+  &.node--type-person {
+    .social-media-links {
+      .icon {
+        @apply bg-maroon;
+        &:hover {
+          @apply bg-white;
+          .ic:before {
+            @apply text-maroon;
+          }
+        }
+      }
+    }
+    .button {
+      @apply bg-maroon border-maroon;
+      &:hover {
+        @apply bg-white text-maroon;
+      }
+    }
+  }
+}

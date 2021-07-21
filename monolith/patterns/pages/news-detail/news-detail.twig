@@ -1,0 +1,31 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@banner' with { 
+    banner: {
+      image: banner.image, 
+      campus: banner.campus 
+    }
+  } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { slab: {
+    section_intro: {
+      heading: { level: 1, headline: 'VCOM Announces New Partnership with Limestone College' }
+    }
+  } } %}
+    {% block slab_content %}
+      {% embed '@with-sidebar' %}
+        {% block with_sidebar_main %}
+          {% include '@datetime' with { datetime: datetime } %}
+          {% include '@figure' with { figure: { caption: 'Congratulations to the VCOM-Auburn Blue Cross and Blue Shield of Alabama  Scholarship Program recipients! Left to right: Kayla Martin, Anna Bianchi, Katherine Vinson, James Healy, Tianna Humes, Harvey Browning, Farrah Gaston and Imani Carter.' } } %}
+          {% include '@body' with { body: body } %}
+        {% endblock %}
+        {% block with_sidebar_aside %}
+          {% include '@section-nav' %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% include '@footer' %}

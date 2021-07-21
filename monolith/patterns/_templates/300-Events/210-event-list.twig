@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block main_content %}
+    {% include '@' ~ page_header|default('text-page-header') with { head: "Events", slab_variant : header_slab|default('slab--newcity-white') } %}
+    {% include '@breadcrumb-slab' %}
+    {% embed '@slab-2x1' with { slab_variant : slab_variant|default('slab--newcity-white') }  %} 
+        {% block slab_content %}
+            {% include '@content-list' %}
+        {% endblock %}
+        {% block slab_sidebar %}
+            {% include '@content-filter' with {contentType: "events"} %}
+            {% include '@contact-info' %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+

@@ -1,0 +1,22 @@
+.button {
+    border-width: 0;
+    @apply uppercase text-white text-center font-bold border-1 inline-block py-10 px-20 bg-maroon border-maroon tracking-widest;
+    transition: all 0.25s;
+    
+    &:hover {
+        @apply bg-transparent font-bold text-maroon;
+    }
+    &.button--content {
+      @apply w-250 px-10;
+    }
+    &.button--ghost {
+        @apply bg-maroon text-white border-1 border-white;
+        transition: all 0.25s;
+        &:hover {
+          @apply bg-white text-maroon;
+        }
+    }
+    &.button--grid {
+      @apply min-w-full;
+    }
+}

@@ -1,0 +1,173 @@
+name: News Rollup
+context:
+  banner:
+    image:
+      w: 2000
+      ratio: "3:2"
+  cta_slab:
+    grid:
+      variant: 'grid--large'
+      items:
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Media Contacts
+              variant: button--grid
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Publications
+              variant: button--grid
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Marketing Services
+              variant: button--grid
+  news_slab:
+    teaser_collection:
+      variant: teaser-collection--overlay
+      items:
+        - teaser: "@teaser--overlay-teaser.teaser"
+        - teaser: "@teaser--overlay-teaser.teaser"
+        - teaser: "@teaser--overlay-teaser.teaser"
+        - teaser: "@teaser--overlay-teaser.teaser"
+        - teaser: "@teaser--overlay-teaser.teaser"
+    button:
+      label: More News
+  sidebar_main:
+    teaser_collection:
+      variant: 'teaser-collection--two-across'
+      items:
+        - teaser: "@teaser--publication-with-image.teaser"
+        - teaser: "@teaser--publication-with-image.teaser"
+        - teaser: "@teaser--publication-with-image.teaser"
+        - teaser: "@teaser--publication-with-image.teaser"
+  sidebar_aside:
+    teaser_collection:
+      variant: 'teaser-collection--full'
+      items:
+        - teaser: "@teaser--event-archive.teaser"
+        - teaser: "@teaser--event-archive.teaser"
+        - teaser: "@teaser--event-archive.teaser"
+        - teaser: "@teaser--event-archive.teaser"
+        - teaser: "@teaser--event-archive.teaser"
+  tabs_slab:
+    items:
+      - id: virginia
+        name: Virginia
+        pattern: \@slab
+        pattern_context:
+          slab:
+            classes: 
+              - virginia
+            section_intro:
+              heading:
+                level: 2
+                headline: Virginia Campus Updates
+            pattern: \@feature
+            pattern_context:
+              feature:
+                variant: feature--campus virginia
+                heading:
+                  level: 3
+                  headline: Radford Athletics Announces Partnership with VCOM for Sports Medicine Center
+                image: "@image.image"
+                body:
+                  items:
+                    - pattern: \@p
+                      pattern_context:
+                        p:
+                          content: Radford University Athletics and the Edward Via College of Osteopathic Medicine (VCOM) have entered a partnership to provide Highlander student-athletes a state-of-the-art 4,300 square foot sports medicine facility. In addition, Radford University Athletics will continue to be a training ground for young physicians in the VCOM Sports Medicine Fellowship.
+                    - pattern: \@button
+                      pattern_context:
+                        button:
+                          label: Read More
+      - id: carolinas
+        name: Carolinas
+        pattern: \@slab
+        pattern_context:
+          slab:
+            classes: 
+              - carolinas
+            section_intro:
+              heading:
+                level: 2
+                headline: Carolinas Campus Updates
+            pattern: \@feature
+            pattern_context:
+              feature:
+                variant: feature--campus carolinas
+                heading:
+                  level: 3
+                  headline: A Carolinas Related Headline for Something Newsworthy
+                image: "@image.image"
+                body:
+                  items:
+                    - pattern: \@p
+                      pattern_context:
+                        p:
+                          content: A Really great thing happened in Spartanburg that affected VCOm Carolinas in a positive way.  This story will warm the hearts of those who read it and surely fill their souls with mirth.
+                    - pattern: \@button
+                      pattern_context:
+                        button:
+                          label: Read More
+      - id: auburn
+        name: Auburn
+        pattern: \@slab
+        pattern_context:
+          slab:
+            classes: 
+              - auburn
+            section_intro:
+              heading:
+                level: 2
+                headline: Auburn Campus Updates
+            pattern: \@feature
+            pattern_context:
+              feature:
+                variant: feature--campus auburn
+                heading:
+                  level: 3
+                  headline: An Auburn Related Headline for Something Newsworthy
+                image: "@image.image"
+                body:
+                  items:
+                    - pattern: \@p
+                      pattern_context:
+                        p:
+                          content: A Really great thing happened in Auburn that affected VCOm Auburn in a positive way.  This story will warm the hearts of those who read it and surely fill their souls with mirth.
+                    - pattern: \@button
+                      pattern_context:
+                        button:
+                          label: Read More       
+      - id: louisiana
+        name: Louisiana
+        pattern: \@slab
+        pattern_context:
+          slab:
+            classes: 
+              - louisiana
+            section_intro:
+              heading:
+                level: 2
+                headline: Louisiana Campus Updates
+            pattern: \@feature
+            pattern_context:
+              feature:
+                variant: feature--campus louisiana
+                heading:
+                  level: 3
+                  headline: A Louisiana Related Headline for Something Newsworthy
+                image: "@image.image"
+                body:
+                  items:
+                    - pattern: \@p
+                      pattern_context:
+                        p:
+                          content: A Really great thing happened in Louisiana that affected VCOm Carolinas in a positive way.  This story will warm the hearts of those who read it and surely fill their souls with mirth.
+                    - pattern: \@button
+                      pattern_context:
+                        button:
+                          label: Read More           
+            
+

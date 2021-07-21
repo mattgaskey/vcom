@@ -1,0 +1,39 @@
+.quote {
+	&.quote--with-media {
+		@apply flex flex-row;
+		img {
+      @apply rounded-full my-10;
+    }
+    .quote__body {
+      @apply ml-30;
+    }
+	}
+	
+	.quote__body {
+		@apply border-l-6 border-orange-700 pl-30 font-sans flex flex-col justify-center;
+		.quote__body--quote {
+			p {
+				@apply italic mb-15;
+				&::before {
+					content: $icon-quote-double;
+					@apply font-icon not-italic block text-gray-300 text-2xl mb-10;
+				}
+			}
+		}
+
+		.quote__meta {
+      .quote__meta--name {
+        @apply font-bold;
+        &:before {
+          content: '- ';
+        }
+      }
+      .quote__meta--sep {
+        margin-left: -3px;
+      }
+			cite {
+				@apply not-italic;
+			}
+		}
+	}
+}

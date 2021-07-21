@@ -1,0 +1,6 @@
+<div class="inset flex flex-col md:flex-row flex-no-wrap">
+    {% include '@body' with { body: inset.body } %}
+    <div class="inset__alert">
+        {% include '@alert' with { alert: inset.alert } %}
+    </div>
+</div>

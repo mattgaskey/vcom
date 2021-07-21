@@ -1,0 +1,14 @@
+name: Faculty Info
+context:
+  faculty_info:
+    name:
+      value: Adrienne Z. Ables, PharmD, MS, FNAOME
+    title:
+      items:
+        - Assistant Dean for Faculty Development
+        - Phramacology Faculty
+        - Professor of Phramacology
+    contact:
+      campus: Virginia Campus
+      office: 118
+      phone: 339-333-4958

@@ -1,0 +1,18 @@
+<div class="{{ tabs.variant }} js-tabs max-w-full mx-auto">
+  {% block tab_list %}
+    <ul class="js-tablist c-container" data-existing-hx="h2">
+      {% for item in tabs.items %}
+      <li class="js-tablist__item">
+        <a href="#{{ item.id }}" class="{{ item.id }} js-tablist__link">{{ item.name }}</a>
+      </li>
+      {% endfor %}       
+    </ul>
+  {% endblock %}
+  {% block tab_content %}
+    {% for item in tabs.items %}
+    <div id="{{ item.id }}" class="js-tabcontent">
+      {% include item.pattern with item.pattern_context %}
+    </div>
+    {% endfor %}
+  {% endblock %}
+</div>

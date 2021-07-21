@@ -1,0 +1,45 @@
+a {
+    // Set the default link style inside the 
+    // layout-container class so links outside 
+    // the container (for example, in the admin 
+    // toolbar) do not get overridden.
+    &.link--default {
+        @apply underline;
+        transition: all 0.3s;
+        &:hover {
+          @apply text-blue-400;
+        }
+    }
+
+    &.link--underlined {
+       @apply underline;
+       &:hover {
+           @apply no-underline font-bold;
+       }
+    }
+
+    &.link--fancy {
+        @include fancy-link($icon-fancy_link_arrow);
+        @apply inline-block underline leading-loose mb-10;
+        margin-left: 32px;
+        text-indent: -19px;
+        &:before {
+            @apply inline-block no-underline;
+        }
+    }
+
+    &.link--button {
+        @apply inline-block font-sans uppercase px-10 py-5 text-sm font-bold leading-none;
+    }
+
+    &.link--default-list {
+        @apply font-bold text-maroon underline;
+    }
+
+    &.link--fancy-list {
+        @include fancy-link($icon-angle-right);
+        @apply inline-block;
+        margin-left: 19px;
+        text-indent: -19px;
+    }
+}

@@ -1,0 +1,8 @@
+{% extends 'base.twig' %}
+
+{% block main_content %}
+    {% include '@' ~ page_header|default('text-page-header') with { head: fake("name"), sub: fake("jobTitle"), secondary_image: true, slab_variant : header_slab|default('slab--newcity-white') } %}
+    {% include '@breadcrumb-slab' %}
+    {% include '@sidebar-profile' with { slab_variant : slab_variant|default('slab--newcity-white'), hide_image: hide_image }  %} 
+{% endblock %}
+

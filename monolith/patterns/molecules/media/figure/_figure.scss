@@ -1,0 +1,32 @@
+figure {
+    img {
+        @apply block h-full;
+        font-family: "object-fit: cover; object-position: 50% 50%";
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+    figcaption {
+      @apply mt-10 text-sm;
+        span {
+            @apply block leading-tight;
+        }
+    }
+    &.display {
+      figcaption {
+          @apply text-center font-sans text-white bottom-0 p-10 min-w-full mt-0;
+      }
+      &:hover {
+        img {
+          @apply opacity-80;
+        }
+        figcaption {
+          @apply bg-maroon;
+        }
+      }
+    }
+    &.no-caption {
+        figcaption {
+            @apply hidden;
+        }
+    }
+}

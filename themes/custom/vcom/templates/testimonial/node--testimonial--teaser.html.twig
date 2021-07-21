@@ -1,0 +1,28 @@
+{% set prior_schools = content.field_prior_schools|children|first['#context'].value %}
+{% set hometown = content.field_hometown|children|first['#context'].value %}
+{% set specialty = content.field_specialty|children|first['#context'].value %}
+{% set residency = content.field_residency|children|first['#context'].value %}
+{% set type = content.field_testimonial_type|children|first['#markup'] %}
+
+<a class="testimonial" href="{{ url }}">
+  <figure class="display w-200 {{ content.field_campus[0]['#plain_text']|lower }}">
+    {{ content.field_media }}
+    <figcaption>
+      <span class="font-bold">{{ node_title }}</span>
+      <span class="font-normal">{{ content.field_campus|children }}, {{ content.field_class|children }}</span>
+      {% if type == 'Alumni' %}
+        {% if residency is not empty or specialty is not empty %}
+          <span class="block border-b-1 border-white my-10"></span>
+          <span>{{ residency }}</span>
+          <span>{{ specialty }}</span>
+        {% endif %}
+      {% elseif type == 'Student' %}
+        {% if prior_schools is not empty or hometown is not empty %}
+          <span class="block border-1 border-white my-10"></span>
+          <span>{{ prior_schools }}</span>
+          <span>{{ hometown }}</span>
+        {% endif %}
+      {% endif %}
+    </figcaption>
+  </figure>
+</a>

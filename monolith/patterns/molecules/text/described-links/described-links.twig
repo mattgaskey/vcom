@@ -1,0 +1,10 @@
+<dl class="described-links">
+  {% for item in described_links.items %}
+    {% if item.link %}
+      <dt><a href="http://www.example.com/">{{ item.link }}</a></dt>
+    {% endif %}
+    {% if item.description %}
+      <dd>{{ item.description }}</dd>
+    {% endif %}
+  {% endfor %}
+</dl>

@@ -1,0 +1,113 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@banner' with { 
+    banner: {
+      image: banner.image, 
+      campus: banner.campus 
+    }
+  } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { slab: {
+    variant: 'node--type-person carolinas',
+    section_intro: {
+      heading: { level: 1, headline: 'Alexis Stoner' }
+    }
+  } } %}
+    {% block slab_content %}
+      {% embed '@grid' with { grid: {
+        variant: 'photo table grid--major-right'
+      } } %}
+        {% block grid_items %}
+          <div class="photo-table__photo">
+            {% include '@figure' with { figure: {
+              image: {
+                ratio: "2:3"
+              }
+            } } %}
+          </div>
+          <div class="photo-table__content editorial">
+            {% include '@p' with { p: {
+              variant: 'person--name',
+              content: 'Alexis Stoner, PhD, MPH'
+            } } %}
+            {% include '@p' with { p: {
+              content: 'Discipline Chair for Epidemiology, Community and Public Health and Preventive Medicine'
+            } } %}
+            </br>
+            {% include '@p' with { p: {
+              variant: 'person--department',
+              content: '<strong>Department/Discipline</strong>: <span><a href="#">Preventive Medicine and Public Health</a></span>'
+            } } %}
+            {% include '@p' with { p: {
+              content: '<strong>Office</strong>: 244'
+            } } %}
+            {% include '@p' with { p: {
+              content: '<strong>Campus</strong>: Carolinas Campus'
+            } } %}
+            {% include '@link' with { link: {
+              variant: 'download-cv button',
+              url: '#',
+              label: 'Download CV'
+            } } %}
+            {% include '@social-media-links' with { social_media_links: {
+              lists: {
+                variant: 'platforms list--horizontal clean'
+              },
+              icon_link: {
+                variant: 'icon-link--hidden-label'
+              },
+              items: [
+                {
+                  icon: {
+                    glyph: 'ic--facebook',
+                    label: 'facebook'
+                  },
+                  link: {
+                    url: 'www.facebook.com'
+                  }
+                },
+                {
+                  icon: {
+                    glyph: 'ic--twitter',
+                    label: 'twitter'
+                  },
+                  link: {
+                    url: 'www.twitter.com'
+                  }
+                },
+                {
+                  icon: {
+                    glyph: 'ic--linkedin',
+                    label: 'linkedin'
+                  },
+                  link: {
+                    url: 'www.linkedin.com'
+                  }
+                }
+              ]
+            } } %}
+          </div>
+        {% endblock %}
+      {% endembed %}
+      {% include '@p' with { p: {
+        variant: 'my-20',
+        content: 'Alexis Stoner has a Bachelor’s degree in Biology from Kenyon College, a Master’s degree in Public Health from The Ohio State University, and recently earned a Ph.D. in Curriculum and Instruction – Instructional Design and Technology from Virginia Tech. During her Ph.D program, her dissertation explored incorporating mindfulness as an instructional strategy to enhance reflection within a situation learning environment. Currently, her research focuses on incorporating mindfulness within medical education, designing authentic learning experiences for undergraduate medical students, along with developing educational public health initiatives to improve health outcomes among underserved populations. She has also spent time exploring hygiene and water accessibility at our international outreach sites.'
+      } } %}
+      {% include '@heading' with { heading: {
+        level: 2,
+        headline: 'Publications',
+        variant: 'mb-20'
+      } } %}
+      {% include '@table' with { table: { variant: 'publications mb-20' } } %}
+      {% include '@heading' with { heading: {
+        level: 2,
+        headline: 'Contact',
+        variant: 'mb-20'
+      } } %}
+      {% include '@webform' %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% include '@footer' %}

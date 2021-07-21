@@ -1,0 +1,37 @@
+.directory-table {
+  margin: 0 auto;
+
+  table {
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  caption {
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 2rem 1rem;
+  }
+
+  td {
+    padding: .5rem;
+  }
+
+  tbody {
+    tr {
+      background-color: white;
+
+      &:hover {
+        background-color: #ffffcc;
+      }
+
+      &:nth-child(odd) {
+        background-color: #efefef;
+
+        &:hover {
+          background-color: #e0e0cf;
+        }
+      }
+    }
+  }
+}

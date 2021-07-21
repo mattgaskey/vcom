@@ -1,0 +1,6 @@
+csv_import.admin:
+  title: "Import Staff and RMLs"
+  description: "Upload new staff and residency match location files here"
+  parent: system.admin_content
+  route_name: csv_import.form
+  weight: 1000

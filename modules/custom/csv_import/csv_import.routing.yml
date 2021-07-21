@@ -1,0 +1,7 @@
+csv_import.form:
+  path: /admin/import_csv
+  defaults:
+    _title: Import CSV files
+    _form: '\Drupal\csv_import\Form\ImportForm'
+  requirements:
+    _role: "administrator+content_manager"

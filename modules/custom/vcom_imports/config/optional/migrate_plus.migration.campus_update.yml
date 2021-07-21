@@ -1,0 +1,64 @@
+id: campus_update
+label: Import Campus Updates
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: "private://campus_updates/campus-updates.json"
+  item_selector: articles
+  fields:
+    - name: title
+      label: "Title"
+      selector: title
+    - name: date
+      label: "Date"
+      selector: date
+    - name: campus
+      label: "Campus"
+      selector: campus
+    - name: body
+      label: "Body"
+      selector: "body"
+    - name: featureimage
+      label: "Feature Image"
+      selector: featureimage
+  ids:
+    title:
+      type: string
+process:
+  title: title
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: "basic_html"
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+  created:
+    plugin: format_date
+    from_format: "U"
+    to_format: "U"
+    from_timezone: "EST"
+    to_timezone: "UTC"
+    source: date
+  field_media:
+    - plugin: skip_on_empty
+      method: process
+      source: featureimage
+    - plugin: addmedia
+      media_source: "public://campus_updates/"
+      media_destination: "public://campus_updates/photos/"
+
+destination:
+  plugin: entity:node
+  default_bundle: campus_updates

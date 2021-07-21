@@ -1,0 +1,87 @@
+.social-media-links {
+    .icon {
+        @apply pr-5 w-45 h-45 bg-maroon;
+        font-size: 35px;
+        line-height: 45px;
+        transition: all 0.25s;
+        &:hover {
+          @apply bg-white;
+          .ic:before {
+            @apply text-maroon;
+          }
+        }
+        .ic:before {
+          @apply text-white relative;
+          top: 15%;
+          transform: translateX(12.5%);
+        }
+
+        .ic--twitter:before {
+          transform: translateX(17.5%);
+        }
+
+        .ic--youtube:before {
+          transform: translate(15%, 2.5%);
+        }
+
+        .ic--linkedin:before {
+          transform: translateX(17.5%);
+        }
+
+        .icon__glyph {
+          @apply text-white;
+        }
+    }
+}
+
+.social-sharing-buttons__button {
+  height: 45px;
+  width: 45px;
+  &[title="Share to Facebook"] {
+    svg {
+      fill: #3b5998;
+    }
+    &:hover {
+      background-color: #3b5998;
+      svg {
+        fill: white;
+      }
+    }
+  }
+  &[title="Share to Twitter"] {
+    svg {
+      fill: #1DA1F2;
+    }
+    &:hover {
+      background-color: #1DA1F2;
+      svg {
+        fill: white;
+      }
+    }
+  }
+  &[title="Share to E-mail"] {
+    svg {
+      fill: #e1670b;
+    }
+    &:hover {
+      background-color: #e1670b;
+      svg {
+        fill: white;
+      }
+    }
+  }
+  &.btnCopy {
+    svg {
+      fill: #83003f;
+    }
+    &:hover {
+      background-color: #83003f;
+      svg {
+        fill: white;
+      }
+    }
+  }
+  &:first-of-type {
+    @apply ml-0;
+  }
+}

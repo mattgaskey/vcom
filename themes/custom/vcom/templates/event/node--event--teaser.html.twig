@@ -1,0 +1,11 @@
+{% if content.field_media|children %}
+  <div class="photo-table__photo">
+    {{ content.field_media }}
+  </div>
+{% endif %}
+<div class="photo-table__content editorial">
+  <h2 class="text-2xl"><a class="event-title" href="{{ url }}">{{ label }}</a></h2>
+  {{ content.field_date_range }}
+  {{ content.field_location }}
+  {{ content.body }}
+</div>

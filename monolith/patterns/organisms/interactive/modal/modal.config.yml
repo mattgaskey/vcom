@@ -1,0 +1,28 @@
+name: modal
+status: wip
+context:
+  # mfp_type is one of : image iframe inline ajax 
+  modal:
+    type: mfp-inline
+    pattern: \@placeholder
+    trigger_text: Open Modal
+variants:
+  - name: image
+    context:
+      modal:
+        type: mfp-image
+        url: /images/fpo_16x9.png
+  - name: youtube
+    context:
+      modal:
+        type: mfp-iframe
+        url: https://www.youtube.com/watch?v=UKBvaOLDem0
+  - name: search
+    context:
+      modal:
+        type: mfp-inline
+        pattern: \@search-form
+        trigger_text: Search
+        variant: search-control
+
+

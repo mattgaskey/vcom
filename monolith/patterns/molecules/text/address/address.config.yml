@@ -1,0 +1,28 @@
+collated: true
+name: address
+status: wip
+context:
+  address:
+    heading_link:
+      url: '#'
+      label: VCOM Virginia
+    addr:
+      street: 2265 Kraft Drive
+      locality: Blacksburg
+      region: VA
+      postal_code: 24060
+      phone: 540-231-4000
+      fax: 540-231-5252
+variants:
+  - name: address__location
+    context:
+      address:
+        variant: address__location
+        heading_link:
+        directions_link:
+          url: '#'
+          variant: link--default
+          label: Get Directions
+        addr:
+          hours:
+            Monday-Thursday 9am, Friday 9am-5pm

@@ -1,0 +1,10 @@
+{% embed '@fractal/section-nav.twig' %}
+  {% block section_nav_label %}
+  {{ title_prefix }}
+    {{ label }}
+  {{ title_suffix }}
+  {% endblock %}
+  {% block section_nav_items %}
+    {{ content }}
+  {% endblock %}
+{% endembed %}

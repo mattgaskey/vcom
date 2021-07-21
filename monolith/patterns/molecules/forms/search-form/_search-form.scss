@@ -1,0 +1,10 @@
+#search-block-form {
+    & input {
+        &::placeholder {
+            @apply text-black text-lg;
+        }
+    }
+    input:not(:placeholder-shown) + .ic {
+        display: none;
+    }
+}

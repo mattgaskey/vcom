@@ -1,0 +1,7 @@
+{
+    "teaser_variant": "teaser--news",
+    "content_date" : true,
+    "teaser_byline" : true,
+    "content_date_format" : "M d, Y",
+    "content_taxonomy" : true
+}

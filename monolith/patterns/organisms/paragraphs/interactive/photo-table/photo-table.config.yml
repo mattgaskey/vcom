@@ -1,0 +1,14 @@
+name: Photo Table
+context:
+  photo_table:
+    image:
+      ratio: "3:4"
+    items:
+      - <span><strong>Lindsey C. Jenkins, BA</strong></span><span><em>Medical Education Specialist</em></span>
+      - <span><strong>Crystal Pettry, BA</strong></span><span><em>Director for Medical Education</em></span>
+      - <span><strong>Renee Prater, DVM, PhD</strong></span><span><em>Associate Dean for Curriculum, Assessment and Medical Education</em></span>
+      - <span><strong>Ashley N. White, BS</strong></span><span><em>Medical Education Specialist</em></span>
+      - <span><strong>Mike Breiner, MD</strong></span><span><em>Discipline Chair for Surgery</em></span>
+      - <span><strong>James R. Palmieri, PhD</strong></span><span><em>Associate Professor for Microbiology and Immunology</em></span>
+      - <span><strong> Pawel Michalak, PhD</strong></span><span><em>Associate Professor for Cell Biology and Physiology</em></span>
+      - <span><strong>Chris Reilly, PhD</strong></span><span><em>Discipline Chair for Cellular Biology and Physiology</em></span>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>icon/nav-arrow-right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Navigation-States" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="vcom_comp_navigation_states" transform="translate(-149.000000, -4624.000000)" fill="#83003F">
+            <g id="Group-4" transform="translate(149.000000, 4407.000000)">
+                <g id="Group-9" transform="translate(0.000000, 212.000000)">
+                    <path d="M4,15 L2.25906758,13.1686747 L-1.84455883,8.99196787 C-2.05181372,8.77777671 -2.05181372,8.56358876 -1.84455883,8.34939759 L-0.69429991,7.12851406 C-0.569946973,7.04283759 -0.466321079,7 -0.383419121,7 C-0.259066184,7 -0.155440291,7.04283759 -0.0725383326,7.12851406 L4,11.3052209 L8.07253833,7.12851406 C8.19689127,7.04283759 8.30051716,7 8.38341912,7 C8.50777206,7 8.61139795,7.04283759 8.69429991,7.12851406 L9.84455883,8.34939759 C10.0518137,8.56358876 10.0518137,8.76706731 9.84455883,8.95983936 L5.74093242,13.1365462 L4,15 Z" id="icon/nav-arrow-right" transform="translate(4.000000, 11.000000) rotate(-90.000000) translate(-4.000000, -11.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

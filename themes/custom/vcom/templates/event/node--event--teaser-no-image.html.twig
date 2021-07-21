@@ -1,0 +1,13 @@
+{% embed '@fractal/teaser.twig' with { teaser: { link: { url: url }, variant: 'teaser--event' } } %}
+  {% block teaser_top %}
+    {% set dateblock = {
+      day: date_start|date('j'),
+      month: date_start|date('M')
+    } %}
+    {% include '@fractal/dateblock.twig' with { dateblock:dateblock } %}
+  {% endblock %}
+  {% block teaser_content %}
+    <h3 class="teaser__heading">{{ label|injectclass('teaser__text') }}</h3>
+    {{ content.field_date_range|children }}
+  {% endblock %}
+{% endembed %}

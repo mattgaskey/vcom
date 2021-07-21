@@ -1,0 +1,88 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/main.css: {}
+      css/patterns.css: {}
+      css/patch.css: {}
+global-scripts:
+  version: 1.x
+  js:
+    js/lib/ofi.min.js: {}
+    js/hamburger.js: {}
+    js/overlay-images.js: {}
+    js/toggle-button.js: {}
+    js/main.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupal.dialog.ajax
+interactives:
+  version: 1.x
+  js:
+    js/lib/jquery-accessible-accordion.js: {}
+accordion:
+  version: 1.x
+  js:
+    js/patterns/accordion.js: {}
+    js/patterns/accordion-init.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - vcom/interactives
+popups:
+  version: VERSION
+  css:
+    theme:
+      css/magnific-popup.css: {}
+  js:
+    js/lib/jquery.magnific-popup.min.js: {}
+  dependencies:
+    - core/jquery
+masonry:
+  version: 1.x
+  js:
+    js/lib/imagesloaded.pkgd.min.js: {}
+    js/lib/masonry.pkgd.min.js: {}
+ambient:
+  version: 1.x
+  js:
+    "https://player.vimeo.com/api/player.js": {}
+    js/patterns/hero.js: {}
+image-gallery:
+  version: 1.x
+  js:
+    js/patterns/image-gallery.js: {}
+    js/patterns/image-gallery-init.js: {}
+  css:
+    component:
+      css/image-gallery.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - vcom/masonry
+    - vcom/popups
+table:
+  version: 1.x
+  js:
+    js/patterns/table.js: {}
+    js/patterns/table-init.js: {}
+  dependencies:
+    - core/jqeury
+    - core/jquery.once
+tabs:
+  version: 1.x
+  js:
+    js/lib/jquery-accessible-tabs-aria.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+fitvids:
+  version: 1.x
+  js:
+    js/lib/jquery.fitvids.js: {}
+    js/fitvids.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

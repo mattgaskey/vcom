@@ -1,0 +1,52 @@
+name: link-group
+status: wip
+context:
+  link_group:
+    items:
+      - pattern: \@link
+        pattern_context: 
+          link: "@link.link"
+      - pattern: \@link
+        pattern_context: 
+          link: "@link.link"
+      - pattern: \@link
+        pattern_context: 
+          link: "@link.link"
+      - pattern: \@link
+        pattern_context: 
+          link: "@link.link"
+      - pattern: \@link
+        pattern_context: 
+          link: "@link.link"
+  hg:
+    headline: Link Group
+    tag: h2
+variants:
+  - name: Invisible Header
+    context:
+      link_group:
+        variant: 'link-group--invisible-header'
+  - name: No Bullets Inline
+    context:
+      link_group:
+        variant: 'clean inline'
+  - name: No Bullets Inline Piped
+    context:
+      link_group:
+        items:
+          - pattern: \@link
+            pattern_context: 
+              link: "@link.link"
+          - pattern: \@link
+            pattern_context: 
+              link: "@link.link"
+          - pattern: \@link
+            pattern_context: 
+              link: "@link.link"
+          - pattern: \@link
+            pattern_context: 
+              link: "@link.link"
+          - pattern: \@link
+            pattern_context: 
+              link: "@link.link"
+        variant: 'clean inline piped'

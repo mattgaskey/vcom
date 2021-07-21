@@ -1,0 +1,35 @@
+<div class="teaser {{ teaser.variant }}">
+  <a class="teaser__link" href="{{ teaser.link.url }}" >
+    {% block teaser_top %}
+    {% if teaser.image is not empty %}
+      {% if teaser.datetime %}
+        {% include '@datetime' with { datetime: teaser.datetime } %}
+        <div class="teaser__image">
+          {% include '@image' with { image: teaser.image } %}
+        </div>
+      {% else %}
+      <div class="teaser__image">
+        {% include '@image' with { image: teaser.image } %}
+      </div>
+      {% endif %}
+    {% endif %}
+    {% if teaser.dateblock is not empty %}
+      {% include '@dateblock' with { dateblock: teaser.dateblock } %}
+    {% endif %}
+    {% endblock %}
+    <div class="teaser__content">
+      {% block teaser_content %}
+        {% if teaser.daterange %}
+          {% include '@heading' with { heading: teaser.heading } %}
+          {% include '@daterange' with { daterange: teaser.daterange } %}
+        {% elseif teaser.datetime %}
+          {% include '@heading' with { heading: teaser.heading } %}
+        {% else %}
+          {% include '@heading' with { heading: teaser.heading } %}
+          {% include '@content-meta' with { content_meta: teaser.content_meta } %}
+          {% include '@p' with { p: teaser.p } %}
+        {% endif %}
+      {% endblock %}
+    </div>
+  </a>
+</div>

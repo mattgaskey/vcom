@@ -1,0 +1,27 @@
+{% set classes = [
+  'alert',
+  'alert--' ~ alert_level,
+  'flex',
+  'flex-row',
+  'flex-no-wrap',
+  'min-w-full'
+] %}
+{% set icon = "" %}
+{% if alert_level == "clear" %}
+  {% set icon = "ic--check_successful" %}
+{% else %}
+  {% set icon = "ic--" ~ alert_level ~ "_alert" %}
+{% endif %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="alert__icon">
+    <span class="icon icon--no-label">
+      <span class="icon__glyph ic {{ icon }}" aria-hidden="true"></span>
+      <span class="icon__label">{{ title }}</span>
+    </span>
+  </div>
+  <div class="alert__message">
+    <h2><span class="heading__text">{{ title }}</span></h2>
+    {{ message }}
+  </div>
+</div>

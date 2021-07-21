@@ -1,0 +1,6 @@
+<{{ hg.tag }} class="headline-group {{ hg.variant }}">
+	{% if hg.super %}<span class="headline-group__super">{{ hg.super }}</span>{% endif %} 
+	<span class="headline-group__head">{% include '@optional-link' with { optional_link: hg.headline } %}</span>
+	{% if hg.sub %}<span class="headline-group__sub">{{ hg.sub }}</span>{% endif %} 
+</{{ hg.tag }}>
+

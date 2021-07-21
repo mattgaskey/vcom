@@ -1,0 +1,21 @@
+name: Portrait Teaser
+display: 
+  max-width: 400px
+context:
+  name: Jimmy Gibbs
+  title: Representing the Carolinas Advisory Board
+variants:
+  - name: Auburn
+    context:
+      campus: auburn
+  - name: Carolinas
+    context:
+      campus: carolinas
+  - name: Louisiana
+    context:
+      campus: louisiana
+  - name: Virginia
+    context:
+      campus: virginia
+
+

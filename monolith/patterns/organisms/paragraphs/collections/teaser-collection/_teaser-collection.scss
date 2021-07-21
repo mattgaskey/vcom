@@ -1,0 +1,93 @@
+.teaser-collection {
+  &__heading {
+    @apply mb-20;
+    .heading__text {
+      @apply font-serif;
+    }
+    p {
+      @apply font-sans;
+    }
+  }
+  &.teaser-collection--three-across {
+    @extend .grid--large;
+  }
+  &.teaser-collection--two-across {
+    @extend .grid--xlarge;
+  }
+  &.teaser-collection--full {
+    @extend .grid--full;
+  }
+  &.teaser-collection--description {
+    .teaser-collection__heading {
+      @apply text-center px-20;
+      @screen lg {
+        @apply w-half mx-auto px-0;
+      }
+    }
+  }
+  &.teaser-collection--overlay {
+    @supports (display: grid) {
+      @extend .grid--narrow-gutters;
+      .views-row, .teaser {
+        height: 300px;
+      }
+      @screen md {
+        @extend .grid--custom;
+        .views-row, .teaser {
+          height: 400px;
+        }
+        .views-row:nth-child(1) {
+          grid-area: one;
+        }
+        .views-row:nth-child(2) {
+          grid-area: two;
+        }
+        .views-row:nth-child(3) {
+          grid-area: three;
+        }
+        .views-row:nth-child(4) {
+          grid-area: four;
+        }
+        .views-row:nth-child(5) {
+          grid-area: five;
+        }
+        grid-template-rows: 300px 275px;
+        grid-template-areas: 
+          "one   one   one   one   one  one  one  two  two  two  two  two"
+          "three three three three four four four four five five five five";
+      }
+      @screen lg {
+        grid-template-rows: 400px 375px;
+      }
+    }
+    @supports not (display: grid) {
+      @apply flex flex-col flex-no-wrap;
+      .views-row, .teaser {
+        height: 300px;
+        @apply mb-20;
+      }
+      @screen md {
+        @apply flex-row flex-wrap;
+        .views-row:nth-child(1) {
+          flex: 0 0 60%;
+          margin-right: 2%;
+        }
+        .views-row:nth-child(2) {
+          flex: 0 0 38%;
+        }
+        .views-row:nth-child(3),
+        .views-row:nth-child(4),
+        .views-row:nth-child(5) {
+          flex: 0 0 32%;
+        }
+        .views-row:nth-child(3),
+        .views-row:nth-child(4) {
+          margin-right: 2%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  }
+}

@@ -1,0 +1,135 @@
+name: Locations Landing Page
+context:
+  locations_slab:
+    grid:
+      variant: grid--without-gutters grid--full
+      items:
+        - pattern: \@feature
+          pattern_context:
+            feature:
+              variant: feature--campus virginia
+              image: "@image.image"
+              heading:
+                level: 3
+                headline: Virginia Campus
+              body: 
+                items:
+                  - pattern: \@p
+                    pattern_context:
+                      p: 
+                        content: The Virginia campus is located at the heart of the Appalachian Mountains. The campus is situated just mintes from downtown, where you can enjoy delicious food, a variety of shopping, local arts and theater.
+                  - pattern: \@heading
+                    pattern_context:
+                      heading:
+                        level: 4
+                        headline: Highlights
+                  - pattern: \@unordered-lists
+                    pattern_context:
+                      ul:
+                        variant: list--bullets
+                        items:
+                          - Abundant wildlife
+                          - Outdoor trails for all skill levels
+                          - New River tubing and fishing
+                          - Claytor Lake Festival
+                  - pattern: \@button
+                    pattern_context:
+                      button:
+                        label: Explore the Virginia Campus
+        - pattern: \@feature
+          pattern_context:
+            feature:
+              variant: feature--flipped feature--campus carolinas
+              image: "@image.image"
+              heading:
+                level: 3
+                headline: Spartanburg, SC
+              body: 
+                items:
+                  - pattern: \@p
+                    pattern_context:
+                      p: 
+                        content: Nestled on the edge of beautiful, historic downtown Spartanburg, South Carolina. The college is part of the College Town Consortium, creating a variety of social and service opportunities for students.
+                  - pattern: \@heading
+                    pattern_context:
+                      heading:
+                        level: 4
+                        headline: Highlights
+                  - pattern: \@unordered-lists
+                    pattern_context:
+                      ul:
+                        variant: list--bullets
+                        items:
+                          - Live entertainment in Morgan Square
+                          - Local farmer's market and theater
+                          - Regional parks, mountains, beaches, and lakes
+                          - Close to two major airports
+                  - pattern: \@button
+                    pattern_context:
+                      button:
+                        label: Explore the Carolinas Campus 
+        - pattern: \@feature
+          pattern_context:
+            feature:
+              variant: feature--campus auburn
+              image: "@image.image"
+              heading:
+                level: 3
+                headline: Auburn, AL
+              body: 
+                items:
+                  - pattern: \@p
+                    pattern_context:
+                      p: 
+                        content: Ground was broken in 2014 for this campus in the Auburn Research Park. The 100,000 square foot, four-story, state-of-the-art building is situated on 16 beautiful acres located on the Auburn University Campus.
+                  - pattern: \@heading
+                    pattern_context:
+                      heading:
+                        level: 4
+                        headline: Highlights
+                  - pattern: \@unordered-lists
+                    pattern_context:
+                      ul:
+                        variant: list--bullets
+                        items:
+                          - Walking paths and Campus Lake
+                          - Access to Auburn University amenities
+                          - In-house and online resources
+                          - State-of-the-art laboratories and research centers
+                  - pattern: \@button
+                    pattern_context:
+                      button:
+                        label: Explore the Auburn Campus
+        - pattern: \@feature
+          pattern_context:
+            feature:
+              variant: feature--flipped feature--campus louisiana
+              image: "@image.image"
+              heading:
+                level: 3
+                headline: Monroe, LA
+              body: 
+                items:
+                  - pattern: \@p
+                    pattern_context:
+                      p: 
+                        content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit euismod nibh, sit amet fringilla libero. Suspendisse vitae gravida nunc, at consequat enim. Integer pretium massa ut nibh placerat gravida sit amet fringilla libero.
+                  - pattern: \@heading
+                    pattern_context:
+                      heading:
+                        level: 4
+                        headline: Highlights
+                  - pattern: \@unordered-lists
+                    pattern_context:
+                      ul:
+                        variant: list--bullets
+                        items:
+                          - Maecenas volutpat leo vitae luctus
+                          - Pellentesque viverra cursus pellentesque
+                          - Vivamus pharetra feugiat odio
+                          - Cras fermentum velit in nunc cursus
+                  - pattern: \@button
+                    pattern_context:
+                      button:
+                        label: Explore the Louisiana Campus
+              

@@ -1,0 +1,1 @@
+To override parts of the Fractal "mandelbrot" theme, find the theme file you want to override at https://github.com/frctl/mandelbrot/tree/master/views and copy it here. Preserve the file directory structure from the mandelbrot theme starting from the /views/ directory. An example has been provided.

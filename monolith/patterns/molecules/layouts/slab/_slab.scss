@@ -1,0 +1,75 @@
+.slab {
+  @apply py-40;
+  
+  @screen md {
+    @apply py-75;
+  }
+
+  &:not(.slab--tab-overlay):not(.slab--tab-underlay) {
+    .slab__wrapper {
+      @apply px-20;
+      @screen md {
+        @apply c-container;
+      }
+    }
+  }
+
+  .slab__wrapper {
+    .slab__header {
+      @apply mb-15;
+      h2, h3 {
+        @apply leading-tight;
+      }
+      &.slab__header--centered {
+        @apply text-center px-20 mx-auto;
+        @screen md {
+          @apply px-50;
+        }
+        @screen lg {
+          @apply px-0 w-half;
+        }
+      }
+    }
+    
+    .slab__cta {
+      @apply mt-30;
+    }
+  }
+  
+  &.slab--gray {
+    @apply bg-gray-100;
+  }
+
+  &.slab--dark {
+    @apply bg-gray-700;
+  }
+
+  &.slab--border-bottom {
+    @apply border-b-6 border-gray-400;
+  }
+
+  // Default class for body paragraph
+  &.slab--body-padding {
+    @apply pt-20;
+  }
+
+  // Default class for tabs paragraphs
+  &.slab--tab-underlay {
+    @apply py-0;
+    margin-top: 54px;
+  }
+
+  // Overrides for paragraphs that have Slab Spacing settings
+  &.slab--no-bottom-padding {
+    @apply pb-0;
+  }
+
+  &.slab--no-top-padding {
+    @apply pt-0;
+  }
+
+  &.slab--tab-overlay {
+    @apply py-0;
+    margin-top: -54px;
+  }
+}

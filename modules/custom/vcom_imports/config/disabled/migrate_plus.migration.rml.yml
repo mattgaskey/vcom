@@ -1,0 +1,63 @@
+id: rml
+label: Import Residency Match Locations
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'public://rml/rml.json'
+  item_selector: match
+  fields: 
+    - name: nid
+      label: 'Node ID'
+      selector: nid
+    - name: title
+      label: 'Title'
+      selector: title
+    - name: published
+      label: 'Published'
+      selector: published
+    - name: campus
+      label: 'Campus'
+      selector: campus
+    - name: classyear
+      label: 'Class Year'
+      selector: classyear
+    - name: postdate
+      label: 'Post Date'
+      selector: postdate
+    - name: residencycity
+      label: 'City'
+      selector: residencycity
+    - name: residencystate
+      label: 'State'
+      selector: residencystate
+    - name: residencyspecialty
+      label: 'State'
+      selector: residencyspecialty
+  ids:
+    nid:
+      type: integer
+process:
+  field_class_year: classyear
+  field_location: title
+  field_speciality: residencyspecialty
+  field_city: residencycity
+  field_state: residencystate
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus 
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find campus"
+
+destination:
+  plugin: entity:field_group
+  default_bundle: rml

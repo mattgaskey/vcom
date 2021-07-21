@@ -1,0 +1,45 @@
+id: fac_staff
+label: Import Faculty and Staff CSV
+migration_group: repeatable
+source:
+  plugin: csv
+  path: "private://csv_import/staff.csv"
+  delimiter: ","
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - code
+process:
+  field_name/given: first
+  field_name/family: last
+  field_name/middle: middle
+  field_name/credentials: degree
+  field_job_title: title
+  field_employee_code: code
+  field_preferred_first: preferred
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus
+    - plugin: explode
+      delimiter: "|"
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find campus"
+  field_email: email
+
+destination:
+  plugin: entity:node
+  default_bundle: person
+  overwrite_properties:
+    - field_campus
+    - field_email
+    - field_job_title
+    - field_name
+    - field_preferred_first

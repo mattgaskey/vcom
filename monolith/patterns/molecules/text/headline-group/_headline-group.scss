@@ -1,0 +1,28 @@
+// $sizelist: 4xl 3xl 2xl 2xl xl xl;
+
+.headline-group {
+  // Since the meaning of & changes depending on nesting.
+  $bem-root: #{&};
+  @apply block leading-none mt-0;
+
+  #{$bem-root}__super,
+  #{$bem-root}__sub {
+    @apply block;
+  }
+
+  // Default non-semantic headline group
+  @at-root #{$bem-root} {
+
+    #{$bem-root}__super {
+      @apply text-base uppercase font-sans;
+    }
+
+    #{$bem-root}__sub {
+      @apply text-lg italic;
+    }
+
+    #{$bem-root}__head {
+      @apply block my-10;
+    }
+  }
+}

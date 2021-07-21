@@ -1,0 +1,47 @@
+name: Button Collection
+default: Collection of Unsized Buttons
+context:
+  button_collection:
+    items:
+      - button_text: see all events
+      - button_text: see all news
+      - button_text: rsvp
+      - button_text: see all events
+      - button_text: see all news
+      - button_text: subscribe
+      - button_text: rsvp
+      - button_text: see all events
+      - button_text: see all news
+      - button_text: subscribe
+      - button_text: rsvp
+      - button_text: a really long button text that breaks down
+      - button_text: see all events
+      - button_text: see all news
+      - button_text: subscribe
+      - button_text: rsvp
+variants:
+  - name: Collection of Fixed-Width Buttons
+    context:
+      button_collection:
+        button_variant: button--content
+        items:
+          - button_text: see all events
+          - button_text: see all news
+          - button_text: rsvp
+          - button_text: see all events
+          - button_text: see all news
+          - button_text: subscribe
+          - button_text: rsvp
+          - button_text: see all events
+          - button_text: see all news
+          - button_text: subscribe
+          - button_text: rsvp
+          - button_text: a really long button text that breaks down
+          - button_text: see all events
+          - button_text: see all news
+          - button_text: subscribe
+          - button_text: rsvp
+  - name: Collection of Center-Aligned Buttons
+    context:
+      button_collection:
+        variant: button-collection--center

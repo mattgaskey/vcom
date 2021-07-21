@@ -1,0 +1,4 @@
+{% set tag = random(['nature','music','cat','building','abstract','arts']) %}
+{% spaceless %}
+  <img src="{{ image.src|default(yetimg({ratio: image.ratio, w: image.width, tag: image.tag}) )}}" alt="{{ image.alt }}" class="{{ image.variant }} block w-full" />
+{% endspaceless %}

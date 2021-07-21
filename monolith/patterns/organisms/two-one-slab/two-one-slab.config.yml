@@ -1,0 +1,15 @@
+label: 2:1 Slab
+default: major-left
+context:
+  cta: "@cta.cta"
+  pullquote: "@pullquote.pullquote"
+  grid:
+    variant: grid--major-left
+  sidebar:
+    main: \@pullquote
+    side: \@cta
+variants:
+  - name: major-right
+    context: 
+      grid:
+        variant: grid--major-right

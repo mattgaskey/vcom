@@ -1,0 +1,1 @@
+To tweak the Fractal Mandelbrot JS (to e.g., include Frontback), change the "fractal-tweaks.js" file. If there are environment-specific tweaks, you can put them in `dev-fractal-tweaks.js` and `prod-fractal-tweaks.js.` The proper js file will be included based on environment variables set in the appropriate docker-compose files (/build.yml and /develop.yml).

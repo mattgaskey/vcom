@@ -1,0 +1,35 @@
+{#
+/**
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'social-media-links--platforms',
+    'platforms',
+    'list--horizontal',
+    'clean'
+  ]
+%}
+
+<ul{{ attributes.addClass(classes) }}>
+  {% for platform in platforms %}
+    <li>
+      <a href="{{ platform.url }}" class="icon-link icon-link--hidden-label" {{ platform.attributes}} >
+        <span class="icon">
+          <span class="icon__glyph ic ic--{{ platform.id }}"></span>
+          <span class="icon__label">{{ platform.id }}</span>
+        </span>
+      </a>
+
+      {% if appearance.show_name %}
+        {% if appearance.orientation == 'h' %}
+          <br />
+        {% endif %}
+
+        <span><a href="{{ platform.url }}" {{ link_attributes }}>{{ platform.name }}</a></span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

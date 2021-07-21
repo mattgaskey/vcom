@@ -1,0 +1,15 @@
+<?php
+
+// If you want to clear data between installs:
+function vcom_imports_uninstall() {
+  Drupal::configFactory()->getEditable('migrate_plus.migration.fac_staff')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.publication')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.news')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.research')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.campus_update')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.rml')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.rmlcsv')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.scholarships')->delete();
+  Drupal::configFactory()->getEditable('migrate_plus.migration.testimonials')->delete();  
+  Drupal::configFactory()->getEditable('migrate_plus.migration.jobs')->delete();  
+}

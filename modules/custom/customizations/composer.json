@@ -1,0 +1,14 @@
+{
+  "name": "drupal/odu_customizations",
+  "type": "drupal-module",
+  "description": "Admin customizations, plugins, and extensions",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/odu_customizations",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/odu_customizations",
+    "source": "http://cgit.drupalcode.org/odu_customizations"
+  },
+  "require": { }
+}

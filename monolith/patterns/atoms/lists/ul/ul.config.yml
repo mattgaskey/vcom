@@ -1,0 +1,53 @@
+name: Unordered Lists
+default: Plain
+collated: true
+context:
+  ul:
+    items:
+      - List Item One
+      - List Item Two
+      - List Item Three
+      - List Item Four
+      - List Item Five
+variants:
+  - name: Vertical
+    context:
+      ul:
+        variant: 'list--vertical'
+  - name: Horizontal
+    context:
+      ul:
+        variant: 'list--horizontal'
+  - name: bullets
+    context: 
+      ul:
+        variant: 'list--bullets'
+  - name: bullets and vertical
+    context: 
+      ul:
+        variant: 'list--bullets list--vertical'
+  - name: columns
+    context:
+      ul:
+        variant: 'list--columns'
+        items:
+          - List Item That Has an Egregiously Long Name
+          - List Item Two
+          - List Item Three
+          - List Item Four
+          - List Item Five
+          - List Item Six
+          - List Item Seven
+          - List Item Eight
+          - List Item Nine
+          - List Item Ten
+          - List Item Eleven
+          - List Item Twelve
+          - List Item Thirteen
+          - List Item Fourteen
+          - List Item Fifteen
+          - List Item Sixteen
+          - List Item Seventeen
+          - List Item Eighteen
+          - List Item Nineteen
+          - List Item Twenty

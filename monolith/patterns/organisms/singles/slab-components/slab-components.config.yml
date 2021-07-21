@@ -1,0 +1,49 @@
+# default: alert
+# context:
+#   slab:
+#     pattern: \@alert
+#   alert: "@alert.alert"
+# variants:
+#   - name: editorial
+#     context:
+#       slab:
+#         pattern: \@editorial
+#       editorial:
+#         variant: editorial--aside-right
+#       block: "@block.block"
+#       p: "@p.p"
+#       hg:
+#         headline: This is a headline in the editorial context.
+#         tag: h2
+#   - name: teaser
+#     context:
+#       slab:
+#         pattern: \@teaser
+#       teaser: "@teaser.teaser"
+#   - name: pulltext
+#     context:
+#       slab:
+#         pattern: \@pulltext
+#       pullquote: "@pulltext.pulltext"
+#   - name: pullquote
+#     context:
+#       slab:
+#         pattern: \@pullquote
+#       pullquote: "@pullquote.pullquote"
+#   - name: grid
+#     context:
+#       slab:
+#         pattern: \@grid
+#       grid: "@grid.grid"
+#   - name: grid-small
+#     context:
+#       slab:
+#         pattern: \@grid
+#       grid: "@grid--small.grid"
+#   - name: grid-large
+#     context:
+#       slab:
+#         pattern: \@grid
+#       grid: "@grid--large.grid"
+    
+    

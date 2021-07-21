@@ -1,0 +1,9 @@
+<div class="ambient-video">
+  <video loop muted playsinline poster="{{ ambient.poster|path }}" preload="none">
+    <source src="{{ ambient.video|path }}" type="video/mp4">
+  </video>
+  <button class="video-button button--large" aria-label="Stop Video" data-pressed-label="Start Video" data-unpressed-label="Stop Video" data-pressed-icon="design--play-circle-filled" data-unpressed-icon="design--pause-circle-filled" aria-pressed="false">
+    {% include '@icon' with {icon: ambient.play_icon } %}
+    {% include '@icon' with {icon: ambient.pause_icon } %}
+  </button>
+</div>

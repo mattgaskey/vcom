@@ -1,0 +1,8 @@
+{% if items %}
+  <div>
+    <span class="font-bold">Prior School{% if items|length > 1 %}s{% endif %}</span>: 
+    {% for item in items %}
+      {{ item.content }}{% if loop.index < items|length %}, {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

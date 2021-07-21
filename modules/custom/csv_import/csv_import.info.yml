@@ -1,0 +1,9 @@
+name: CSV Imports
+description: "Provides a form for uploading VCOM CSV Data Files"
+type: module
+core: 8.x
+dependencies:
+  - migrate
+  - migrate_tools
+  - migrate_plus
+  - migrate_source_csv

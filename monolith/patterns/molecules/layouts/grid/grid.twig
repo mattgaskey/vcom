@@ -1,0 +1,7 @@
+<div class="grid {{ grid.variant }}">
+  {% block grid_items %}
+    {% for i in grid.items %}
+      {% include i.pattern with i.pattern_context %}
+    {% endfor %}
+  {% endblock %}
+</div>

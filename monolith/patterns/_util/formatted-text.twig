@@ -1,0 +1,14 @@
+{# Generate some random formatted HTML text #}
+{% for i in 1..(3 + random(10)) %}
+  {% set condition = random(10) %}
+  {% set s = fake('lorem.sentence', 3 + random(15)) %}
+  {% if condition < 6 %}
+    {{ s }}
+  {% elseif condition == 7 %}
+    <em>{{ s }}</em>
+  {% elseif condition == 8 %}
+    <strong>{{ s }}</strong>
+  {% elseif condition > 9 %}
+    {% include '@link' with { title: s } %}
+  {% endif %}
+{% endfor %}

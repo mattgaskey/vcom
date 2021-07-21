@@ -1,0 +1,13 @@
+<div class="contact-info {{ contact_info.variant }}">
+  {% if image is not empty %}
+    <div class="contact-info__photo">
+  {% include '@image' %}
+  </div>
+  {% endif %}
+  <dl class="invisible-labels">
+    {% for field in contact_info.fields %}
+      <dt class="contact-info__label contact-info__label--{{ field.slug }}">{{ field.label }}</dt>
+      <dd class="contact-info__label contact-info__value--{{ field.slug }}">{% include '@optional-link' with { optional_link: field.content } only %}</dd>
+    {% endfor %}
+  </dl>
+</div>

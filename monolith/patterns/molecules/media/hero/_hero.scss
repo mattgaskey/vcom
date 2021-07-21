@@ -1,0 +1,114 @@
+.hero {
+  @apply relative overflow-hidden;
+  height: 500px;
+
+  &::before {
+    content: '';
+    @apply absolute z-10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition-property: background;
+    transition-duration: 5s;
+  }
+  &.with-video-background {
+    &::before {
+      background: rgba(0, 0, 0, .25);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  .image--hero {
+    transition-property: opacity;
+    transition-duration: 5s;
+  }
+
+  #hero-video {
+    @apply absolute pointer-events-none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 1000vw;
+
+/* If they choose a narrower video and need a CSS tweak, try: */
+/*
+    height: 100vh;
+    @media (min-aspect-ratio: 16/9) {
+      height: 1000vw;
+      width: 100vw;
+    }
+*/
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  #hero-video-play, #hero-video-pause {
+    @apply absolute bg-maroon-500 text-white p-8 z-40;
+    transition-property: color;
+    transition-duration: 200ms;
+    right: 40px;
+    bottom: 50px;
+    &:hover {
+      @apply text-orange-400;
+    }
+  }
+
+  .hero__content {
+    @apply absolute z-20 bottom-0 text-center text-white px-50 pt-100 pb-50 w-full border-b-6 border-orange-700;
+    background: linear-gradient(
+      to top,
+      #000,
+      rgba(#000, 0)
+    );
+    .heading__text {
+      @apply font-serif;
+    }
+    p {
+      @apply font-sans;
+    }
+    .button-collection {
+      &.grid {
+        justify-items: center;
+      }
+    }
+    h1,
+    p,
+    .button-collection {
+      @screen md {
+        @apply px-100;
+      }
+      @screen lg {
+        @apply px-0 w-half mx-auto;
+      }
+    }
+    h1 {
+      @apply text-4xl;
+      @screen md {
+        @apply text-6xl;
+      }
+    }
+    a.button {
+      @apply mb-10 mt-20;
+      &:last-of-type {
+        @apply mb-0;
+      }
+      @screen md {
+        @apply mb-0;
+      }
+      // Override transparent ghost state on hover
+      &:hover {
+        @apply bg-white border-white;
+      }
+      
+    }
+  }
+}

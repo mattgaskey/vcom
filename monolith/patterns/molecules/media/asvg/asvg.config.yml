@@ -1,0 +1,8 @@
+name: asvg
+title: Accessible SVG
+collated: true
+status: wip
+context:
+  asvg:
+    pattern: \@logo
+    alt_text: VCOM

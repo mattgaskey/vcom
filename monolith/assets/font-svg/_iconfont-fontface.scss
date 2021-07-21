@@ -1,0 +1,14 @@
+/* This file has been generated from a template. Do not edit it directly, your edits will 
+   be ignored like a ten-year-old's dad. Instead, edit the source template in 
+   /assets/font-svg/_iconfont-fontface.scss. 
+
+   This is a lodash template.
+*/
+
+@font-face {
+    font-family: "iconfont";
+    src: url('<%= fontPath %><%= fontName %>.eot');
+    src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('eot'), url('<%= fontPath %><%= fontName %>.woff2') format('woff2'), url('<%= fontPath %><%= fontName %>.woff') format('woff'), url('<%= fontPath %><%= fontName %>.ttf') format('truetype'), url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

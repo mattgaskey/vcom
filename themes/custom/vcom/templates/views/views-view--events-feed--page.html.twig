@@ -1,0 +1,44 @@
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+  {% embed '@fractal/slab.twig' with { slab: { variant: 'slab--no-top-padding editorial' } } %}
+    {% block slab_header %}
+      {% if header %}
+        <div>
+          {{ header }}
+        </div>
+      {% endif %}
+    {% endblock %}
+    {% block slab_content %}
+      {{ exposed }}
+      <h2 class="my-40">Upcoming Events</h2>
+      {{ attachment_before }}
+      <div>
+      {{ rows }}
+      </div>
+      {{ empty }}
+      {{ pager }}
+      <h2 class="mt-60 mb-40">Past Events</h2>
+      {{ attachment_after }}
+      {{ more }}
+
+      {% if footer %}
+        <div>
+          {{ footer }}
+        </div>
+      {% endif %}
+
+      {{ feed_icons }}
+      {% block slab_cta %}{% endblock %}
+    {% endblock %}
+  {% endembed %}
+  
+
+  
+</div>

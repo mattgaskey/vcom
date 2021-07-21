@@ -1,0 +1,18 @@
+<div class="feature {{ feature.variant }} grid grid--without-gutters grid--fifty-fifty">
+  {% block feature_image %}
+    <div class="feature__inset">
+      {% include '@figure' with { 
+        figure: {
+          variant: feature.image.variant, 
+          image: feature.image 
+        }
+      } %}
+    </div>
+  {% endblock %}
+  {% block feature_meta %}
+    <div class="feature__content">
+      {% include '@heading' with { heading: feature.heading } %}
+      {% include '@body' with { body: feature.body } %}
+    </div>
+  {% endblock %}
+</div>

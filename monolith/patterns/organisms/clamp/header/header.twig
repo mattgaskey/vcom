@@ -1,0 +1,80 @@
+<header class="header {{ header.variant }} z-15 flex justify-between lg:justify-start flex-col flex-no-wrap flex-auto">
+  <nav id="navigation" class="header__nav flex justify-between lg:justify-start flex-col flex-no-wrap flex-auto">
+    <div class="nav-buttons flex flex-row justify-between p-5 lg:hidden">
+      <div class="relative hamburger-container lg:hidden text-5xl">
+        <button class="button--default hamburger block m-15 w-50 h-50 p-5" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+      <button class="px-15 mr-15 text-sm quicklinks toggle" aria-expanded="false">Quicklinks / Search <i class="icon__glyph ic ic--magnify relative pl-5"></i></button>   
+    </div>
+    <div class="main-nav bg-gray-700 text-white uppercase mobile-nav hidden lg:block lg:py-15">
+      <div class="c-container mx-auto relative">
+        <div class="logo-container pb-20 border-b-1 border-white min-w-full">
+          <a href="/" class="inline-block w-130">
+            {% include '@logo-mobile' %}
+          </a>
+        </div>
+        <div class="header__logo hidden absolute bg-white p-15 lg:z-20 lg:block">
+          <a href="/">
+            {% embed '@asvg' with { 
+              asvg: { 
+                alt_text: "Edward Via College of Osteopathic Medicine: Virginia, Carolinas, Auburn, Louisiana" 
+              } 
+            } %}
+              {% block svg_object %}
+                {% include '@logo' %}
+              {% endblock %}
+            {% endembed %}
+          </a>
+        </div>
+        {% block main_nav %}
+          {% include '@menu' with { 
+            menu: {
+              variant: main_nav.variant ~ ' lg:justify-end', 
+              items: main_nav.items 
+            }
+           } %}
+        {% endblock %}
+      </div>
+    </div>
+    <div class="utility-nav pt-15 pb-15 md:pb-40">
+      <div class="nav-items c-container mx-auto flex flex-no-wrap flex-row justify-between lg:justify-end px-5 lg:pr-0 lg:items-center">
+        <div class="mobile-nav hidden lg:block">
+          {% block utility_nav %}
+            {% include '@menu' with { 
+              menu: {
+                variant: utility_nav.variant, 
+                items: utility_nav.items 
+                }
+             } %}
+          {% endblock %}
+        </div>
+        <button class="px-15 text-sm hidden lg:block quicklinks toggle">Quicklinks / Search <i class="icon__glyph ic ic--magnify relative pl-5"></i></button>   
+      </div>
+      <div class="auxiliary-navigation hidden flex flex-col w-full px-10 pb-10 md:pb-100 reveal" hidden>
+        <div class="w-full flex justify-end">
+          <a class="toggle inline-block py-30" aria-expanded="false">
+            <div class="close-button flex flex-row h-40 items-center cursor-pointer">
+              <div class="uppercase tracking-widest">Close </div>
+              <div class="icon__glyph ic ic--close_x text-xl relative" aria-hidden="true"></div>
+            </div>
+          </a>
+        </div>
+        <div>
+          {% block quicklinks %}
+            {% include '@search-form' %}
+            <h3 class="font-serif text-4xl font-bold pb-30">Quick Links</h3>
+            {% include '@menu' with {
+              menu: {
+                variant: 'menu--columns', 
+                items: quicklinks.items, 
+                link_variant: quicklinks.link_variant
+              }
+            } %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

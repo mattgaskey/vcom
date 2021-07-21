@@ -1,0 +1,4 @@
+<span class="font-bold">{% if items|length > 1 %}Campuses{% else %}Campus{% endif %}</span>: 
+{% for item in items %}
+  {{ item.content }}{% if not loop.last %}, {% endif %}
+{% endfor %}

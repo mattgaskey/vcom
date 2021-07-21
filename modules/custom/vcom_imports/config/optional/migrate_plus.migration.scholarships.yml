@@ -1,0 +1,46 @@
+id: scholarships
+label: Import scholarships
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: "private://scholarships/scholarships.json"
+  item_selector: details
+  fields:
+    - name: nid
+      label: "Node ID"
+      selector: nid
+    - name: title
+      label: "Title"
+      selector: title
+    - name: availability
+      label: "Availability"
+      selector: availability
+  ids:
+    nid:
+      type: integer
+
+destination:
+  plugin: entity:node
+  default_bundle: scholarship
+  overwrite_properties:
+    - field_available_to
+
+process:
+  title: title
+  field_available_to:
+    - plugin: skip_on_empty
+      method: process
+      source: availability
+    - plugin: entity_lookup_multi
+      value_key: name
+      bundle_key: vid
+      bundles:
+        - year_group
+        - campus
+      entity_type: taxonomy_term
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+  status: published

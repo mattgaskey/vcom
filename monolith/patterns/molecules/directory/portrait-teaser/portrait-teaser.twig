@@ -1,0 +1,11 @@
+<a href="http://www.example.com" class="block">
+{% embed '@figure' with { figure : { variant: 'display ' ~ campus } } %}
+  {% block figure_media %}
+  {% include "@image" with { image: { ratio:'3:4', w:500 } } %}
+  {% endblock %}
+  {% block figure_caption %}
+    <div class="font-bold not-italic">{{ name }}</div>
+    <div class="text-sm leading-none">{{ title }}</div>
+  {% endblock %}
+{% endembed %}
+</a>

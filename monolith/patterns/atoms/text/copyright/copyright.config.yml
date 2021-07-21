@@ -1,0 +1,9 @@
+name: "Copyright"
+status: wip
+context:
+  copyright:
+    company: VCOM - The Edward Via College of Osteopathic Medicine. All Rights Reserved.
+  datetime: 
+    when: now
+    format: Y
+    machine: Y

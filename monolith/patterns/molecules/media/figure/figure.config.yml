@@ -1,0 +1,17 @@
+name: Figure
+context:
+  figure:
+    image:
+      w: 650
+      ratio: "4:3"
+variants:
+  - name: Faculty
+    context:
+      figure:
+        variant: display
+        image:
+          w: 255
+          ratio: "3:4"
+        caption: <span><strong>Dr. Ezekieliah Constantinov Presbyterianism, BS MD PhD</strong></span><span><em>Associate Professor Emeritus for Ostepathic Curricula, Syllabi, and other Latin Phrases</em></span>
+
+

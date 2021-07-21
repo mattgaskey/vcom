@@ -1,0 +1,61 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@hero' with { 
+    hero: {
+      "variant": "image--hero virginia",
+      "heading": {
+        "level": 1,
+        "headline": "Getting Started at VCOM"
+      },
+      "p": {
+        "content": "Commit to us, and we’ll commit to you. When you set foot on campus, you’ll stay on track to becoming the person you always sensed you could be."
+      },
+      "button_collection": {
+        "items": [
+          {
+            "button_text": "Apply",
+            "button_variant": "button--content"
+          },
+          {
+            "button_text": "Visit campus",
+            "button_variant": "button--content"
+          }
+        ]
+      }
+    } 
+  } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { slab: {
+    section_intro: { heading: { level: 2, headline: 'Admissions' } }
+  } } %}
+    {% block slab_content %}
+      {% include '@teaser-collection' with { teaser_collection: admissions_slab.teaser_collection } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { slab: { 
+    variant: 'slab--gray slab--border-bottom',
+    header_variant: 'slab__header--centered',
+    section_intro: {
+      heading: { level: 2, headline: 'Where We\'re Located' },
+      p: { content: 'Short blurb about the different locations and how cool it is to pick from all of the campuses that are close to other universities.' }
+    }
+  } } %}
+    {% block slab_content %}
+      {% include '@teaser-collection' with { teaser_collection: location_slab.teaser_collection } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { slab: { variant: 'slab--border-bottom' } } %}
+    {% block slab_content %}    
+      {% include '@fast-facts' with { fast_facts: fast_facts_slab.fast_facts } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' %}
+    {% block slab_content %}
+      {% include '@grid' with { grid: text_slab.grid } %}
+    {% endblock %}
+  {% endembed %}
+  {% include '@feature' with { feature: feature } %}
+{% endblock %}
+{% include '@footer' %}

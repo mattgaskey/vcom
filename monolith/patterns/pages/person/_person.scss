@@ -1,0 +1,8 @@
+.node--type-person {
+  .person--name {
+    @apply font-sans font-bold text-xl;
+  }
+  .download-cv {
+    @apply my-20;
+  }
+}

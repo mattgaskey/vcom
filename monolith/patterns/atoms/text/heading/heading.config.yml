@@ -1,0 +1,33 @@
+name: heading
+label: Heading
+collated: true
+context:
+  heading:
+    level: 1
+    headline: This is an H1.
+variants:
+  - name: H2
+    context:
+      heading:
+        level: 2
+        headline: This is an H2.
+  - name: H3
+    context:
+      heading:
+        level: 3
+        headline: This is an H3.
+  - name: H4
+    context:
+      heading:
+        level: 4
+        headline: This is an H4.
+  - name: H5
+    context:
+      heading:
+        level: 5
+        headline: This is an H5.
+  - name: H6
+    context:
+      heading:
+        level: 6
+        headline: This is an H6.

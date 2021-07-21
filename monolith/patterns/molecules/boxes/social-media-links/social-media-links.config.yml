@@ -1,0 +1,42 @@
+collated: true
+context:
+  social_media_links:
+    lists:
+      variant: list--vertical
+    icon_link:
+      variant: icon-link--hidden-label
+    items:
+      - icon:
+          glyph: ic--facebook
+          label: Facebook
+        link: 
+          url: https://www.facebook.com
+      - icon:
+          glyph: ic--twitter
+          label: Twitter
+        link: 
+          url: https://www.twitter.com
+      - icon:
+          glyph: ic--instagram
+          label: Instagram
+        link: 
+          url: https://www.instagram.com
+      - icon:
+          glyph: ic--youtube
+          label: YouTube
+        link: 
+          url:
+            https://www.youtube.com        
+      - icon:
+          glyph: ic--linkedin
+          label: LinkedIn
+        link: 
+          url: https://www.linkedin.com        
+variants:
+  - name: Row
+    context:
+      social_media_links:
+        icon_link: 
+          variant: icon-link--hidden-label
+        lists:
+          variant: list--horizontal

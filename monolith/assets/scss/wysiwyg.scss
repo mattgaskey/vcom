@@ -1,0 +1,11 @@
+/* This scss file renders to wysiwyg.scss, and can be used by rich text editors to style text in the editor. */
+
+body {
+  a {
+    @apply text-maroon underline font-bold;
+  }
+  ul {
+    @apply list-disc;
+    margin-left: 2rem;
+  }
+}

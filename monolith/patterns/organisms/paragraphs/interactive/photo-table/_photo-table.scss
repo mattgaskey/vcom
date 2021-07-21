@@ -1,0 +1,42 @@
+.photo-table {
+  
+  .photo-table__photo {
+    grid-area: photo;
+  }
+  .photo-table__column {
+    grid-area: content;
+  }
+  grid-template-areas: 
+    "photo"
+    "content";
+  @screen md {
+    grid-template-columns: repeat(auto-fill, 15.625rem);
+    grid-template-areas:
+      "photo content";
+  }
+  &.flip {
+    @screen md {
+      grid-template-areas: 
+        "content photo";
+    }
+  }
+  &.events-table {
+    @apply border-b-1 border-orange-700 pb-20;
+    &:last-of-type {
+      @apply border-b-0;
+    }
+  }
+  @supports not (display: grid) {
+    li {
+      @apply m-20;
+    }
+  }
+}
+
+.photo-table--view {
+  .photo-table {
+    &:last-of-type {
+      @apply border-b-0;
+    }
+  }
+}

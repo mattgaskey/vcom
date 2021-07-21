@@ -1,0 +1,23 @@
+<div class="slab {{ slab.variant }} {{ slab.classes|join(' ') }}" {{ slab.props|join(' ') }} {{ slab.attrs|attr_list }}>
+  <div class="slab__wrapper">
+    {% if slab.section_intro is not empty or block('slab_header') is not empty %}
+      {% block slab_header %}
+        <div class="slab__header {{ slab.header_variant }}">
+          {% include '@section-intro' with { section_intro: slab.section_intro } %}
+        </div>
+      {% endblock %}
+    {% endif %}
+    {% block slab_content %}
+      <div class="slab__content">
+        {% include slab.pattern with slab.pattern_context %}
+      </div>
+    {% endblock %}
+    {% if slab.button is not empty or block('slab_cta') is not empty %}
+      <div class="slab__cta {{ slab.cta_variant }} ">
+        {% block slab_cta %}
+          {% include '@button' with { button: slab.button } %}
+        {% endblock %}
+      </div>
+    {% endif %}
+  </div>
+</div>

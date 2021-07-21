@@ -1,0 +1,12 @@
+compiled: true
+context:
+  section_intro:
+    heading:
+      level: 2
+      headline: The Slab Heading
+    p: "@p--intro.p"
+variants:
+  - name: no-intro
+    context:
+      section_intro:
+        p:

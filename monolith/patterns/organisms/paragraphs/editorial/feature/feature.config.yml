@@ -1,0 +1,316 @@
+name: feature
+default: Generic Feature
+context:
+  feature:
+    image:
+      alt: Featured image alt text
+    heading:
+      level: 2
+      headline: All Features Have Headings
+    body: 
+      items:
+        - pattern: \@p
+          pattern_context:
+            p: '@p.p'
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Feature CTA
+              variant: button--content
+variants:
+  - name: top-aligned
+    context:
+      feature:
+        variant: feature--top-aligned
+  - name: flipped
+    context:
+      feature:
+        variant: feature--flipped
+  - name: dark
+    context:
+      feature:
+        variant: feature--dark
+        body: 
+          items:
+            - pattern: \@p
+              pattern_context:
+                p: '@p.p'
+            - pattern: \@button
+              pattern_context:
+                button:
+                  label: Feature CTA
+                  variant: button--content button--ghost
+  - name: Dark Flipped
+    context:
+      feature:
+        variant: feature--dark feature--flipped
+        body: 
+          items:
+            - pattern: \@p
+              pattern_context:
+                p: '@p.p'
+            - pattern: \@button
+              pattern_context:
+                button:
+                  label: Feature CTA
+                  variant: button--content button--ghost  
+  - name: Virginia Campus
+    context:
+      feature:
+        variant: feature--campus virginia
+        heading:
+          headline: Blacksburg, VA
+        body: 
+          items:
+            - pattern: \@p
+              pattern_context:
+                p: 
+                  content: The Virginia campus is located at the heart of the Appalachian Mountains. The campus is situated just mintes from downtown, where you can enjoy delicious food, a variety of shopping, local arts and theater.
+            - pattern: \@heading
+              pattern_context:
+                heading:
+                  level: 3
+                  headline: Highlights
+            - pattern: \@unordered-lists
+              pattern_context:
+                ul:
+                  variant: list--bullets
+                  items:
+                    - Abundant wildlife
+                    - Outdoor trails for all skill levels
+                    - New River tubing and fishing
+                    - Claytor Lake Festival
+            - pattern: \@button
+              pattern_context:
+                button:
+                  label: Explore the Virginia Campus
+  - name: Virginia Campus Dark
+    context:
+      feature:
+        variant: feature--campus virginia feature--dark
+        heading:
+          headline: Virginia Campus
+        image:
+          src: /images/sample/vcom_location.png
+          alt: Virginia Campus Map
+        body:
+          items:
+            - pattern: \@address
+              pattern_context:
+                address:
+                  variant: address__location
+                  addr:
+                    street: 2265 Kraft Drive
+                    locality: Blacksburg
+                    region: VA
+                    postal_code: 24060
+                    phone: 540-231-4000
+                    fax: 540-231-5252
+                    hours: Monday-Thursday 9am-7pm, Friday 9am-5pm
+                  directions_link:
+                    url: '#'
+                    label: Get Directions
+                    variant: link--default
+            - pattern: \@button-collection
+              pattern_context:
+                button_collection:
+                  items:
+                    - button_variant: button--ghost
+                      button_text: Admissions Contact Info
+                    - button_variant: button--ghost
+                      button_text: Schedule a Tour
+  - name: Carolinas Campus
+    context:
+      feature:
+        variant: feature--campus carolinas
+        heading:
+          headline: Spartanburg, SC
+        body: 
+          items:
+            - pattern: \@p
+              pattern_context:
+                p: 
+                  content: Nestled on the edge of beautiful, historic downtown Spartanburg, South Carolina. The college is part of the College Town Consortium, creating a variety of social and service opportunities for students.
+            - pattern: \@heading
+              pattern_context:
+                heading:
+                  level: 3
+                  headline: Highlights
+            - pattern: \@unordered-lists
+              pattern_context:
+                ul:
+                  variant: list--bullets
+                  items:
+                    - Live entertainment in Morgan Square
+                    - Local farmer's market and theater
+                    - Regional parks, mountains, beaches, and lakes
+                    - Close to two major airports
+            - pattern: \@button
+              pattern_context:
+                button:
+                  label: Explore the Carolinas Campus 
+  - name: Carolinas Campus Dark
+    context:
+      feature:
+        variant: feature--campus carolinas feature--dark
+        heading:
+          headline: Carolinas Campus
+        image:
+          src: /images/sample/vcom_location.png
+          alt: Carolinas Campus Map
+        body:
+          items:
+            - pattern: \@address
+              pattern_context:
+                address:
+                  variant: address__location
+                  addr:
+                    street: 350 Howard Street
+                    locality: Spartanburg
+                    region: SC
+                    postal_code: 29303
+                    phone: 864-327-9800
+                    fax: 864-804-6986
+                    hours: Monday-Thursday 9am-7pm, Friday 9am-5pm
+                  directions_link:
+                    url: '#'
+                    label: Get Directions
+                    variant: link--default
+            - pattern: \@button-collection
+              pattern_context:
+                button_collection:
+                  items:
+                    - button_variant: button--ghost
+                      button_text: Admissions Contact Info
+                    - button_variant: button--ghost
+                      button_text: Schedule a Tour
+  - name: Auburn Campus
+    context:
+      feature:
+        variant: feature--campus auburn
+        heading:
+          headline: Auburn, AL
+        body: 
+          items:
+            - pattern: \@p
+              pattern_context:
+                p: 
+                  content: Ground was broken in 2014 for this campus in the Auburn Research Park. The 100,000 square foot, four-story, state-of-the-art building is situated on 16 beautiful acres located on the Auburn University Campus.
+            - pattern: \@heading
+              pattern_context:
+                heading:
+                  level: 3
+                  headline: Highlights
+            - pattern: \@unordered-lists
+              pattern_context:
+                ul:
+                  variant: list--bullets
+                  items:
+                    - Walking paths and Campus Lake
+                    - Access to Auburn University amenities
+                    - In-house and online resources
+                    - State-of-the-art laboratories and research centers
+            - pattern: \@button
+              pattern_context:
+                button:
+                  label: Explore the Auburn Campus
+  - name: Auburn Campus Dark
+    context:
+      feature:
+        variant: feature--campus auburn feature--dark
+        heading:
+          headline: Auburn Campus
+        image:
+          src: /images/sample/vcom_location.png
+          alt: Auburn Campus Map
+        body:
+          items:
+            - pattern: \@address
+              pattern_context:
+                address:
+                  variant: address__location
+                  addr:
+                    street: 910 South Donahue Drive
+                    locality: Auburn
+                    region: AL
+                    postal_code: 36832
+                    phone: 334-442-4000
+                    fax: 334-442-4095
+                    hours: Monday-Thursday 9am-7pm, Friday 9am-5pm
+                  directions_link:
+                    url: '#'
+                    label: Get Directions
+                    variant: link--default
+            - pattern: \@button-collection
+              pattern_context:
+                button_collection:
+                  items:
+                    - button_variant: button--ghost
+                      button_text: Admissions Contact Info
+                    - button_variant: button--ghost
+                      button_text: Schedule a Tour
+  - name: Louisiana Campus
+    context:
+      feature:
+        variant: feature--campus louisiana
+        heading:
+          headline: Monroe, LA
+        body: 
+          items:
+            - pattern: \@p
+              pattern_context:
+                p: 
+                  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit euismod nibh, sit amet fringilla libero. Suspendisse vitae gravida nunc, at consequat enim. Integer pretium massa ut nibh placerat gravida sit amet fringilla libero.
+            - pattern: \@heading
+              pattern_context:
+                heading:
+                  level: 3
+                  headline: Highlights
+            - pattern: \@unordered-lists
+              pattern_context:
+                ul:
+                  variant: list--bullets
+                  items:
+                    - Maecenas volutpat leo vitae luctus
+                    - Pellentesque viverra cursus pellentesque
+                    - Vivamus pharetra feugiat odio
+                    - Cras fermentum velit in nunc cursus
+            - pattern: \@button
+              pattern_context:
+                button:
+                  label: Explore the Louisiana Campus
+  - name: Louisiana Campus Dark
+    context:
+      feature:
+        variant: feature--campus louisiana feature--dark
+        heading:
+          headline: Louisiana Campus
+        image:
+          src: /images/sample/vcom_location.png
+          alt: Louisiana Campus Map
+        body:
+          items:
+            - pattern: \@address
+              pattern_context:
+                address:
+                  variant: address__location
+                  addr:
+                    street: 700 VCOM Avenue
+                    locality: Monroe
+                    region: LA
+                    postal_code: 71209
+                    phone: 123-456-7890
+                    fax: 098-765-4321
+                    hours: Monday-Thursday 9am-7pm, Friday 9am-5pm
+                  directions_link:
+                    url: '#'
+                    label: Get Directions
+                    variant: link--default
+            - pattern: \@button-collection
+              pattern_context:
+                button_collection:
+                  items:
+                    - button_variant: button--ghost
+                      button_text: Admissions Contact Info
+                    - button_variant: button--ghost
+                      button_text: Schedule a Tour

@@ -1,0 +1,12 @@
+<h2>Featured Profile</h2>
+<div class="photo-table grid grid--major-right">
+  <div class="photo-table__photo">
+    {{ content.field_media }}
+  </div>
+  <div class="photo-table__content editorial">
+    <h3>{{ label }}</h3>
+    <p class="italic">{{ content.field_class|children }}, {{ content.field_campus|children }}</p>
+    <p><span>"{{ content.field_featured_quote|render|striptags|trim }}"</span></p>
+    <a href="{{ url }}" class="link--fancy inline-block">Read More</a>
+  </div>
+</div>

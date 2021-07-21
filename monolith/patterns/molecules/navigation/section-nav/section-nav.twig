@@ -1,0 +1,27 @@
+<div class="section-nav border-1 border-gray-200 py-30 px-35">
+  <h2 class="font-serif leading-none mb-25">
+    <span class="sr-only">Section Navigation: </span>
+    {% block section_nav_label %}
+      <a href="{{ section_nav.header_link.url|default("https://example.com") }}">{{ section_nav.header_link.label|default("Parent Page / Section") }}</a>
+    {% endblock %}
+  </h2>
+  {% block section_nav_items %}
+  <ul class="clean leading-loose">
+      {% for i in 1 .. 5 %}
+        <li><a href="http://www.example.com/">Default Link Text</a></li>
+      {% endfor %}
+        <li class="current-item"><a href="http://www.example.com/">Default Link Text</a>
+          <h3 class="sr-only">Child pages:</h3>
+          <ul class="clean mb-5 ml-25 italic">
+            {% for i in 1 .. 5 %}
+              <li><a href="http://www.example.com/">Default Link Text</a></li>
+            {% endfor %}          
+          </ul>
+        </li>
+      {% for i in 1 .. 5 %}
+        <li><a href="http://www.example.com/">Default Link Text</a></li>
+      {% endfor %}
+  </ul>
+  {% endblock %}
+</div>
+

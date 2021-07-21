@@ -1,0 +1,1 @@
+To tweak the Fractal Mandelbrot CSS, change the "fractal-tweaks.css" file. If there are environment-specific tweaks, you can put them in `dev-fractal-tweaks.css` and `prod-fractal-tweaks.css.` The proper css file will be included based on environment variables set in the appropriate docker-compose files (/build.yml and /develop.yml).

@@ -1,0 +1,60 @@
+ol {
+    counter-reset: list;
+    & > li {
+        @apply ml-40;
+    }    
+}
+
+.editorial ol,
+.decimal {
+
+    li {
+        position: relative;
+        &::before {
+            position: absolute;
+            left: -40px;
+            width: calc(40px - .3rem);
+            text-align: right;
+        }
+    }
+
+    & > li::before {
+        @apply font-bold;
+        counter-increment: list;
+        content: counter(list, decimal) ") ";
+    }
+
+    li > ol {
+        counter-reset: list;
+        > li::before {
+            content: counter(list, lower-alpha) ") ";
+        }
+    }    
+}
+
+.editorial ol.roman,
+.roman {    
+    li {
+        position: relative;
+        &::before {
+            position: absolute;
+            left: -40px;
+            width: calc(40px - .3rem);
+            text-align: right;
+        }
+    }
+        
+    & > li:before {
+        @apply font-bold;
+        counter-increment: list;
+        content: counter(list, upper-roman) ". ";
+    }
+
+    li > ol {
+        counter-reset: list;
+        > li::before {
+            content: counter(list, lower-roman) ") ";
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+/* Place style tweaks for the style guide interface here */
+.Header {
+  position: relative;
+  background-color: #83003f;
+}
+
+a.Header-title {
+  color: #fff !important;
+}
+
+.Header-navToggleIcon path:last-child {
+  fill: #fff !important;
+}
+
+.client-logo {
+  display: block;
+  position: absolute;
+  right: 1rem;
+  height: 3rem;
+  width: 10rem;
+}
+
+.client-logo path {
+  fill: white;
+}
+
+iframe.component-embed {
+  width: 100%;
+}

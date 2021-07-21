@@ -1,0 +1,71 @@
+// removes scroll when modal is opened 
+
+.no-scroll {
+  overflow: hidden;
+}
+
+// overlay covers everything 
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #83003f;
+  opacity: .89;
+  z-index: 666;
+}
+
+// modal 
+
+.mfp-inline-holder,
+.mfp-image-holder {
+  .mfp-close {
+    color: #83003f;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.modal-display {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  border-width: 0;
+  background: #fff;
+  z-index: 667;
+  overflow-x: none;
+  overflow-y: auto;
+
+  @screen md {
+    position: fixed;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    max-height: 95vh;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+}
+
+.modal-close {
+  position: absolute;
+  padding: 0;
+  border: 0;
+
+  &::after {
+    display: inline-block;
+    margin-left: .3em;
+    font-family: 'iconfont';
+    font-size: 2em;
+    content: $icon-close;
+    vertical-align: middle;
+  }
+}

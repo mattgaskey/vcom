@@ -1,0 +1,11 @@
+<div class="social-media-links {{ social_media_links.variant }}">
+  {% block social_media_links %}
+  <ul class="{{ social_media_links.lists.variant }}">
+    {% for item in social_media_links.items %}  
+      <li>
+        {% include '@icon-link' with { icon: item.icon, link: item.link, icon_link: social_media_links.icon_link } %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+</div>

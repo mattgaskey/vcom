@@ -1,0 +1,11 @@
+<div class="fast-fact {{ fast_fact.variant }}">
+  <div class="fast-fact__stat font-serif text-center">
+    {{ fast_fact.heading.headline }}
+  </div>
+  <div class="fast-fact__description font-sans">
+    {{ fast_fact.content }}
+  </div>
+  <div class="fast-fact__icon text-8xl mb-4">
+    {% include '@icon' with { icon: fast_fact.icon  } %}
+  </div>
+</div>

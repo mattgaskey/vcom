@@ -1,0 +1,5 @@
+<div class="fast-facts {{ fast_facts.variant }} grid grid--large">
+  {% for item in fast_facts.items %}
+    {% include '@fast-fact' with { fast_fact: item } %}
+  {% endfor %}
+</div>

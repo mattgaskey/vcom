@@ -1,0 +1,50 @@
+collated: true
+default: Menu Vertical
+name: menu
+context:
+  menu:
+    variant: menu--vertical
+    items:
+      - Menu One
+      - Menu Two
+      - Menu Three
+variants:
+  - name: heading
+    context: 
+      menu:
+        variant: menu--heading
+        heading: Heading Text
+  - name: horizontal
+    context:
+      menu:
+        variant: menu--horizontal
+  - name: piped
+    context:
+      menu:
+        variant: menu--piped
+        link_variant: link--default
+  - name: columns
+    context:
+      menu:
+        variant: menu--columns
+        items:
+        - List Item That Has an Egregiously Long Name
+        - List Item Two
+        - List Item Three
+        - List Item Four
+        - List Item Five
+        - List Item Six
+        - List Item Seven
+        - List Item Eight
+        - List Item Nine
+        - List Item Ten
+        - List Item Eleven
+        - List Item Twelve
+        - List Item Thirteen
+        - List Item Fourteen
+        - List Item Fifteen
+        - List Item Sixteen
+        - List Item Seventeen
+        - List Item Eighteen
+        - List Item Nineteen
+        - List Item Twenty 

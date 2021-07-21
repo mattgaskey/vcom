@@ -1,0 +1,1 @@
+This pattern demonstrates the image ratios available in the design. It should not be used as a part of any other pattern.

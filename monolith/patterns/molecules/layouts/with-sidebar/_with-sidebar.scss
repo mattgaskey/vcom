@@ -1,0 +1,6 @@
+.with-sidebar {
+  @apply px-20;
+  @screen md {
+    @apply c-container;
+  }
+}

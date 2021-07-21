@@ -1,0 +1,17 @@
+.sep {
+  &::before {
+    content: '•';
+  }
+}
+
+.sep--dash {
+  &::before {
+    content: '-';
+  }
+}
+
+.sep--pipe {
+  &::before {
+    content: '|';
+  }
+}

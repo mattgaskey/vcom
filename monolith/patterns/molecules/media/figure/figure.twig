@@ -1,0 +1,17 @@
+<figure class="{{ figure.variant }}">
+  {% block figure_media %}
+    {% include '@image' with { 
+      image: {
+        w: figure.image.w, 
+        ratio: figure.image.ratio, 
+        src: figure.image.src, 
+        alt: figure.image.alt 
+      }
+    } %}
+  {% endblock %}
+  <figcaption>
+    {% block figure_caption %}
+      {{ figure.caption }}
+    {% endblock %}
+  </figcaption>
+</figure>

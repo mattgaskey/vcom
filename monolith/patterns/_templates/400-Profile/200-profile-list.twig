@@ -1,0 +1,15 @@
+{% extends 'base.twig' %}
+
+{% block main_content %}
+    {% include '@' ~ page_header|default('text-page-header') with { head: "Directory", slab_variant : header_slab|default('slab--newcity-white') } %}
+    {% include '@breadcrumb-slab' %}
+    {% embed '@slab-2x1' with { slab_variant : slab_variant|default('slab--newcity-white') }  %} 
+        {% block slab_content %}
+            {% include '@people-list' with { slab_variant : slab_variant|default('slab--newcity-white') }  %} 
+        {% endblock %}
+        {% block slab_sidebar %}
+            {% include '@content-filter' with {contentType: "directory"} %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+

@@ -1,0 +1,77 @@
+name: Directory
+context:
+  banner:
+    image:
+      w: 2000
+      ratio: "3:2"
+  photo_table:
+    image:
+      ratio: "3:4"
+    items:
+      - <span><strong>Jimmy Gibbs</strong></span><span><em>Representing the Carolinas Capus Advisory Board</em></span>
+      - <span><strong>Bill Hardgrave, PhD</strong></span><span><em>Dean for Carolinas Campus (ex officio)</em></span>
+  faculty_directory:
+    items:
+      - faculty_info:
+        name:
+          value: Adrienne Z. Ables, PharmD, MS, FNAOME
+        title:
+          items:
+            - Assistant Dean for Faculty Development
+            - Phramacology Faculty
+            - Professor of Phramacology
+        contact:
+          campus: Virginia Campus
+          office: 118
+          phone: 339-333-4958
+      - faculty_info:
+        name:
+          value: Lesa Bolin, BS
+        title:
+          items:
+            - Director for Medical Education
+        contact:
+          campus: Virginia Campus
+          office: 11313
+          phone: 339-333-4318
+      - faculty_info:
+        name:
+          value: Caroline Foster, BA
+        title:
+          items:
+            - Medical Education Specialist
+        contact:
+          campus: Virginia Campus
+          office: 1998
+          phone: 339-333-4118
+      - faculty_info:
+        name:
+          value: Kanesha Glenn, MS
+        title:
+          items:
+            - Education Technician for Graduate Biomedical Sciences
+            - Instructor for Anatomical Sciences
+        contact:
+          campus: Carolinas Campus
+          office: 1118
+          phone: 339-333-4358
+      - faculty_info:
+        name:
+          value: Lesa Bolin, BS
+        title:
+          items:
+            - Director for Medical Education
+        contact:
+          campus: Carolinas Campus
+          office: 128
+          phone: 339-333-2258
+      - faculty_info:
+        name:
+          value: Caroline Foster, BA
+        title:
+          items:
+            - Medical Education Specialist
+        contact:
+          campus: Virginia Campus
+          office: 1133
+          phone: 339-333-4921

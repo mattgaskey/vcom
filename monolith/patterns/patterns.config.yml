@@ -1,0 +1,112 @@
+context:
+  main_nav:
+    variant: menu--horizontal
+    items:
+      - Admissions
+      - Academics
+      - Students
+      - Research
+      - Locations
+  asvg:
+    pattern: \@logo
+    alt_text: VCOM
+  hamburger:
+    icon:
+      glyph: ic--menu_hamburger
+      variant: icon--big icon--no-label
+      label: hamburger menu
+    button:
+      variant: button--default hamburger
+  quicklinks:
+    link_variant: link--fancy-list
+    items:
+      - College Catalog and Student Handbook
+      - Faculty and Staff Webmail
+      - Student Webmail
+      - Block Calendars
+      - Library
+      - Give to VCOM
+      - Canvas
+      - HELP Desk
+      - NCAHD
+      - OMNEE
+      - OSTMED.DR
+      - ViaSTAR
+      - VCOM TV
+      - VCOM Portal
+  utility_nav:
+    variant: menu--horizontal
+    items:
+      - About
+      - News & Events
+      - Faculty/Staff
+      - Alumni
+      - Giving
+      - Employment
+  footer:
+    variant: menu--heading
+    link_variant: link--default
+    main_nav:
+      heading: Main Nav
+      items:
+        - Admissions
+        - Academics
+        - Students
+        - Research
+        - Locations
+        - MyVCOM
+    helpful_links:
+      heading: Helpful Links
+      items:
+        - About
+        - News & Events
+        - Faculty/Staff
+        - Alumni
+        - Employment
+    about_vcom:
+      heading: About VCOM
+      items:
+        - Message from the President
+        - Mission and Goals
+        - History
+        - Economic Impact
+        - Accreditation
+    admissions:
+      heading: Admissions
+      items:
+        - Doctor of Osteopathic Medicine
+        - Master of Arts in Biomedical Sciences
+    copyright:
+      company: VCOM - The Edward Via College of Osteopathic Medicine. All Rights Reserved.
+    datetime: 
+      when: now
+      format: Y
+      machine: Y
+    legal:
+      variant: menu--piped
+      link_variant: link--default
+      items:
+        - Accessibility
+        - Privacy Notice
+    social_media_links:
+      variant: social-media-links--row
+      items:
+      - icon:
+          glyph: ic--facebook
+          label: Facebook
+        link:
+          url: http://www.example.com
+      - icon:
+          glyph: ic--twitter
+          label: twitter
+        link:
+          url: http://www.example.com
+      - icon:
+          glyph: ic--youtube
+          label: youtube
+        link:
+          url: http://www.example.com
+      lists: 
+        variant: list--horizontal
+      icon_link:
+        variant: icon-link--hidden-label   

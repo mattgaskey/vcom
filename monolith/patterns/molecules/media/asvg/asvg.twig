@@ -1,0 +1,8 @@
+<span class="asvg {{ asvg.variant }}">
+  <span class="asvg__object">
+    {% block svg_object %}
+      {% include asvg.pattern %}
+    {% endblock %}
+  </span>
+  <span class="asvg__label sr-only">{{ asvg.alt_text }}</span>
+</span>

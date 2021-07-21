@@ -1,0 +1,7 @@
+{% spaceless %}
+  {% if optional_link.url is not empty %}
+    <a href="http://wwww.example.com/">Optional Link</a>
+  {% else %}
+    {{ optional_link }}
+  {% endif %}
+{% endspaceless %}

@@ -1,0 +1,17 @@
+default: Virginia
+context:
+  page_title: Virginia skin
+  campus: virginia
+variants:
+  - name: Carolinas
+    context:
+      title: Carolinas skin
+      campus: carolinas
+  - name: Auburn
+    context:
+      title: Auburn skin
+      campus: auburn
+  - name: Louisiana
+    context:
+      title: Louisiana skin
+      campus: louisiana

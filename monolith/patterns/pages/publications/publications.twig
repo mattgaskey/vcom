@@ -1,0 +1,24 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@banner' with { 
+    banner: {
+      image: banner.image, 
+      campus: banner.campus 
+    }
+  } %}
+{% endblock %}
+{% block page_content %}
+  <div class="one-col py-40">
+    <h1>Publications</h1>
+  </div>
+  {% embed "@with-sidebar" %}
+    {% block with_sidebar_main %}
+      {% include "@table" %}
+    {% endblock %}
+    {% block with_sidebar_aside %}
+      {% include "@section-nav" %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% include '@footer' %}

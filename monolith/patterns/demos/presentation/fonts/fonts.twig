@@ -1,0 +1,10 @@
+<div class="{{ family }}">
+  {% for size in sizes %}
+  <h1 class="presentation-header">.{{ size }}</h1>
+  <p class="{{ size }}">The quick brown fox jumps over the lazy dog.</p>
+  <p class="font-bold {{ size }}">The quick brown fox jumps over the lazy dog.</p>
+  <p class="italic {{ size }}">The quick brown fox jumps over the lazy dog.</p>
+  <p class="font-bold italic {{ size }}">The quick brown fox jumps over the lazy dog.</p>
+  <hr />
+  {% endfor %}
+</div>

@@ -1,0 +1,135 @@
+.grid {
+
+  // flexbox fallback + global bottom margin for all grid types
+  display: flex;
+  flex-flow: row wrap;
+
+  // non-fallback fixed-column grids + grid defaults
+  @supports(display: grid) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    // overflow: visible;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    @screen md {
+      grid-template-columns: repeat(4, 1fr);
+      > * {
+        width: auto;
+        min-width: 0;
+      }
+    }
+  }
+
+  // ==============================================
+  // variant for flexible grid
+
+  &.grid--flexible {
+    @screen md {
+      grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    }
+  }
+
+  // ==============================================
+  // variants to change the number of columns
+
+  &.grid--small {
+    @screen md {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  
+  &.grid--large {
+    @screen md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &.grid--xlarge {
+    @screen md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    > * {
+      flex-basis: 50%;
+    }
+  }
+
+  &.grid--full {
+    @screen md {
+      grid-template-columns: 1fr;
+    }
+    > * {
+      flex-basis: 100%;
+    }
+  }
+
+  &.grid--custom {
+    @screen md {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+  
+
+  // ==============================================
+  // variants to change the weight of columns
+
+  &.grid--major-left {
+    @screen md {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  &.grid--major-right {
+    @screen md {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+
+  // ==============================================
+  // use smaller gutters
+  &.grid--narrow-gutters {
+    @supports(display: grid) {
+      grid-gap: 1rem;
+      &.box {
+        &:last-child,
+        &.grid,
+        &.grid--narrow-gutters {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // ==============================================
+  // wide gutters
+  &.grid--wide-gutters {
+    @supports (display:grid) {
+      grid-gap: 4rem;
+    }
+  }
+
+  // ==============================================
+  // use no gutters
+
+  &.grid--without-gutters {
+    @supports(display: grid) {
+      grid-gap: 0;
+    }
+  }
+
+  // ==============================================
+  // fifty-fifty
+
+  &.grid--fifty-fifty {
+    grid-auto-rows: minmax(min-content, max-content);
+    
+    @screen md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+

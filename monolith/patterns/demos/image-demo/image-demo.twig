@@ -1,0 +1,20 @@
+{% embed '@slab' %}
+    {% block slab_content %}
+        <h2>Common Aspect Ratios</h2>
+        <div class="sg-image-grid">
+        {% for aspect in ['1:1','4:3','3:2','16:9'] %}
+            <div class="sg-image-grid-tile">
+                {% include '@image' with {ratio:aspect, w: 400, alt: aspect} %}
+            </div>
+        {% endfor %}
+        </div>
+        <h2>Portrait Aspect Ratios</h2>
+        <div class="sg-image-grid">
+        {% for aspect in ['3:4','2:3','9:16'] %}
+            <div class="sg-image-grid-tile">
+                {% include '@image' with {ratio:aspect, w: 400, alt: aspect} %}
+            </div>
+        {% endfor %}        
+        </div>
+    {% endblock %} 
+{% endembed %}

@@ -1,0 +1,334 @@
+<?php
+
+/**
+ * @file
+ * Contains customizations.module.
+ */
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Cache\Cache;
+
+/**
+ * Implements hook_help().
+ */
+function customizations_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the odu_customizations module.
+    case 'help.page.odu_customizations':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Admin customizations, plugins, and extensions') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Set dynamic allowed values for content types; used for entities
+ * that need to configure views.
+ *
+ * @param \Drupal\field\Entity\FieldStorageConfig $definition
+ *   The field definition.
+ * @param \Drupal\Core\Entity\ContentEntityInterface|null $entity
+ *   The entity being created if applicable.
+ * @param bool $cacheable
+ *   Boolean indicating if the results are cacheable.
+ *
+ * @return array
+ *   An array of possible key and value options.
+ *
+ * @see options_allowed_values()
+ */
+function customizations_ct_list_members(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $types = \Drupal::entityTypeManager()->getStorage('node_type')->loadMultiple();
+  
+  // List of content types we allow from this selection. As you add display capabilities for more types,
+  // add to this list to allow the selection.
+  $allowed = ['event','news'];
+
+  // We validate the list against all existing content types; that makes sure the correct label is
+  // displayed and the content type exists
+  foreach ($types as $type) {
+    $label = $type->label();
+    $id = $type->id();
+
+    if (in_array($id,$allowed)) {
+      $options[$id] = $label;
+    }
+  }
+  return $options;
+}
+
+/**
+ * Set dynamic allowed values for ordering strategies; used for entities
+ * that need to configure views.
+ *
+ * @param \Drupal\field\Entity\FieldStorageConfig $definition
+ *   The field definition.
+ * @param \Drupal\Core\Entity\ContentEntityInterface|null $entity
+ *   The entity being created if applicable.
+ * @param bool $cacheable
+ *   Boolean indicating if the results are cacheable.
+ *
+ * @return array
+ *   An array of possible key and value options.
+ *
+ * @see options_allowed_values()
+ */
+function customizations_orderby_list_members(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $options = [
+    'latest' => 'Latest',
+    'random' => 'Random',
+    'featured' => 'Featured'
+  ];
+  return $options;
+}
+
+function customizations_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  
+   if ($form['#id'] == 'views-exposed-form-publications-page-1') {
+    // convert faculty into select options
+    // First grab an array of faculty with publications
+    
+    // Query ECK field_group
+    $authstorage = Drupal::getContainer()->get('entity_type.manager')->getStorage('field_group');
+    $authids = $authstorage->getQuery();
+
+    // Gather published authors and sort by title
+    $authids = $authids->condition('type', 'publication')
+     ->sort('field_person', 'ASC')
+     ->execute();
+ 
+    // If there are no published authors, move on
+    if (!$authids) {
+     return FALSE;
+    }
+
+    //  Next, grab an array of all person nodes
+    $nodestorage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
+    $nids = $nodestorage->getQuery();
+
+    // Gather published person nodes and sort by title
+    $nids = $nids->condition('type', 'person')
+     ->condition('status', 1)
+     ->sort('title', 'ASC')
+     ->execute();
+ 
+    //  Check the person node array against the ECK array and 
+    //  return an array of person nodes that habe publications
+    $authors = [];
+    $people = [];
+
+    $auths = $authstorage->loadMultiple($authids);
+    $nodes = $nodestorage->loadMultiple($nids);
+ 
+    foreach ($auths as $auth) {
+      if ($auth->field_person->entity->title->value) {
+        $authors[$auth->field_person->entity->title->value] = $auth->id();
+      }
+    }
+    foreach ($nodes as $node) {
+     $people[$node->title->value] = $node->id();
+    }
+    
+    $authors = array_unique($authors);
+    
+    function key_compare_func($key1, $key2)
+      {
+          if ($key1 == $key2)
+              return 0;
+          else if ($key1 > $key2)
+              return 1;
+          else
+              return -1;
+      }
+    
+    $matches = array_intersect_ukey($people, $authors, 'key_compare_func');
+    $options = array_flip($matches);
+
+    // Start building out our new form element
+    $person_field = 'person';
+    $form[$person_field]['#type'] = 'select';
+    $form[$person_field]['#multiple'] = FALSE;
+ 
+    // Specify the empty option for our select list
+    $form[$person_field]['#empty_option'] = t('- Any -');
+ 
+    // Add the $options from above to our select list
+    $form[$person_field]['#options'] = $options;
+    unset($form[$person_field]['#size']);
+
+   }
+
+   if ($form['#id'] == 'views-exposed-form-testimonials-page-1') {
+    // only show years that exist in the DB
+    
+    // Query Testimonials
+    $teststore = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
+    $testids = $teststore->getQuery();
+
+
+    // Gather published testimonial nodes and sort by year
+    $testids = $testids->condition('type', 'testimonial')
+     ->condition('status', 1)
+     ->sort('field_class', 'ASC')
+     ->execute();
+ 
+    $classes = [];
+    $years = [];
+
+    $years = $teststore->loadMultiple($testids);
+    
+    foreach ($years as $year) {
+      if ($year->field_class->value) {
+        $classes[$year->field_class->value] = $year->field_class->value;
+      }
+    }
+
+
+    // Start building out our new form element
+    $year_field = 'year';
+    $form[$year_field]['#type'] = 'select';
+    $form[$year_field]['#multiple'] = FALSE;
+ 
+    // Specify the empty option for our select list
+    $form[$year_field]['#empty_option'] = t('- Any -');
+ 
+    // Add the $options from above to our select list
+    $form[$year_field]['#options'] = $classes;
+    unset($form[$year_field]['#size']);
+
+   }
+}
+
+function customizations_update_courses_form(&$form) {
+  $connection = \Drupal::database();
+  $query = $connection->query("select distinct field_semester_value from {node__field_semester} where entity_id in (select nid as entity_id from {node_field_data} where status = 1)");
+  $result = $query->fetchAll();
+  $values = array_column($result, 'field_semester_value');
+  
+  if (count($values) < 2) {
+    $form['#attributes']['class'][] = 'no-semester-options';
+  }
+
+}
+
+/* 
+ * Provide a created date fallback for news urls for news stories that do not have a created date set.
+ */
+function customizations_pathauto_pattern_alter(\Drupal\pathauto\PathautoPatternInterface $pattern, array $context) {
+  // Switch out any [node:created:*] tokens with [node:updated:*] on update.
+  // \Drupal::logger('davidson_customizatons')->notice($context['module'] . " " . $context['op']);
+  if ($context['module'] == 'node' && ($context['op'] == 'insert' || $context['op'] == 'update'  || $context['op'] == 'bulkupdate')) {
+    $node = $context['data']['node'];
+
+    if($node->hasField('field_run_date')) {
+      $run_date = $node->get('field_run_date')->first();
+      if(!$run_date) {
+        $pattern->setPattern(preg_replace('/\[node:field_run_date:date(\:[^]]*)?\]/', '[node:created$1]', $pattern->getPattern()));
+        $pattern->getPattern();
+      }
+    } 
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function customizations_theme($existing, $type, $theme, $path) {
+  return [
+    'google_custom_search' => [
+      'variables' => [
+        'cx' => '',
+        'query_parameter' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_ENTITY_presave().
+ */
+function customizations_emergency_presave(EntityInterface $entity) {
+  // Invalidate custom entity list cache tag.
+  $tags = ['emergency_emit_list'];
+  Cache::invalidateTags($tags);
+}
+
+/**
+ * Implements hook_form_alter()
+ */
+
+function customizations_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  // Use regex to make sure we are using the correct form.
+  if (preg_match('/webform_submission_directory_contact_node_/', $form_id)) {
+    // Get the node for the page the webform is on.
+    $node = \Drupal::routeMatch()->getParameter('node');
+    // Check that this node is valid.
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      // Get the value of the email submissions to field.
+      $email_override = $node->get('field_email')->getValue();
+      // Check that the value exists.
+      if (!empty($email_override)) {
+        // Form values for webform can not be set in hook_form_alter(), so pass to a validation function.
+        $form['actions']['submit']['#validate'][] = 'customizations_email_override';
+      }
+    }
+  }
+}
+
+/**
+ * Changes the TO email value depending on the parent node's email submission
+ * field value.
+ *
+ * @param array $form
+ *   Form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   From state from the form.
+ */
+function customizations_email_override($form, FormStateInterface $form_state) {
+  // Get the node for the page the webform is on.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // Check that this node is valid.
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    // Get the value of the email submissions to field.
+    $email_override = $node->get('field_email')->getValue();
+    // Check that the value exists.
+    if (!empty($email_override)) {
+      // Set the value of email submissions to field to the email override field on the webform.
+      $form_state->setValue('email_override',$email_override[0]['value']);
+    }
+  }
+}
+
+/**
+  * Implements hook_media_source_info_alter().
+  */
+function mymodule_media_source_info_alter(array &$sources) {
+  $sources['artwork'] = [
+    'id' => 'artwork',
+     'label' => t('Artwork'),
+    'description' => t('Use artwork from Flickr and DeviantArt.'),
+    'allowed_field_types' => ['string'],
+    'default_thumbnail_filename' => 'no-thumbnail.png',
+    'providers' => ['Vimeo', 'YouTube'],
+    'class' => 'Drupal\media\Plugin\media\Source\OEmbed',
+    'provider' => 'mymodule',
+  ];
+}
+
+/* Customize alert levels in emergancy_alerts module */
+function customizations_emergency_alerts_levels_alter(&$levels) {
+  $levels = [
+    'major' => t('Major'),
+    'minor' => t('Minor'),
+    'clear' => t('Clear'),
+  ];
+}
+

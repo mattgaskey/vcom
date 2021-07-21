@@ -1,0 +1,36 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@hero' with { hero: {
+    "variant": "image--hero image--hero-default",
+    "heading": {
+      "level": 1,
+      "headline": "VCOM Locations"
+    },
+    "p": {
+      "content": "Each VCOM campus is committed to academic excellence and personalized attention. Learn more about our locations and where programs are offered near you."
+    },
+    "button_collection": {
+      "items": [
+        {
+          "button_text": "Apply",
+          "button_variant": "button--content"
+        },
+        {
+          "button_text": "Visit Campus",
+          "button_variant": "button--content"
+        }
+      ]
+    }
+  } } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { slab: {
+    section_intro: { heading: { level: 2, headline: 'Locations' } }
+  } } %}
+    {% block slab_content %}
+      {% include '@grid' with { grid: locations_slab.grid } %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% include '@footer' %}

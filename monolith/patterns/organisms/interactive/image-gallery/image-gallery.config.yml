@@ -1,0 +1,53 @@
+name: image-gallery
+context:
+  image_gallery: 
+    items:
+      - figure:
+          media: \@image
+        image:
+          ratio: "4:3"
+          w: "200"
+        cite: '@cite.cite'
+        p: 'This is a default caption. It can include styles but currently cannot support link text.'
+        hg: '@headline-group.hg'          
+      - figure:
+          media: \@image
+        image:
+          ratio: "16:9"
+          w: "200"
+        cite: '@cite.cite'
+        p: 'This is a default caption. It can include styles but currently cannot support link text.'
+        hg: '@headline-group.hg'          
+      - figure:
+          media: \@image
+        image:
+          ratio: "1:1"
+          w: "200"
+        cite: '@cite.cite'
+        p: 'This is a default caption. It can include styles but currently cannot support link text.'
+        hg: '@headline-group.hg'          
+      - figure:
+          media: \@image
+        image:
+          ratio: "3:4"
+          w: "200"
+        cite: '@cite.cite'
+        p: 'This is a default caption. It can include styles but currently cannot support link text.'
+        hg: '@headline-group.hg'          
+      - figure:
+          media: \@image
+        image:
+          ratio: "3:2"
+          w: "200"
+        cite: '@cite.cite'
+        p: 'This is a default caption. It can include styles but currently cannot support link text.'
+        hg: '@headline-group.hg'          
+      - figure:
+          media: \@image
+        image:
+          ratio: "1:1"
+          w: "200"
+        cite: '@cite.cite'
+        p: 'This is a default caption. It can include styles but currently cannot support link text.'
+        hg: '@headline-group.hg'          
+    

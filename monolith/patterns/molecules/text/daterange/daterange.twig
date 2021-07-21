@@ -1,0 +1,7 @@
+{# I am not entirely certain this is the best semantic representation of a date range. -- JHW #}
+{% if daterange.datestart.when|date('Y-m-d') == daterange.dateend.when|date('Y-m-d') %}
+  {% include '@datetime' with { datetime: { when: daterange.datestart.when, format: "F j, Y - g:ia \t\o ", machine: "Y-m-d\TH:i:s" } } %}
+  {% include '@datetime' with { datetime: { when: daterange.dateend.when, format: "g:i a", machine: "Y-m-d\TH:i:s" } } %}
+{% else %}
+  {% include '@datetime' with { datetime: daterange.datestart } %} — {% include '@datetime' with { datetime: daterange.dateend } %}
+{% endif %}

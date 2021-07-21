@@ -1,0 +1,9 @@
+{% embed '@fractal/teaser.twig' with { teaser: { link: { url: url }, variant: 'teaser--news' } } %}
+  {% block teaser_top %}
+    {{ content.field_run_date }}
+    {{ content.field_cover_image|injectclass('teaser__image') }}
+  {% endblock %}
+  {% block teaser_content %}
+    <h3 class="teaser__heading">{{ label|injectclass('heading__text') }}</h3>
+  {% endblock %}  
+{% endembed %}

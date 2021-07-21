@@ -1,0 +1,35 @@
+name: Hero
+default: Hero Default
+context:
+  hero:
+    variant: image--hero image--hero-default
+    heading:
+      level: 1
+      headline: VCOM
+    p: 
+      content: The MISSION of the Edward Via College of Osteopathic Medicine (VCOM) is to prepare globally-minded, community-focused physicians to meet the needs of rural and medically underserved populations and promote research to improve human health.
+    button_collection:
+      variant: button-collection--center
+      items:
+        - button_text: About VCOM
+          button_variant: button--content button--ghost
+    vimeo_id: 480473931
+variants:
+  - name: Hero Border
+    context:
+      hero:
+        campus: virginia
+        variant: image--hero
+        heading:
+          level: 1
+          headline: Getting Started at VCOM
+        p: 
+          content: Commit to us, and we’ll commit to you. When you set foot on campus, you’ll stay on track to becoming the person you always sensed you could be.
+        button_collection:
+          variant: button-collection--center
+          items:
+            - button_text: Apply
+              button_variant: button--content
+            - button_text: Visit Campus
+              button_variant: button--content
+

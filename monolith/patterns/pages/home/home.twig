@@ -1,0 +1,70 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@hero' with { 
+    hero: {
+      variant: 'image--hero image--hero-default',
+      heading: {
+        level: 1,
+        headline: 'VCOM'
+      },
+      p: {
+        content: 'The MISSION of the Edward Via College of Osteopathic Medicine (VCOM) is to prepare globally-minded, community-focused physicians to meet the needs of rural and medically underserved populations and promote research to improve human health.'
+      },
+      button_collection: {
+        variant: 'button-collection--center',
+        items: [
+          { 
+            button_text: 'About VCOM',
+            button_variant: 'button--content button--ghost'
+          }
+        ]
+      }
+    } 
+  } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { 
+    slab: { 
+      header_variant: 'slab__header--centered',
+      section_intro: campus_slab.section_intro 
+    } 
+  } %}
+    {% block slab_content %}
+      {% include '@teaser-collection' with { teaser_collection: campus_slab.teaser_collection } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { 
+    slab: {
+      variant: 'slab--gray slab--border-bottom'
+    }
+  } %}
+    {% block slab_content %}
+      {% include '@fast-facts' with { fast_facts: facts_slab.fast_facts } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' %}
+    {% block slab_content %} 
+      {% include '@teaser-collection' with { teaser_collection: cards_slab.teaser_collection } %}
+    {% endblock %}
+  {% endembed %}
+  {% include '@feature' with { feature: feature } %}
+  {% embed '@slab' with { slab: { variant: 'slab--gray slab--border-bottom' } } %}
+    {% block slab_content %}
+      {% embed '@with-sidebar' %}
+        {% block with_sidebar_main %}
+          {% include '@heading' with { heading: { level: 2, headline: 'News' } } %}
+          {% include '@teaser-collection' with { teaser_collection: sidebar_main.teaser_collection } %}
+          {% include '@button' with { button: { label: 'See All News', variant: 'button--content' } } %}
+        {% endblock %}
+        {% block with_sidebar_aside %}
+          {% include '@heading' with { heading: { level: 2, headline: 'Upcoming Events' } } %}
+          {% include '@teaser-collection' with { teaser_collection: sidebar_aside.teaser_collection } %}
+          {% include '@button' with { button: { label: 'See All Events', variant: 'button--content' } } %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% include '@footer' %}
+

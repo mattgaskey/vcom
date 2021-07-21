@@ -1,0 +1,23 @@
+{% if block is not empty or block('block_content') is not empty %}
+<div class="block {{ block.variant }}">
+  {% if block.section_intro is not empty or block('block_header') is not empty %}
+    {% block block_header %}
+      <div class="block__header">
+        {% include '@section-intro' with { section_intro: block.section_intro } %}
+      </div>
+    {% endblock %}
+  {% endif %}
+  <div class="block__content">
+  {% block block_content %}
+    {% include block.pattern %}
+  {% endblock %}
+  </div>
+  {% if block.link is not empty or block('block_footer') is not empty %}
+    <div class="block__footer">
+      {% block block_footer %}
+        <a href="http://www.example.com/">{{ block.link.label }}</a>
+      {% endblock %}
+    </div>
+  {% endif %}
+</div>
+{% endif %}

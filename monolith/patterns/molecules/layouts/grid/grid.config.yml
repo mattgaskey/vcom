@@ -1,0 +1,131 @@
+name: grid
+collated: true
+context:
+  grid:
+    items:
+      - pattern: \@placeholder
+        pattern_context:
+          title: Context Example
+      - pattern: \@placeholder
+      - pattern: \@placeholder
+      - pattern: \@placeholder
+      - pattern: \@placeholder
+      - pattern: \@placeholder
+      - pattern: \@placeholder
+variants:
+  - name: flexible
+    context:
+      grid:
+        variant: grid--flexible
+  - name: large
+    context:
+      grid:
+        variant: grid--large
+        items:
+          - pattern: \@placeholder
+          - pattern: \@placeholder
+          - pattern: \@placeholder
+  - name: xlarge
+    context:
+      grid:
+        variant: grid--xlarge
+        items:
+          - pattern: \@placeholder
+          - pattern: \@placeholder
+  - name: full
+    context:
+      grid:
+        variant: grid--full
+        items:
+          - pattern: \@placeholder
+          - pattern: \@placeholder
+  - name: major left
+    context:
+      grid:
+        variant: grid--major-left
+        items: "@grid--xlarge.grid.items"
+  - name: major right
+    context:
+      grid:
+        variant: grid--major-right
+        items: "@grid--xlarge.grid.items"
+  - name: narrow gutters
+    context:
+      grid:
+        variant: grid--narrow-gutters
+  - name: narrow gutters large
+    context:
+      grid:
+        variant: grid--narrow-gutters grid--large
+        items: "@grid--large.grid.items"
+  - name: narrow gutters xlarge
+    context:
+      grid:
+        variant: grid--narrow-gutters grid--xlarge
+        items: "@grid--xlarge.grid.items"
+  - name: narrow gutters major left
+    context:
+      grid:
+        variant: grid--narrow-gutters grid--major-left
+        items: "@grid--xlarge.grid.items"
+  - name: narrow gutters major right
+    context:
+      grid:
+        variant: grid--narrow-gutters grid--major-right
+        items: "@grid--xlarge.grid.items"
+  - name: wide gutters
+    context:
+      grid:
+        variant: grid--wide-gutters
+  - name: without gutters
+    context:
+      grid:
+        variant: grid--without-gutters
+  - name: without gutters fifty fifty
+    context:
+      grid:
+        variant: grid--without-gutters grid--fifty-fifty
+        items:
+          - pattern: \@placeholder
+          - pattern: \@placeholder
+  - name: customizable
+    context:
+      grid:
+        variant: grid--custom
+        items:
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '
+          - pattern: \@placeholder
+            pattern_context:
+              title: ' '

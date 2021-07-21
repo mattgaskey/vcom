@@ -1,0 +1,1 @@
+Occasionally we have a pattern where something may or may not be a link if a url is provided. This template isolates that logic. It's not necessary to use this pattern in a CMS if your CMS already handles this instance, but it's necessary to demonstrate that behavior in Fractal.

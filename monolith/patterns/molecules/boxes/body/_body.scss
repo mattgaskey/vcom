@@ -1,0 +1,8 @@
+.body {
+    p {
+        @apply font-sans mb-10;
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+}

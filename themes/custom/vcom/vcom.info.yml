@@ -1,0 +1,31 @@
+name: VCOM Theme
+type: theme
+description: 'Provided by NewCity'
+core: 8.x
+base theme: stable
+logo: logo.svg
+libraries:
+  - vcom/global-styling
+  - vcom/global-scripts
+ckeditor_stylesheets:
+  - css/main.css
+  - css/wysiwyg.css
+component-libraries:
+  fractal:
+    paths:
+      - fractal
+regions:
+  header: "Header"
+  primary_menu: "Primary Menu"
+  secondary_menu: "Secondary Menu"
+  quicklinks: "Quicklinks"
+  highlighted: "Highlighted"
+  help: "Help"
+  content: "Content"
+  sidebar_first: "Sidebar First"
+  sidebar_second: "Sidebar Second"
+  footer: "Footer"
+  footer_menus: "Footer Menus"
+  breadcrumb: "Breadcrumb"
+  emergency_alert: "Emergency Alert"
+  social_share: "Social Share"

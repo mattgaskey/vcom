@@ -1,0 +1,8 @@
+name: event-meta
+label: Event Meta
+status: wip
+context:
+  icon: "@icon-link.icon"
+  link: "@icon-link.link"
+  tag_list: '@tag-list.tag_list'
+  daterange: '@daterange.daterange'

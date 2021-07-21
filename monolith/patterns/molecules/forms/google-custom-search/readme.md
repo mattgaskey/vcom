@@ -1,0 +1,1 @@
+This pattern exists so that we can style the search results.

@@ -1,0 +1,44 @@
+name: News Detail
+context:
+  datetime: 
+    when: now
+    format: l, M j, Y
+    machine: Y-m-d\TH:i:s
+  body:
+    items:
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: AUBURN, AL September 25, 2019 – Today, Blue Cross and Blue Shield of Alabama and the Edward Via College of Osteopathic Medicine (VCOM) announced an important initiative to further expand access to primary care physicians. This scholarship initiative will have a profound impact on health care availability for Alabama citizens that reside in rural and underserved areas of the state.
+      - pattern: \@p
+        pattern_context: 
+          p:
+            content: According to the Alabama Rural Health Association, 54 of Alabama’s 56 rural counties are entirely or partially classified as primary care shortage areas. Statistics show that there are 4.1 primary care physicians per 10,000 individuals in Alabama’s rural counties compared with 7.9 for urban residents. Thousands of Alabamians lack access to primary care doctors. Additionally, these 54 rural counties are also classified as mental healthcare shortage areas. 
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: To help alleviate this need of primary care physicians within the state, Blue Cross and Blue Shield of Alabama is making available $3.2 million in scholarships, over a six-year period, to students at the VCOM-Auburn campus. The scholarship opportunity is for medical students agreeing to practice as primary care or behavioral health physicians in an underserved area of Alabama. 
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: The Blue Cross Blue Shield Scholars program will pay student tuition for the final two years of their enrollment. In return, scholarship recipients will commit to primary care in a rural or medically underserved region in Alabama for a period of three years. Students are selected through an application and committee review process. Eight students have been selected for this year’s scholarship award. During the next four years of the program, 16 students will be awarded the scholarship grant. Eight students will be selected for the scholarship during the final year.
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: “Providing Alabamians access to high quality healthcare continues to be one of our top priorities,” said Tim Vines, President and CEO, Blue Cross and Blue Shield of Alabama. “Having access to primary healthcare results in in lower healthcare spending and improved health outcomes,” said Vines. “Partnering with VCOM further validates our long-term commitment to providing Alabamians access to the healthcare they need and deserve,” added Vines. 
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: “We are so excited about the investment that Blue Cross and Blue Shield of Alabama has made in future physicians to care for rural and medically underserved populations in the state,” said Elizabeth Palmarozzi, DO, FACOFP, VCOM-Auburn Campus Dean. “The Blue Cross and Blue Shield Scholars Program will produce 42 new physicians to serve in Alabama over the next six years,” said Palmarozzi. “These future physicians will serve to improve the quality of life and improve health outcomes in so many families across Alabama,” Palmarozzi added.
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: “This scholarship will make it easier for me to start a practice in a rural area,” said Harvey Browning, a third-year student from Center Point, Alabama. “My goal is to provide care to the people in my community, even if they might not have insurance or be able to afford medical care,” Browning added. 
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: “This scholarship is a huge blessing to me,” said third-year VCOM-Auburn student Farrah Gaston. “When I begin to practice, I will be able to help people much sooner as this scholarship relieves so much of the stress of student loans,” added Gaston, who is from Camden, Alabama.
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: “Access to high-quality health care is very important,” said Dixie Tooke-Rawlins, DO, FACOFP, VCOM President and Provost. “Partnering with Blue Cross and Blue Shield of Alabama will help the College to provide primary care services to more people living in medically underserved areas of the state,” said Tooke-Rawlins. This generous commitment by Blue Cross will greatly enrich VCOM’s scholarship program, decrease student debt and enable many of our students to fulfill the college’s mission of returning our graduates to rural and medically underserved areas in Alabama,” added Tooke-Rawlins.

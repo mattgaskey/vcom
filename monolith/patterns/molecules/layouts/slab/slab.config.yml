@@ -1,0 +1,54 @@
+name: Slab
+status: wip
+context:
+  slab:
+    pattern: \@placeholder
+    section_intro: "@section-intro.section_intro"
+variants:
+  - name: no-intro
+    context:
+      slab:
+        section_intro: 
+  - name: simple-intro
+    context:
+      slab:
+        section_intro:
+          heading:
+            level: 2
+            headline: Just a Headline
+          p:
+  - name: with-button
+    context:
+      slab:
+        button:
+          label: CTA button
+          variant: button--content
+  - name: centered-intro
+    context:
+      slab:
+        header_variant: 'slab__header--centered'
+  - name: gray
+    context:
+      slab:
+        variant: 'slab--gray'
+  - name: gray border bottom
+    context:
+      slab:
+        variant: 'slab--gray slab--border-bottom'
+  - name: no bottom padding
+    context:
+      slab:
+        variant: 'slab--no-bottom-padding'
+  - name: no top padding
+    context:
+      slab:
+        variant: 'slab--no-top-padding'
+  - name: tab overlay
+    context:
+      slab:
+        variant: 'slab--tab-overlay'
+  - name: tab underlay
+    context:
+      slab:
+        variant: 'slab--tab-underlay'
+      

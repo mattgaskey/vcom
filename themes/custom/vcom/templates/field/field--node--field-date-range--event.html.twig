@@ -1,0 +1,6 @@
+{% if items %}
+  <span class="font-bold">When</span>: 
+  {% for item in items %}
+    {{ item.content }}
+  {% endfor %}
+{% endif %}

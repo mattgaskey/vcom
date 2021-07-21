@@ -1,0 +1,199 @@
+<footer class="footer relative bg-black text-white py-25 lg:py-50 px-15 lg:px-0">
+  <div class="c-container mx-auto">
+    <div class="footer__links grid">
+      {% block footer_menus %}
+        {% include '@menu' with { 
+          menu: {
+            items: footer.main_nav.items, 
+            variant: footer.variant, 
+            heading: footer.main_nav.heading, 
+            link_variant: footer.link_variant 
+          }
+         } %}
+        {% include '@menu' with { 
+          menu: {
+            items: footer.helpful_links.items, 
+            variant: footer.variant, 
+            heading: footer.helpful_links.heading, 
+            link_variant: footer.link_variant 
+            } 
+        } %}
+        {% include '@menu' with { 
+          menu: {
+            items: footer.about_vcom.items, 
+            variant: footer.variant, 
+            heading: footer.about_vcom.heading, 
+            link_variant: footer.link_variant 
+            } 
+        } %}
+        {% include '@menu' with { 
+          menu: {
+            items: footer.admissions.items, 
+            variant: footer.variant, 
+            heading: footer.admissions.heading, 
+            link_variant: footer.link_variant 
+            } 
+        } %}
+      {% endblock %}
+    </div>
+    <hr class="border-white border-1 block my-50">
+    {#
+      Important: Content below is hardcoded to make it more accessible to the Drupal template
+      system; this should be considered production code. 
+    #}
+    <div class="footer__addresses grid">
+      <div class="address__wrapper virginia">
+        <div class="vcard adr-virginia">
+          <div class="adr">
+            <a href="/locations/virginia" class="heading--linked ">VCOM Virginia</a>
+            <div class="street-address">2265 Kraft Drive</div> <span class="locality">Blacksburg,</span> <span
+              class="region">VA</span> <span class="postal-code">24060</span>
+            <div class="phone"><span>Phone: </span>540-231-4000</div>
+            <div class="fax"><span>Fax: </span>540-231-5252</div>
+          </div>
+        </div>
+        <div class="social-media-links social-media-links--row">
+          <ul class="list--horizontal">
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.facebook.com/vcomvirginia"><span
+                  class="icon "><span class="icon__glyph ic ic--facebook" aria-hidden="true"></span><span
+                    class="icon__label">Facebook</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.twitter.com/vcomvirginia"><span
+                  class="icon "><span class="icon__glyph ic ic--twitter" aria-hidden="true"></span><span
+                    class="icon__label">Twitter</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="http://www.youtube.com/user/VCOMedu"><span
+                  class="icon "><span class="icon__glyph ic ic--youtube" aria-hidden="true"></span><span
+                    class="icon__label">YouTube</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.instagram.com/vcom_virginia/"><span
+                  class="icon "><span class="icon__glyph ic ic--instagram" aria-hidden="true"></span><span
+                    class="icon__label">Instagram</span></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="address__wrapper carolinas">
+        <div class="vcard adr-carolinas">
+          <div class="adr">
+            <a href="/locations/carolinas" class="heading--linked ">VCOM Carolinas</a>
+            <div class="street-address">350 Howard Street</div> <span class="locality">Spartanburg,</span> <span
+              class="region">SC</span> <span class="postal-code">29303</span>
+            <div class="phone"><span>Phone: </span>864-327-9800</div>
+            <div class="fax"><span>Fax: </span>864-804-6986</div>
+          </div>
+        </div>
+        <div class="social-media-links social-media-links--row">
+          <ul class="list--horizontal">
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.facebook.com/vcomcarolinas"><span
+                  class="icon "><span class="icon__glyph ic ic--facebook" aria-hidden="true"></span><span
+                    class="icon__label">Facebook</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.twitter.com/vcomcarolinas"><span
+                  class="icon "><span class="icon__glyph ic ic--twitter" aria-hidden="true"></span><span
+                    class="icon__label">Twitter</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="http://www.youtube.com/user/VCOMedu"><span
+                  class="icon "><span class="icon__glyph ic ic--youtube" aria-hidden="true"></span><span
+                    class="icon__label">YouTube</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.instagram.com/vcomcarolinas/"><span
+                  class="icon "><span class="icon__glyph ic ic--instagram" aria-hidden="true"></span><span
+                    class="icon__label">Instagram</span></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="address__wrapper auburn">
+        <div class="vcard adr-auburn">
+          <div class="adr">
+            <a href="/locations/auburn" class="heading--linked ">VCOM Auburn</a>
+            <div class="street-address">910 South Donahue Drive</div> <span class="locality">Auburn,</span> <span
+              class="region">AL</span> <span class="postal-code">36832</span>
+            <div class="phone"><span>Phone: </span>334-442-4000</div>
+            <div class="fax"><span>Fax: </span>334-442-4095</div>
+          </div>
+        </div>
+        <div class="social-media-links social-media-links--row">
+          <ul class="list--horizontal">
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.facebook.com/vcomauburn"><span
+                  class="icon "><span class="icon__glyph ic ic--facebook" aria-hidden="true"></span><span
+                    class="icon__label">Facebook</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.twitter.com/vcomauburn"><span
+                  class="icon "><span class="icon__glyph ic ic--twitter" aria-hidden="true"></span><span
+                    class="icon__label">Twitter</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="http://www.youtube.com/user/VCOMedu"><span
+                  class="icon "><span class="icon__glyph ic ic--youtube" aria-hidden="true"></span><span
+                    class="icon__label">YouTube</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.instagram.com/vcom_auburn/"><span
+                  class="icon "><span class="icon__glyph ic ic--instagram" aria-hidden="true"></span><span
+                    class="icon__label">Instagram</span></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="address__wrapper louisiana">
+        <div class="vcard adr-louisiana">
+          <div class="adr">
+            <a href="/locations/louisiana" class="heading--linked ">VCOM Louisiana</a>
+            <div class="street-address">4408 Bon Aire Drive</div> <span class="locality">Monroe,</span> <span
+              class="region">LA</span> <span class="postal-code">71203</span>
+            <div class="phone"><span>Phone: </span>318-342-7100</div>
+            <div class="fax"><span>Fax: </span>318-342-7280</div>
+          </div>
+        </div>
+        <div class="social-media-links social-media-links--row">
+          <ul class="list--horizontal">
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.facebook.com/VCOMLouisiana/"><span
+                  class="icon "><span class="icon__glyph ic ic--facebook" aria-hidden="true"></span><span
+                    class="icon__label">Facebook</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://twitter.com/vcomlouisiana"><span
+                  class="icon "><span class="icon__glyph ic ic--twitter" aria-hidden="true"></span><span
+                    class="icon__label">Twitter</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="http://www.youtube.com/user/VCOMedu"><span
+                  class="icon "><span class="icon__glyph ic ic--youtube" aria-hidden="true"></span><span
+                    class="icon__label">YouTube</span></span></a>
+            </li>
+            <li>
+              <a class="icon-link icon-link--hidden-label" href="https://www.instagram.com/vcom_louisiana"><span
+                  class="icon "><span class="icon__glyph ic ic--instagram" aria-hidden="true"></span><span
+                    class="icon__label">Instagram</span></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__ribbon pt-50">
+      <div class="lg:flex lg:justify-center">
+        <span class="copyright">© {{ year|default(2020) }} VCOM - The Edward Via College of Osteopathic Medicine. All
+          Rights Reserved.</span>
+        <div class="menu-box">
+          <ul class="menu menu--piped">
+            <li class="menu__item"><a href="/terms" class="menu__link link--default">Terms of Use</a></li>
+            <li class="menu__item"><a href="/privacy" class="menu__link link--default">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

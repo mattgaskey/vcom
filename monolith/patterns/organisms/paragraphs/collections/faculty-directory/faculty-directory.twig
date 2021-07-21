@@ -1,0 +1,5 @@
+<div class="faculty-directory {{ faculty_directory.variant }} grid grid--full grid--without-gutters">
+  {% for item in faculty_directory.items %}
+    {% include '@faculty-info' with { faculty_info: item } %}
+  {% endfor %}
+</div>

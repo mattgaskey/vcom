@@ -1,0 +1,23 @@
+<div class="{{ callout_box.variant }} min-w-full callout-box editorial">
+  {% block content_head %}
+    {% include '@heading' with { 
+      heading: {
+        level: callout_box.heading.level, 
+        variant: callout_box.heading.variant, 
+        headline: callout_box.heading.headline 
+      } 
+    } %}
+  {% endblock %}
+  {% block content_body %}
+    {% include '@p' with { p: callout_box.p } %}
+    {% if callout_box.button is not empty %}
+      {% include '@button' with { 
+        button: { 
+          variant: callout_box.button.variant, 
+          label: callout_box.button.label 
+        } 
+      } %}
+    {% endif %}
+  {% endblock %}
+  
+</div>

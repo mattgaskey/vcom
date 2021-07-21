@@ -1,0 +1,121 @@
+.gsc-control-cse {
+  padding: 0 !important;
+  table.gcsc-branding, table.gsc-resultsHeader{
+    display:none;
+  }
+  table.gsc-above-wrapper-area-container{
+    border:none;
+  }
+  td.gsc-orderby-container{
+    border-right:none;
+  }
+  td.gsc-table-cell-snippet-close{
+    padding: rem-calc(8);
+  }
+  table tr td, table tr th{
+    border:none;
+  }
+  table tbody tr:nth-child(odd){
+    background:none;
+  }
+  table.gsc-table-result, 
+  table.gsc-search-box,
+  table.gsc-above-wrapper-area-container{
+    padding:0;
+    border:none;
+    margin:0;
+  }
+  td.gsc-orderby-container{
+    border-right: none;
+  }
+  td.gsc-table-cell-snippet-close{
+    text-align:left;
+  }
+
+  .gsc-selected-option-container {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .gsc-control-cse {
+    font-family: $font-family-sans !important;
+    .gsc-table-result {
+      font-family: inherit !important;
+    }
+  }
+
+  .gsc-results {
+    .gsc-expansionArea {
+      .gsc-webResult.gsc-result {
+        transition: border-color .3s;
+        transition: background-color .3s;
+        &:hover {
+          border-color: #83003f;
+          background-color: #f6f6f6;
+        }
+        .gs-webResult.gs-result {
+          a.gs-title {
+            color: #83003f;
+            font-weight: bold;
+            transition: color 700ms;
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    .gsc-cursor-box {
+      margin: 10px 0 !important;
+      padding: 0 !important;
+      .gsc-cursor-page {
+        font-family: $font-family-sans !important;
+        text-decoration: none !important;
+        font-size: 1.2rem !important;
+        padding: .2rem .7rem !important;
+        background-color: #83003f !important;
+        border: 1px solid #83003f !important;
+        color: white !important;
+        transition: background-color .3s;
+        &:hover {
+          background-color: transparent !important;
+          color: #83003f !important;
+        }
+      }
+      .gsc-cursor-current-page {
+        background-color: transparent !important;
+        text-shadow: none !important;
+        padding: .2rem .7rem !important;
+        color: #83003f !important;
+        border: 1px solid #83003f !important;
+      }
+    }
+  }
+  td.gsc-input {
+    padding: 0 !important;
+    @apply h-50;
+    div.gsc-input-box {
+      height: 48px;
+    }
+    .gsst_a .gscb_a {
+      color: #83003f !important;
+    }
+  }
+  td.gsc-search-button {
+    padding: 0 !important;
+    button.gsc-search-button-v2 {
+      border-width: 0;
+      border-radius: 0;
+      height: 48px;
+      @apply uppercase text-white text-center font-bold border-1 inline-block py-10 px-20 m-0 w-full bg-maroon border-maroon;
+      transition: all 0.25s;
+      
+      &:hover {
+          @apply bg-white font-bold text-maroon;
+          svg {
+            fill: #83003f;
+          }
+      }
+    }
+  }
+}

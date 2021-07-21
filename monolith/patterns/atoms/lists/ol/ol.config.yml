@@ -1,0 +1,17 @@
+name: Ordered Lists
+default: Decimal
+collated: true
+context:
+  ol:
+    items:
+      - List Item One
+      - List Item Two
+      - List Item Three
+      - List Item Four
+      - List Item Five
+    variant: decimal
+variants:
+  - name: Roman
+    context:
+      ol:
+        variant: roman

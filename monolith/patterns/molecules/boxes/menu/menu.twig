@@ -1,0 +1,16 @@
+<div class="menu-box" {{ attributes }}>
+  {% block menu_header %}
+  {% if menu.heading is not empty %}
+    <h3 class="menu__heading headline-group">{{ menu.heading }}</h3>
+  {% endif %}
+  {% endblock %}
+  {% block menu_items %}
+  <ul class="menu {{ menu.variant }}">
+    {% for item in menu.items %}
+      <li class="menu__item">
+        <a href="/" class="menu__link {{ menu.link_variant }}">{{- item -}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+</div>

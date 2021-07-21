@@ -1,0 +1,30 @@
+collated: true
+context:
+  button:
+    label: Default Button
+variants:
+  - name: Ghost Button
+    context:
+      button:
+        label: Ghost Button
+        variant: button--ghost
+  - name: Content Button
+    context:
+      button:
+        label: Content Button
+        variant: button--content
+  - name: Content Button Ghosted
+    context:
+      button:
+        label: Content Button
+        variant: button--content button--ghost
+  - name: Grid Button
+    context:
+      button:
+        label: Grid Button
+        variant: button--grid
+  - name: Grid Button Ghosted
+    context:
+      button:
+        label: Grid Button
+        variant: button--grid button--ghost

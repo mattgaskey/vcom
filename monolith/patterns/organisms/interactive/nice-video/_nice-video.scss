@@ -1,0 +1,46 @@
+// Initial styles for .nice-video assume no javascript
+
+.nice-video {
+  position: relative;
+  background-color: #83003f;
+
+  img {
+    opacity: .57;
+  }
+}
+
+.nice-video--control {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  transition: .2s color ease-in-out, .2s background-color ease-in-out;
+  color: #83003f;
+  text-decoration: none;
+
+  // Special tuning for this icon position 
+  .ic--play-triangle {
+    display: block;
+    width: 3.1rem;
+    height: 3.1rem;
+    padding-right: 0;
+    border: 1px transparent solid;
+    border-radius: 100%;
+    background-color: #fff;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .label {
+    position: absolute;
+    left: -99999em;
+  }
+
+  &:hover {
+    .ic--play-triangle {
+      background-color: color(light-blue);
+      color: #fff;
+    }
+  }
+}
+

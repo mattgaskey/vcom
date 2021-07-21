@@ -1,0 +1,15 @@
+<a href="{{ url }}">
+{% embed '@fractal/figure.twig' with { figure: { variant: 'display min-h-full ' ~ campusclass  } } %}
+  {% block figure_media %}
+    {% if content.field_media['#items'] %}
+    {{ content.field_media }}
+    {% else %}
+    {% include "@fractal/missing-image.twig" %}
+    {% endif %}
+  {% endblock %}
+  {% block figure_caption %}
+    <div class="font-bold not-italic mb-5">{{ content.field_name|injectclass('font-bold not-italic') }}</div>
+    {{ content.field_job_title }}
+  {% endblock %}
+{% endembed %}
+</a>

@@ -1,0 +1,9 @@
+<h1 class="presentation-header">Colors</h2>
+
+<div class="color-grid">
+  {% for i in colors %}
+    <div class="color-grid__swatch bg-{{ i.name }}">
+      <span class="color-grid__label">{{ i.name }}<br />{{ i.value }}</span>
+    </div>
+  {% endfor %}
+</div> 

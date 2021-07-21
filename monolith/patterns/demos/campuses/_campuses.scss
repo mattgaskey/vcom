@@ -1,0 +1,21 @@
+.virginia {
+    @include campus($virginia, $virginiaLight, $carolinas);
+}
+
+.carolinas {
+    @include campus($carolinas, $carolinasLight, $virginia);
+}
+
+.auburn {
+    @include campus($auburn, $auburnLight, $louisiana);
+}
+
+.louisiana {
+    @include campus($louisiana, $louisianaLight, $auburn);
+}
+
+.campuses {
+  .button {
+    @apply mb-10;
+  }
+}

@@ -1,0 +1,16 @@
+.contact-info {
+
+  &__photo {
+    width: 66vw;
+    height: auto;
+    margin: 0 auto;
+
+    @screen sm {
+      position: relative;
+      width: 6.25rem;
+      float: right;
+    }
+  }
+
+  
+}

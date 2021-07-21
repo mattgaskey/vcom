@@ -1,0 +1,8 @@
+{% if items %}
+  <div class="mb-20">
+    <span class="font-bold">Where</span>: 
+    {% for item in items %}
+      {{ item.content }}{% if loop.index < items|length %}, {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

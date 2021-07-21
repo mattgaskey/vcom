@@ -1,0 +1,13 @@
+collated: true
+context:
+  icon: 
+    glyph: ic--pin
+    label: Center of the United States
+  link:
+    url: https://goo.gl/maps/6EnbowefKn62
+variants:
+  - name: Hidden label
+    context:
+      icon_link:
+        variant: icon-link--hidden-label
+

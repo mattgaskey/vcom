@@ -1,0 +1,7 @@
+<aside{{ attributes }}>
+  {% for item in items %}
+    <div{{ item.attributes }} class="{% if loop.index < items|length %}mb-20{% endif %}">
+      {{ item.content }}
+    </div>
+  {% endfor %}
+</aside>

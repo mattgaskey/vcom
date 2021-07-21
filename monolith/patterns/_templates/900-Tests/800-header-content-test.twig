@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+{% block main_content %}
+
+{% embed '@slab' with { slab_variant : 'slab--newcity-white' } %}
+    {% block slab_content %}
+        {% for i in 2..6 %}
+            {% include '@heading' with { level: i, headline: 'H' ~ i ~ '. ' ~ fake('company.bs')|titleize } %}
+            {% include '@formatted-text' with { formatted_text_paragraphs:random(5), formatted_text_sentences : 10 + random(10) } %}
+        {% endfor %}
+        {% for i in 2..6 %}
+            {% include '@headline-group' with { level: i, super: 'H' ~ i ~ ' headline group', head: fake('company.bs')|titleize, sub: fake('catchPhrase') } %}
+            {% include '@formatted-text' with { formatted_text_paragraphs:random(5), formatted_text_sentences : 10 + random(10) } %}
+        {% endfor %}        
+    {% endblock %}
+{% endembed %}
+
+{% endblock %}

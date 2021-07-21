@@ -1,0 +1,96 @@
+id: news
+label: Import news
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'public://news/news.json'
+  item_selector: articles
+  fields: 
+    - name: nid
+      label: 'Node ID'
+      selector: nid
+    - name: title
+      label: 'Title'
+      selector: title
+    - name: articledate
+      label: 'Article Date'
+      selector: articledate
+    - name: campus
+      label: 'Campus'
+      selector: campus
+    - name: tags
+      label: 'Tags'
+      selector: tags
+    - name: body
+      label: 'Body'
+      selector: 'body'
+    - name: image
+      label: 'Image'
+      selector: image
+    - name: imagegallery
+      label: 'Image Gallery'
+      selector: imagegallery
+    - name: featureimage
+      label: 'Feature Image'
+      selector: featureimage
+  ids:
+    nid:
+      type: integer
+process:
+  title: title
+  body/value: body
+  body/format: 
+    plugin: default_value
+    default_value: 'basic_html'
+  field_old_id: nid
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus 
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find campus"
+  field_categories:
+    plugin: entity_lookup
+    value_key: name
+    entity_type: taxonomy_term
+    ignore_case: true
+    source: tags
+  field_run_date: 
+    plugin: format_date
+    from_format: 'U'
+    to_format: 'Y-m-d'
+    source: articledate
+  created:
+    plugin: format_date
+    from_format: 'U'
+    to_format: 'U'
+    from_timezone: 'EST'
+    to_timezone: 'UTC'
+    source: articledate
+  field_cover_image:
+    - plugin: skip_on_empty
+      method: process
+      source: featureimage
+    - plugin: addmedia
+      media_source: "public://news/"
+      media_destination: "public://news/photos/"
+  field_legacy_gallery:
+    - plugin: skip_on_empty
+      method: process
+      source: imagegallery
+    - plugin: addmedia
+      media_source: "public://news/"
+      media_destination: "public://news/photos/"
+
+destination:
+  plugin: entity:node
+  default_bundle: news

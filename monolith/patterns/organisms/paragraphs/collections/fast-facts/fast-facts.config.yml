@@ -1,0 +1,30 @@
+context:
+  fast_facts:
+    items:
+      - variant: virginia
+        heading:
+          level: 2
+          headline: "23%"
+        content: of VCOM students are from <a href="#" class="link--default">rural communities</a> with populations under 10,000
+        icon:
+          variant: icon--no-label
+          glyph: ic--doctor
+          label: doctor
+      - variant: carolinas
+        heading:
+          level: 2
+          headline: "#3"
+        content: most affordable private medical school according to <a href="#" class= "link--default">U.S. News & World Report</a>
+        icon:
+          variant: icon--no-label
+          glyph: ic--wallet
+          label: wallet
+      - variant: auburn
+        heading:
+          level: 2
+          headline: "56%"
+        content: percent of its graduates are practicing in a rural or <a href="#" class="link--default">medically underserved area</a>
+        icon:
+          variant: icon--no-label
+          glyph: ic--bank
+          label: bank

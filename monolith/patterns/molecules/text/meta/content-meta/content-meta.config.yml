@@ -1,0 +1,10 @@
+title: Content Meta
+status: wip
+context:
+  content_meta:
+    cite: '@cite.cite'
+    datetime: 
+      date: now
+      format: F d, Y
+      machine: Y-m-d
+    taxonomy: '@taxonomy.taxonomy'

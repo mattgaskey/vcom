@@ -1,0 +1,37 @@
+default: pulltext
+display:
+  max-width: 640px
+  margin: 0 auto;
+context: 
+  block: 
+    pattern: \@pulltext
+  pulltext: "@pulltext.pulltext"
+variants:
+  - name: pullquote
+    context:
+      block:
+        pattern: \@pullquote
+      pullquote: "@pullquote.pullquote"
+  - name: fast-fact
+    context: 
+      block: 
+        pattern: \@fast-fact
+      fast_fact: "@fast-fact.fast_fact"
+  - name: contact-info
+    context:
+      block:
+        pattern: \@contact-info
+        section_intro: "@section-intro--no-link.section_intro"
+      contact_info: "@contact-info.contact_info"
+  - name: contact-table
+    context:
+      block:
+        pattern: \@contact-table
+        section_intro: "@section-intro--no-link.section_intro"
+      contact_table: "@contact-table.contact_table"
+  - name: teaser
+    context:
+      block:
+        pattern: \@teaser
+        section_intro: 
+      teaser: "@teaser.teaser"      

@@ -1,0 +1,23 @@
+name: icon-button
+label: Icon Button
+status: wip
+collated: true
+context:
+  icon: 
+    glyph: ic--home
+    label: Home
+variants:
+  - name: Stacked
+    context:
+      icon:
+        variant: 'icon--stacked'
+  - name: Big
+    context:
+      icon:
+        variant: 'icon--big'
+  - name: Reversed
+    context:
+      button:
+        variant: 'small'
+      icon:
+        variant: 'icon--reversed'

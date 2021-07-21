@@ -1,0 +1,9 @@
+name: VCOM Imports
+description: 'Implements data imports from files or external feeds into the VCOM website'
+type: module
+core: 8.x
+dependencies:
+  - migrate
+  - migrate_tools
+  - migrate_plus
+  - migrate_source_csv

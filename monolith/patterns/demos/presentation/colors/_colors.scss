@@ -1,0 +1,38 @@
+.color-grid {
+    @apply flex flex-wrap;
+  }
+  
+.color-grid__swatch {
+    flex: 0 0 1;
+    @apply w-3rd min-h-1/4 relative;
+
+    @screen md {
+        @apply w-4th;
+    }
+
+    @screen lg {
+        @apply w-8th;
+        min-height: 10vw;
+    }
+
+}
+
+.color-grid__label {
+    @apply font-sans text-xs absolute top-0 left-0 p-10 leading-none;
+    background-color: #ffffffcc;
+    border-radius: 0 0 .5rem 0;
+}
+
+@each $clr in map-keys($colors) {
+    $value: map-get($colors, $clr);
+    .bg--#{$clr} {
+        background-color: $value;
+
+        &::after {
+            content: '#{$value}';
+            background-color: #000000AA;
+            @apply text-white font-bold absolute right-0 bottom-0 font-serif text-xs p-10 leading-none uppercase;
+            border-radius: .5rem 0 0 0;
+        }
+    }   
+}

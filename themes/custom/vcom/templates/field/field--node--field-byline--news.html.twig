@@ -1,0 +1,7 @@
+{% if items %}
+  <span>By
+    {% for item in items %}
+      <span> {{ item.content }}{% if loop.index < items|length %}, {% else %} - {% endif %}</span>
+    {% endfor %}
+  </span>
+{% endif %}

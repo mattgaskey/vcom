@@ -1,0 +1,5 @@
+<div class="carousel {{ carousel.variant }}">
+  {% for pane in carousel.panes %}
+    {% include '@block' with { block: pane.block, figure: pane.figure, cite: pane.cite, p: pane.p, image: pane.image } %}
+  {% endfor %}
+</div>

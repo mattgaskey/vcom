@@ -1,0 +1,35 @@
+name: Quote
+collated: true
+context:
+  quote:
+    p:
+      content: In pretium fringilla lectus. Nulla nisl ipsum, molestie in ornare ut, pretium a mauris. Quisque eget lorem mi. Ut vel consectetur ante. Nam sem nulla, interdum sed gravida et, euismod nec mi. Vivamus dui augue, fringilla at eros quis, fringilla mollis ex. Nam dictum maximus tempus.
+    cite: 
+      name: 
+        citation: Jane Smith
+      attr: 
+        citation: Alumna
+variants:
+  - name: with Media
+    context:
+      quote:
+        img:
+          src: /images/sample/thumb-square-ivy.jpg
+          alt: The person in quote
+  - name: with Media and short text
+    context:
+      quote:
+        p:
+          content: In pretium fringilla lectus.
+        img:
+          src: /images/sample/thumb-square-ivy.jpg
+          alt: The person in quote
+  - name: with Media and super-long text
+    context:
+      quote:
+        variant: quote--with-media
+        p:
+          content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida urna vitae mauris pellentesque vehicula. Ut rhoncus rhoncus feugiat. Aenean congue massa in lacinia luctus. Nunc lectus nunc, rutrum non scelerisque vitae, scelerisque id eros. Ut a nulla risus. Nam imperdiet odio sit amet velit porta, et fringilla lectus rhoncus. Nullam varius in metus nec pulvinar. Nullam imperdiet lectus quis augue hendrerit, in ultricies quam bibendum. Nam nec vestibulum eros. Sed aliquam nunc sapien, in ultrices ex placerat id. Duis ultricies massa a tincidunt pellentesque. Phasellus eu eros vulputate, blandit neque eu, varius tellus. Phasellus feugiat risus orci, eu lobortis urna lobortis vitae. Morbi vulputate ante a leo lacinia bibendum. Maecenas et sapien sit amet enim vehicula accumsan. Nam bibendum dui ut augue venenatis, vel malesuada urna posuere. Nullam mauris metus, feugiat sed semper non, commodo at ex. Vestibulum in lorem fermentum, malesuada lectus ac, condimentum mi. Morbi ut libero enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc dignissim eros id lectus iaculis dapibus. Nunc convallis quis odio a consequat. Integer pharetra porttitor nunc, eu ornare quam convallis in. Fusce nec consequat massa. Morbi ac nibh porttitor, consequat purus in, interdum ante. Phasellus eget magna magna.
+        img:
+          src: /images/sample/thumb-square-ivy.jpg
+          alt: The person in quote

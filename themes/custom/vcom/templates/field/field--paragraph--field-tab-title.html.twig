@@ -1,0 +1,5 @@
+{% for item in items %}
+  <li class="js-tablist__item">
+    <a href="#tab-{{ loop.index }}" class="js-tablist__link" id="label_tab-{{ loop.index }}">{{ item.content }}</a>
+  </li> 
+{% endfor %}

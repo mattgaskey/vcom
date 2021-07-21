@@ -1,0 +1,46 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@banner' with { 
+    banner: {
+      image: banner.image, 
+      campus: banner.campus 
+    }
+  } %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@slab' with { slab: { section_intro: { heading: { level: 1, headline: 'Preclinical Education' } } } }%}
+    {% block slab_content %}
+      {% embed '@with-sidebar' %}
+        {% block with_sidebar_main %}
+          {% include '@body' with { body: body } %}
+        {% endblock %}
+        {% block with_sidebar_aside %}
+          {% include '@section-nav' %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { slab: { 
+    variant: 'slab--gray slab--border-bottom',
+    section_intro: { heading: { level: 2, headline: 'Disciplines of Preclinical Education' } } 
+  } } %}
+    {% block slab_content %}
+      {% include '@teaser-collection' with { teaser_collection: discipline_slab.teaser_collection } %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' %}
+    {% block slab_content %}
+      {% include '@grid' with { grid: text_slab.grid} %}
+    {% endblock %}
+  {% endembed %}
+  {% embed '@slab' with { slab: {
+    variant: 'slab--no-top-padding',
+    section_intro: { heading: { level: 2, headline: 'Meet the Clinical Faculty' } }
+  } } %}
+    {% block slab_content %}
+      {% include '@grid' with { grid: button_slab.grid } %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+{% include '@footer' %}

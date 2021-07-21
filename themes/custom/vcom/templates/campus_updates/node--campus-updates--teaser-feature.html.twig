@@ -1,0 +1,27 @@
+{% set campus = content.field_campus|render|striptags|trim %}
+{% set tid = '' %}
+  {% if campus == 'Auburn' %}
+    {% set tid = 32 %}
+  {% elseif campus == 'Carolinas' %}
+    {% set tid = 31 %}
+  {% elseif campus == 'Louisiana' %}
+    {% set tid = 33 %}
+  {% elseif campus == 'Virginia' %}
+    {% set tid = 30 %}
+  {% else %}
+    {% set campus = 'Campus' %}
+  {% endif %}
+{% embed '@fractal/feature.twig' %}
+  {% block feature_image %}
+    <div class="feature__inset">
+      {{ content.field_media }}
+    </div>
+  {% endblock %}
+  {% block feature_meta %}
+    <div class="feature__content campus-update">
+      <h3>{{ label }}</h3>
+      {{ content.body }}
+      <a href="/news-events/campus-updates{% if tid != '' %}?campus={{tid}}{% endif %}" class="button self-start mt-20">More {{campus}} Updates</a>
+    </div>
+  {% endblock %}
+{% endembed %}

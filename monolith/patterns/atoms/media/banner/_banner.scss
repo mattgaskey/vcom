@@ -1,0 +1,29 @@
+.page__banner {
+  &:not(.image--hero) {
+    height: 175px;
+    @screen xl {
+      height: auto;
+      max-height: 210px;
+    }
+    @apply border-b-6;
+    img {
+      display: block;
+      filter: grayscale(100%);
+      opacity: .3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @screen xl {
+        max-height: 210px;
+      }
+    }
+  }
+
+  &.image--hero {
+    @apply h-full relative;
+    img {
+      @apply block w-full h-full;
+      object-fit: cover;
+    }
+  }
+}

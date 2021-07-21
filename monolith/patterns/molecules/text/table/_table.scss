@@ -1,0 +1,128 @@
+table {
+  @apply border-collapse w-full;
+  
+  th, td {
+    @apply p-10;
+    display: block;
+    border-width: 0;
+
+    &.align-right {
+      text-align: initial;
+    }
+  }
+
+  thead {
+    display: none;
+    tr {
+      th {
+        @apply bg-blue font-bold text-white;
+        &.views-field {
+          a {
+            color: white !important;
+            text-decoration: underline !important;
+            &:hover {
+              color: #c3c3c3 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      th {
+        @apply text-center text-white bg-gray border-t-1 border-b-1 border-white;
+      }
+      &:nth-child(odd) {
+        @apply bg-gray-100;
+      }
+    }
+  }
+
+  caption {
+    font-style: italic;
+    caption-side: bottom;
+  }
+
+  .responsive-label {
+   @apply block font-bold h-full;
+
+    &::after {
+      content: ': ';
+    }
+  }
+
+  &.tablesaw-stack {
+    thead {
+      th {
+        .tablesaw-cell-label {
+          width: 40%;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 0 !important;
+        td {
+          background-color: inherit !important;
+          .tablesaw-cell-label {
+            width: 40%;
+          }
+        }
+      }
+    }
+    .tablesaw-cell-content {
+      max-width: 57%;
+      @screen md {
+        max-width: 100%;
+      }
+    }
+  }
+
+  // @supports (display: grid) {
+  //   tr {
+  //     display: grid;
+  //     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  //     grid-gap: 4px;
+
+  //     th {
+  //       grid-column: 1 / -1;
+  //     }
+  //   }
+  // }
+
+  .views-field-field-pmid,
+  .views-field-field-person {
+    a {
+      word-break: normal !important;
+    }
+  }
+
+  @screen md {
+    thead {
+      display: table-header-group;
+    }
+
+    tr {
+      display: table-row;
+    }
+
+    th,
+    td {
+      display: table-cell;
+
+      &.align-right {
+        text-align: right;
+      }
+    }
+
+    tbody tr {
+      border-bottom-width: 0;
+    }
+
+    .responsive-label {
+      display: none;
+    }
+  }
+}

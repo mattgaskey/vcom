@@ -1,0 +1,48 @@
+{% include '@skip-link' %}
+{% include '@header' %}
+{% block hero %}
+  {% include '@banner' with { 
+    banner: {
+      image: banner.image, 
+      campus: banner.campus 
+    }
+  } %}
+{% endblock %}
+{% block page_content %}
+  <div class="{{ campus_variant }}">
+    {% embed '@slab' with { slab: { 
+      section_intro: main_slab.section_intro
+     } } %}
+      {% block slab_content %}
+        {% embed '@with-sidebar' %}
+          {% block with_sidebar_main %}
+            {% include '@body' with { body: main_slab.body } %}
+          {% endblock %}
+          {% block with_sidebar_aside %}
+            {% include '@section-nav' %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+    {% include '@feature' with { feature: campus_info.feature } %}
+    {% embed '@slab' with { slab: {
+      variant: 'slab--gray slab--bottom-border',
+      section_intro: { heading: { level: 2, headline: 'Get Ivolved' } }
+    } } %}
+      {% block slab_content %}
+        {% include '@teaser-collection' with { teaser_collection: involved_slab.teaser_collection } %}
+      {% endblock %}
+      {% block slab_cta %}
+        {% include '@button' with { button: { label: 'View All Student Organizations' } } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed '@slab' with { slab: {
+      section_intro: { heading: { level: 2, headline: 'Campus News' } }
+    } } %}
+      {% block slab_content %}
+        {% include '@teaser-collection' with { teaser_collection: news_slab.teaser_collection } %}
+      {% endblock %}
+    {% endembed %}
+  </div>
+{% endblock %}
+{% include '@footer' %}

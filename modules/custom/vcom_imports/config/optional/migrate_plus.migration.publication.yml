@@ -1,0 +1,57 @@
+id: publication
+label: Import Publication
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: "private://pubs/publications.json"
+  item_selector: publications
+  fields:
+    - name: nid
+      label: "Node ID"
+      selector: nid
+    - name: title
+      label: "Title"
+      selector: title
+    - name: cite
+      label: "Citation"
+      selector: citation
+    - name: pmid
+      label: "PMID"
+      selector: pmid
+    - name: serial
+      label: "Serial"
+      selector: "serial"
+    - name: year
+      label: "Year"
+      selector: year
+    - name: authors
+      label: "Authors"
+      selector: authors
+  ids:
+    nid:
+      type: integer
+process:
+  title: title
+  field_citation/value: cite
+  field_citation/format:
+    plugin: default_value
+    default_value: "card_html"
+  field_pmid: pmid
+  field_year_published: year
+  field_serial: serial
+  field_old_id: nid
+  field_person:
+    access_check: 0
+    plugin: entity_lookup
+    source: authors
+    value_key: field_employee_code
+    entity_type: node
+    bundle_key: type
+    bundle: person
+    ignore_case: true
+
+destination:
+  plugin: entity:field_group
+  default_bundle: publication

@@ -1,0 +1,15 @@
+<ul class="photo-table {{ photo_table.variant }} grid">
+  {% for item in photo_table.items %}
+    <li class="w-250">
+      <a href="{{ item.url|default('#') }}">
+        {% include '@figure' with { 
+          figure: {
+            variant: 'display', 
+            caption: item, 
+            image: photo_table.image 
+          }
+        } %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

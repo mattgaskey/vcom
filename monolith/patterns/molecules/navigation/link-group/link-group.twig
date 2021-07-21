@@ -1,0 +1,6 @@
+<div class="link-group {{ link_group.variant }}">
+  {% block link_group_content %}
+    {% include '@headline-group' with { hg: link_group.hg } %}
+    {% include '@unordered-lists' with { ul: link_group } %}
+  {% endblock %}
+</div>

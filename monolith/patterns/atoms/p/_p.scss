@@ -1,0 +1,11 @@
+p {
+    &.intro {
+        @apply text-lg;
+    }
+
+    &.drop-cap::first-letter {
+        @apply font-bold font-serif float-left pr-5;
+        line-height: 0.8;
+        font-size: 5rem;
+    }
+}

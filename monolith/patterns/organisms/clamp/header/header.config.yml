@@ -1,0 +1,9 @@
+order: 1
+context:
+  header:
+    slab:
+    asvg:
+      pattern: \@logo
+      alt_text: VCOM
+    main_nav: "@main-nav.main_nav"
+    utility_nav: "@utility-nav.utility_nav"

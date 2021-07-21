@@ -1,0 +1,22 @@
+.inset {
+    .inset__body {
+        @apply pr-40 pb-20;
+    }
+    .inset__alert {
+        @apply min-w-3rd;
+        .alert {
+            @apply h-full;
+            .alert__icon {
+                @apply justify-center;
+                .icon {
+                    @apply ml-20 leading-normal;
+                }
+            }
+            .alert__message {
+                .heading__text, p, a {
+                    @apply text-base;
+                }
+            }
+        }
+    }
+}

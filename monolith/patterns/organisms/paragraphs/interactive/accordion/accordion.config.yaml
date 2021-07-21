@@ -1,0 +1,30 @@
+name: accordion
+status: wip
+context:
+  accordion:
+    panes:
+      - heading:
+          level: 3
+          headline: Accordion Panel One
+          variant: js-accordion__header
+      - heading:
+          level: 3
+          headline: Accordion Panel Two
+          variant: js-accordion__header
+      - heading:
+          level: 3
+          headline: Accordion Panel Three
+          variant: js-accordion__header
+      - heading:
+          level: 3
+          headline: Accordion Panel Four
+          variant: js-accordion__header
+      - heading:
+          level: 3
+          headline: Accordion Panel Five
+          variant: js-accordion__header
+      - heading:
+          level: 3
+          headline: Accordion Panel Six
+          variant: js-accordion__header
+        

@@ -1,0 +1,67 @@
+id: jobs
+label: Import Jobs
+migration_group: default
+source:
+  plugin: csv
+  path: 'public://jobs/jobs.csv'
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - nid
+  column_names:
+    - nid: nid
+    - position: position
+    - type: type
+    - campus: campus
+    - job_description: job_description
+    - postdate: postdate
+    - body: body
+    - published: published
+
+destination:
+  plugin: entity:node
+  default_bundle: jobs
+  overwrite_properties:  
+    - field_position_type
+    - field_campus
+    - field_complete_job_description
+
+process:
+  title: position
+  body/value: body 
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+  status: published
+  field_position_type:
+    - plugin: skip_on_empty
+      method: process
+      source: type
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: position_type
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus 
+    - plugin: explode
+      delimiter: "|"
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+  field_complete_job_description:
+    - plugin: skip_on_empty
+      method: process
+      source: job_description
+    - plugin: addmedia
+      media_source: ""
+      media_destination: "public://employment/desc/"

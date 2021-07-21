@@ -1,0 +1,18 @@
+{# include an inline modal wrapper for inline modals only #}
+{% if modal.type is same as("mfp-inline") %}
+    {# for inline modals, the src value is the fragment identifier #}
+    {% set id = "modal"|uniqid %}
+    {% set src = "#" ~ id %}
+    {# An inline #}
+    <div class="modal-display mfp-hide" id="{{ id }}">
+        {% block modal_content %}
+            {% include modal.pattern %}
+        {% endblock %}
+    </div>
+{% else %}
+    {% set id = modal.id %}
+    {% set src = modal.url|path %}
+{% endif %}
+
+<button class="modal-control {{ modal.type }} {{ modal.variant }}" data-mfp-src="{{ src }}">{{ modal.trigger_text }}</button>
+

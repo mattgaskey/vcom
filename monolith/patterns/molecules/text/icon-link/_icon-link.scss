@@ -1,0 +1,10 @@
+.icon-link {
+  display: inline-block;
+}
+
+.icon-link--hidden-label {
+  .icon__label {
+    position: absolute; 
+    left: -9999999em;
+  }
+}

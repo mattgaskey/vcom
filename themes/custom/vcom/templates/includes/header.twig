@@ -1,0 +1,12 @@
+{% embed '@fractal/header.twig' %}
+  {% block main_nav %}
+    {{ page.primary_menu }}
+  {% endblock %}
+  {% block utility_nav %}
+    {{ page.secondary_menu }}
+  {% endblock %}
+  {% block quicklinks %}
+    {% include '@fractal/search-form.twig' %}
+    {{ page.quicklinks }}
+  {% endblock %}
+{% endembed %}

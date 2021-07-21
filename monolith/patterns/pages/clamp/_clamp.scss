@@ -1,0 +1,23 @@
+.page {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr minmax(16.25rem, 71.5rem) 1fr;
+  grid-template-rows: max-content minmax(1fr, max-content) max-content;
+
+  grid-template-areas: 
+    "header header header"
+    "body   body   body  "
+    "footer footer footer";
+
+  > header {
+    grid-area: header;
+  }
+
+  .page__content {
+    grid-area: body;
+  }
+
+  > footer {
+    grid-area: footer;
+  }
+}

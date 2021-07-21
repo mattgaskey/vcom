@@ -1,0 +1,12 @@
+.dateblock {
+  @apply min-w-70 h-70 pt-5 text-center font-sans uppercase text-white leading-tight bg-gray;
+  span {
+    @apply block;
+  }
+  .dateblock--day {
+    @apply text-3xl;
+  }
+  .dateblock--month {
+    @apply text-sm;
+  }
+}

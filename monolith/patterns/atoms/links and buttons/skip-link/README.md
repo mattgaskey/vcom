@@ -1,0 +1,1 @@
+The skip-link is an accessibility affordance. It has to be the first focusable link on the page and has to become visible when focused on via keyboard access; it should link to the main body content of the page. 

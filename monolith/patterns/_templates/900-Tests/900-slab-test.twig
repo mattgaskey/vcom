@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+{% block main_content %}
+    {% set slab_styles = ['newcity-black','newcity-white','newcity-green','blue-gray'] %}
+    {% set grid_types = ['2-up','3-up','4-up'] %}
+    {% for skin in slab_styles %}
+        {% include '@slab' with { slab_variant: 'slab--' ~ skin } %}
+        {% include '@slab-1x2' with { slab_variant: 'slab--' ~ skin } %}
+        {% include '@slab-2x1' with { slab_variant: 'slab--' ~ skin } %}
+        {% for grid in grid_types %} 
+            {% include '@grid' with {
+                    slab_variant: 'slab--' ~ skin, 
+                    grid_type: 'grid--' ~ grid, 
+                    grid_cols: loop.index + 1
+                } 
+            %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

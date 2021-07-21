@@ -1,0 +1,157 @@
+.feature {
+
+  // Set the grid defaults
+  @supports (display:grid) {
+    &.grid--fifty-fifty {
+      .feature__inset {
+        grid-area: image;
+      }
+      .feature__content {
+        grid-area: meta;
+      }
+      grid-template-areas: 
+        "image"
+        "meta";
+      
+      .feature__inset, .feature__content {
+        align-self: stretch;
+      }
+      @screen md {
+        grid-template-areas: 
+          "image meta";
+        &.feature--flipped {
+          grid-template-areas: 
+            "meta image";
+        }
+      }
+    }
+  }
+
+  //  Set the flexbox fallbacks
+  @supports not (display: grid) {
+    &.grid--fifty-fifty {
+      @apply flex flex-col flex-no-wrap;
+      .feature__inset, .feature__content {
+        flex: 1 0 50%;
+      }
+      @screen md {
+        @apply flex-row;
+        &.feature--flipped {
+          .feature__inset {
+            @apply order-2;
+          }
+          .feature__content {
+            @apply order-1;
+          }
+        }
+      }
+    }
+  }
+  
+  //  Make sure the image container is filling its container
+  //  Limit the height of the image
+  .feature__inset {
+    figure {
+      @apply h-full w-full;
+      img {
+        max-height: 550px;
+      }
+      figcaption {
+        @apply hidden;
+      }
+    }
+  }
+
+  // Basic spacing and text styles
+  .feature__content {
+    @apply pt-10 pb-30 flex flex-col justify-center;
+    &.campus-update {
+      @screen md {
+        @apply pt-0;
+      }
+    }
+
+    // Keeps the meta half of a fifty-fifty within the page container
+    max-width: 575px;
+    
+    h2,
+    h3 {
+      @apply font-serif leading-none pb-20;
+    }
+    // Sloppy fix for h3 cross styling
+    .editorial {
+      h3 {
+        @apply pb-0;
+      }
+    }
+    .button {
+      @apply mt-20;
+    }
+    
+    .button-collection {
+      @apply justify-start;
+      li {
+        @apply m-0 mr-10;
+      }
+    }
+  }
+
+  // No top padding (features embedded in slabs)
+  &.feature--top-aligned {
+    .feature__content {
+      @apply py-0 flex flex-col justify-center;
+    }
+  }
+
+  // Default dark
+  &.feature--dark {
+    @apply bg-maroon;
+    .feature__content {
+      @apply text-white;
+      a:not(.button) {
+        color: #ffffff !important;
+      }
+      .button {
+        @extend .button--ghost;
+      }
+    }
+  }
+
+  // Edge spacing for non-flipped meta
+  &:not(.feature--flipped) {
+    .feature__content {
+      @apply pl-60 pr-20;
+      @screen md {
+        @apply pr-40;
+      }
+      @screen lg {
+        margin-right: auto;
+        @apply pr-0;
+      }
+    }
+    .feature__inset {
+      justify-self: right;
+    }
+  }
+
+  // Edge spacing for flipped meta
+  &.feature--flipped {
+    .feature__content {
+      @apply pr-60 pl-20;
+      @screen md {
+        @apply pl-40;
+      }
+      @screen lg {
+        margin-left: auto;
+        @apply pl-0;
+      }
+    }
+    &.c-container {
+      .feature__content {
+        @screen lg {
+          @apply pl-20;
+        }
+      }
+    }
+  }
+}

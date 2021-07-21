@@ -1,0 +1,11 @@
+{% for i in 2..num_list_items/2 %}
+<li>{{ fake('lorem.words',1 + random(3))|capitalize }}</li>
+{% endfor %}
+{% if nested %}
+<li>{{ fake('lorem.sentence') }}
+  {% include '@unordered-lists' with { nested: false} only %}
+</li>
+{% endif %}
+{% for i in 1..num_list_items/2 %}
+  <li>{{ fake('lorem.words',1 + random(3))|capitalize }}</li>
+{% endfor %}

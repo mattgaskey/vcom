@@ -1,0 +1,11 @@
+@mixin fancy-link($icon) {
+    @apply font-bold text-maroon;
+    transition: padding-left 0.25s;
+    &::before {
+        content: $icon;
+        @apply font-icon text-sm pr-5;
+    }
+    &:hover {
+        @apply pl-5;
+    }
+}

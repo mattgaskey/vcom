@@ -1,0 +1,3 @@
+{% if field.original_value|render %}
+  <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term={{ field.original_value|render }}">{{ field.original_value|render }}</a>
+{% endif %}

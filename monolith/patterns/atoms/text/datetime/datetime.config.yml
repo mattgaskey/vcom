@@ -1,0 +1,8 @@
+name: datetime
+label: Date
+status: wip
+context:
+  datetime: 
+    when: now
+    format: M d, Y \a\t g:i
+    machine: Y-m-d\TH:i:s

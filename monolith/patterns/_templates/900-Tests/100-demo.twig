@@ -1,0 +1,46 @@
+{% extends 'base.twig' %}
+{% block main_content %}
+
+{% set with_cta = true %}
+{% set cta_type = 'mixed' %}
+{% set secondary_image = 'true' %}
+{% set super = fake('lorem.words',5) %}
+
+{% set headers = ['hero','split','text'] %}
+{% for h in headers %}
+  {% include '@' ~ h ~ '-page-header' with { head: h ~ 'Header' } %}
+{% endfor %}
+
+  {% set block = 'call-to-action' %}
+  
+  {% include '@block-columns' with { columns: 3, grid_columns: ['@' ~ block,'@' ~ block,'@' ~ block] } %}
+  {% include '@carousel-slab' with { carousel_style: 'carousel--center' } %}
+
+  {% set block = 'teaser' %}
+  {% include '@block-columns' with { columns: 3, grid_columns: ['@' ~ block,'@' ~ block,'@' ~ block] } %}
+
+  {% embed '@slab' %}
+    {% block slab_content %}
+    {% set num = 3 %}
+      {% include '@content-list' %}
+      {% include '@people-list' %}
+    {% endblock %}
+  {% endembed %}  
+
+  {% include '@image-gallery-slab' with { numImages: 7, level: 2 } %}
+
+  {% set block = 'link-collection' %}
+  {% include '@block-columns' with { columns: 3, grid_columns: ['@' ~ block,'@' ~ block,'@' ~ block] } %}
+
+  {% include '@statistics' %}
+
+  {% embed '@slab' %}
+    {% block slab_content %}
+      {% include '@figure' %}
+    {% endblock %}
+  {% endembed %}
+
+  {% include '@zipper' %}
+
+
+{% endblock %} 

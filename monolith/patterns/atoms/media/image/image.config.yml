@@ -1,0 +1,8 @@
+name: image
+label: Image
+status: wip
+context:
+  image:
+    ratio: "4:3"
+    w: 800
+    alt: "Placeholder image. This should be real alt text when implemented."

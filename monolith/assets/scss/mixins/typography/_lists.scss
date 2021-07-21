@@ -1,0 +1,38 @@
+@mixin list-vertical {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  
+    li {
+      margin: .3em 0;
+      padding-right: 5px;
+    }
+  }
+  
+  @mixin list-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: baseline;
+    margin: 0 -.3em;
+    list-style: none;
+  
+    li {
+      margin: .3em 0;
+      padding: 0 .3em;
+      line-height: 1.1;
+    }
+  }
+
+  @mixin list-piped {
+    
+    @include list-horizontal;
+  
+    li {
+      @apply border-r-1 border-black border-solid;
+  
+      &:last-child {
+        border-width: 0;
+      }
+    }
+  }

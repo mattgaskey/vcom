@@ -1,0 +1,8 @@
+<div class="editorial">
+	{% for i in 2..6 %}
+		{% set headline = 'Editorial heading level ' ~ i %}
+		{% include '@heading' with { headline: headline, level : i } %}
+		{% include '@heading' with { headline: headline, level : i, linked : true } %}
+		{% if loop.last is not same as(true) %}<hr />{% endif %}
+	{% endfor %}
+</div>

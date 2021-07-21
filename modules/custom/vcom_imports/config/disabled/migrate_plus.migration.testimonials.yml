@@ -1,0 +1,102 @@
+id: testimonials
+label: Import testimonials
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'public://testimonial/testimonial.json'
+  item_selector: details
+  fields: 
+    - name: nid
+      label: 'Node ID'
+      selector: nid
+    - name: published
+      label: Published
+      selector: published
+    - name: title
+      label: 'Title'
+      selector: title
+    - name: campus
+      label: 'Campus'
+      selector: campus
+    - name: testimonial_type
+      label: 'Testimonial Type'
+      selector: testimonial_type
+    - name: class
+      label: Class
+      selector: class
+    - name: degree
+      label: Degree
+      selector: degree
+    - name: hometown
+      label: Hometown
+      selector: hometown
+    - name: photo
+      label: Photo
+      selector: photo
+    - name: priorschool
+      label: 'Prior School'
+      selector: priorschool
+    - name: residencies
+      label: Residencies
+      selector: residencies
+    - name: body
+      label: Body
+      selector: body
+    - name: quote
+      label: Quote
+      selector: quote
+    - name: imagegallery
+      label: Image Gallery
+      selector: imagegallery
+  ids:
+    nid:
+      type: integer
+process:
+  title: title
+  field_additional_images:
+    - plugin: skip_on_empty
+      method: process
+      source: imagegallery
+    - plugin: addmedia
+      media_source: "public://testimonial/"
+      media_destination: "public://testimonial/photos/"      
+  body/value: body
+  body/format: 
+    plugin: default_value
+    default_value: 'basic_html'
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus 
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+      message: "Can't find campus"
+  field_degree: degree
+  field_media: 
+    - plugin: skip_on_empty
+      method: process
+      source: photo
+    - plugin: addmedia
+      media_source: "public://testimonial/"
+      media_destination: "public://testimonial/photos/"
+  field_featured_quote/value: quote
+  field_featured_quote/format:
+    plugin: default_value
+    default_value: 'basic_html'
+  field_class: class
+  field_hometown: hometown
+  field_prior_schools: priorschool
+  field_testimonial_type/value: testimonial_type
+  status: published
+
+destination:
+  plugin: entity:node
+  default_bundle: testimonial

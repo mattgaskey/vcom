@@ -1,0 +1,107 @@
+name: Page with Sidebar
+context:
+  banner:
+    campus: virginia
+    image:
+      w: 2000
+      ratio: "3:2"
+  body:
+    items:
+      - pattern: \@heading
+        pattern_context:
+          heading:
+            level: 2
+            headline: Years 1 & 2
+      - pattern: \@p
+        pattern_context:
+          p:
+            variant: intro
+            content: Paragraph about what happens in years 1 and 2 of their preclinical education. Info about what they can expect and the general details. More important information that needs to be at the forefront of the page for them to read.
+      - pattern: \@p
+        pattern_context:
+          p:
+            content: The water which supplies the farms of Mars is collected in immense underground reservoirs at either pole from the melting ice caps, and pumped through long conduits to the various populated centers. Along either side of these conduits, and extending their entire length, lie the cultivated districts. These are divided into tracts of about the same size, each tract being under the supervision of one or more government officers.
+      - pattern: \@button
+        pattern_context:
+          button:
+            label: button
+            variant: button--content
+      - pattern: \@heading
+        pattern_context:
+          heading:
+            level: 3
+            headline: Biomedical Disciplines
+      - pattern: \@grid
+        pattern_context:
+          grid:
+            variant: grid--xlarge
+            items:
+              - pattern: \@menu
+                pattern_context:
+                  menu:
+                    variant: list--bullets
+                    link_variant: link--default-list
+                    items:
+                      - Anatomical Sciences
+                      - Cellular Biology and Molecular Physiology
+                      - Microbiology and Immunology
+              - pattern: \@menu
+                pattern_context:
+                  menu:
+                    variant: list--bullets
+                    link_variant: link--default-list
+                    items:        
+                      - Pathology and Histology
+                      - Pharmacology
+                      - Preventive Medicine and Public Health
+  discipline_slab:
+    teaser_collection:
+      variant: teaser-collection--four-across
+      items:
+        - teaser: "@teaser--card-without-heavy-border.teaser"               
+        - teaser: "@teaser--card-without-heavy-border.teaser"               
+        - teaser: "@teaser--card-without-heavy-border.teaser"               
+        - teaser: "@teaser--card-without-heavy-border.teaser"    
+  text_slab:
+    grid:
+      variant: grid--xlarge grid--wide-gutters
+      items:
+        - pattern: \@callout-box
+          pattern_context:
+            callout_box:
+              heading:
+                level: 2
+                headline: Cost & Financial Aid
+              p:
+                content: Short blurb about the different locations and how you provide financial support and scholarships for prospective students who need financial assistance.
+        - pattern: \@callout-box
+          pattern_context:
+            callout_box:
+              heading:
+                level: 2
+                headline: Student Resources
+              p:
+                content: Short blurb about the different locations and how you provide financial support and scholarships for prospective students who need financial assistance.
+  button_slab: 
+    grid:
+      items:
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Virginia
+              variant: button--grid virginia
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Carolinas
+              variant: button--grid carolinas
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Auburn
+              variant: button--grid auburn
+        - pattern: \@button
+          pattern_context:
+            button:
+              label: Louisiana
+              variant: button--grid louisiana

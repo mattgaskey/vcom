@@ -1,0 +1,13 @@
+name: Section Nav
+status: wip
+context:
+  section_nav:
+    header_link:
+      url: http://www.example.com
+      label: Parent Page / Section
+  link: "@link.link"
+  active_link: 
+    label: Currently active link
+    url: http://www.example.com
+    attrs:
+      aria-current: page

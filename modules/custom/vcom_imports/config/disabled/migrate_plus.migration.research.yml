@@ -1,0 +1,80 @@
+id: research
+label: Import Research Projects
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'public://research.json'
+  item_selector: publications
+  fields: 
+    - name: nid
+      label: 'Node ID'
+      selector: nid
+    - name: title
+      label: 'Title'
+      selector: title
+    - name: campus
+      label: 'Campus'
+      selector: campus
+    - name: category
+      label: 'Research Category'
+      selector: category
+    - name: funding
+      label: 'Funding Agency'
+      selector: funding
+    - name: serial
+      label: 'Serial'
+      selector: 'serial'
+    - name: primary
+      label: 'Primary Investigators'
+      selector: primary
+    - name: authors
+      label: 'Authors'
+      selector: authors
+  ids:
+    nid:
+      type: integer
+process:
+  title: title
+  field_serial: serial
+  field_old_id: nid
+  field_funding_agency: funding
+  field_campus:
+    plugin: entity_lookup
+    source: campus
+    value_key: name
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: campus
+    ignore_case: true
+  field_research_category:
+    plugin: entity_lookup
+    source: category
+    value_key: name
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: research_category
+    ignore_case: true
+  field_principal:
+    access_check: 0
+    plugin: entity_lookup
+    source: primary
+    value_key: field_employee_code
+    entity_type: node
+    bundle_key: type
+    bundle: person
+    ignore_case: true      
+  field_person:
+    access_check: 0
+    plugin: entity_lookup
+    source: authors
+    value_key: field_employee_code
+    entity_type: node
+    bundle_key: type
+    bundle: person
+    ignore_case: true
+
+destination:
+  plugin: entity:node
+  default_bundle: research_project

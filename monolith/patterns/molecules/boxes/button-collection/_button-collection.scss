@@ -1,0 +1,27 @@
+.button-collection {
+  &.button-collection--center {
+    @apply justify-center;
+  }
+
+  &.button--content {
+    .button {
+      @apply w-250;
+    }
+  }
+
+  &.button--grid {
+    .button {
+      @apply min-w-full;
+    }
+  }
+
+  li {
+    @apply my-10 mx-auto list-none;
+    @screen md {
+      @apply mr-10 mb-10 mt-0 ml-0 list-none;
+      &:last-child {
+        @apply mr-0 mb-0;
+      }
+    }
+  }
+}

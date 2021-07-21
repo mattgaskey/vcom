@@ -1,0 +1,29 @@
+<div class="hero">
+  {% if hero.vimeo_id %}
+  <div aria-hidden="true">
+    <div id="hero-video" data-video-id="{{ hero.vimeo_id }}"></div>
+
+    <button id="hero-video-play" class="hidden">
+      <svg class="fill-current" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 2.572 0 L 2.572 24 L 21.429 12 Z"/></svg>
+    </button>
+
+    <button id="hero-video-pause" class="hidden">
+      <svg class="fill-current" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 1.715 24 L 8.571 24 L 8.571 0 L 1.715 0 L 1.715 24 Z M 15.429 0 L 15.429 24 L 22.285 24 L 22.285 0 L 15.429 0 Z"/></svg>
+    </button>
+  </div>
+  {% endif %}
+  
+  {% include '@banner' with { 
+    banner: { 
+      campus: hero.campus, 
+      variant: hero.variant, 
+      image: { w: 2000, ratio: "16:9" } 
+    } 
+  } %}
+
+  <div class="hero__content">
+    {% include '@heading' with { heading: hero.heading } %}
+    {% include '@p' with { p: hero.p } %}
+    {% include '@button-collection' with { button_collection: hero.button_collection } %}
+  </div>
+</div>

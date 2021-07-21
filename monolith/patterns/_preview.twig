@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link media="all" rel="stylesheet" href="{{ '/css/pattern-scaffolding.css'|path }}">
+    <link media="all" rel="stylesheet" href="{{ '/css/main.css'|path }}">
+    <link media="all" rel="stylesheet" href="{{ '/css/patterns.css'|path }}">
+    <link media="all" rel="stylesheet" href="{{ '/css/slick.css'|path }}">
+    <link media="all" rel="stylesheet" href="{{ '/css/slick-theme.css'|path }}">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="https://player.vimeo.com/api/player.js" defer></script>
+    <script defer src="{{ '/js/lib/jquery.magnific-popup.min.js'|path }}"></script>
+    <script defer src="{{ '/js/lib/jquery-accessible-accordion.js'|path }}"></script>
+    <script defer src="{{ '/js/lib/van11y-accessible-tab-panel-aria.js'|path }}"></script>
+    {# <script defer src="{{ '/js/lib/jquery-accessible-tabs-aria.js'|path }}"></script> #}
+    <script defer src="{{ '/js/lib/jquery.fitvids.js'|path }}"></script>
+    <script defer src="{{ '/js/lib/imagesloaded.pkgd.min.js'|path }}"></script>
+    <script defer src="{{ '/js/lib/masonry.pkgd.min.js'|path }}"></script>
+    <script defer src="{{ '/js/lib/slick/slick.min.js'|path }}"></script>
+    <script defer src="{{ '/js/toggle-button.js'|path }}"></script>
+    <script defer src="{{ '/js/overlay-images.js'|path }}"></script>
+    <script defer src="{{ '/js/lib/ofi.min.js'|path }}"></script>
+    <script defer src="{{ '/js/hamburger.js'|path }}"></script>
+    <script defer src="{{ '/js/main.js'|path }}"></script>
+    {% for js in _target.resources.js %}
+        {% set pattern_js_path = '/js/patterns/' ~ js.base %}
+        <script defer src="{{ pattern_js_path|path }}"></script>
+    {% endfor %}
+    <title>Preview Layout</title>
+</head>
+<body>
+
+{{ yield }}
+
+<script>
+  window.frontback = {
+    repo: 'https://gitlab.com/newcity/monolith/monolith-fractal',
+    postUrl: 'https://magicyeti.us/frontback'
+  };
+  var script = document.createElement('script');
+  script.src = frontback.postUrl + '/assets/js/frontback.js';
+  document.body.appendChild(script);
+</script>
+
+</body>
+</html>

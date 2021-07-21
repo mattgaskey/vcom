@@ -1,0 +1,27 @@
+collated: true
+context:
+  p:
+    content: <strong>The water which supplies the farms of Mars</strong> is collected in immense underground reservoirs <em>at either pole</em> from the melting ice caps, and pumped through long conduits to the various populated centers. Along either side of these conduits, and extending their entire length, <a href="http://www.example.com/">lie the cultivated districts.</a> These are divided into tracts of about the same size, each tract being under the supervision of one or more government officers.
+variants:
+  - name: brief
+    context:
+      p:
+        content: A noble craft, but somehow a most melancholy! All noble things are touched with that.
+  - name: plain
+    context:
+      p:
+        content: The water which supplies the farms of Mars is collected in immense underground reservoirs at either pole from the melting ice caps, and pumped through long conduits to the various populated centers. Along either side of these conduits, and extending their entire length, lie the cultivated districts. These are divided into tracts of about the same size, each tract being under the supervision of one or more government officers.
+  - name: verbose
+    context:
+      p:
+        content: Long paragraph for content testing. Consider the subtleness of the sea; how its most dreaded creatures glide under water, unapparent for the most part, and treacherously hidden beneath the loveliest tints of azure. Consider also the devilish brilliance and beauty of many of its most remorseless tribes, as the dainty embellished shape of many species of sharks. Consider, once more, the universal cannibalism of the sea; all whose creatures prey upon each other, carrying on eternal war since the world began. Consider all this; and then turn to the green, gentle, and most docile earth; consider them both, the sea and the land; and do you not find a strange analogy to something in yourself? For as this appalling ocean surrounds the verdant land, so in the soul of man there lies one insular Tahiti, full of peace and joy, but encompassed by all the horrors of the half-known life. God keep thee! Push not off from that isle, thou canst never return!
+  - name: intro
+    context:
+      p:
+        variant: intro
+        content: Paragraph about what happens in years 1 and 2 of their preclinical education. Info about what they can expect and the general details. More important information that needs to be at the forefront of the page for them to read.
+  - name: dropcap
+    context:
+      p:
+        variant: drop-cap
+        content: Long paragraph for content testing. Consider the subtleness of the sea; how its most dreaded creatures glide under water, unapparent for the most part, and treacherously hidden beneath the loveliest tints of azure. Consider also the devilish brilliance and beauty of many of its most remorseless tribes, as the dainty embellished shape of many species of sharks. Consider, once more, the universal cannibalism of the sea; all whose creatures prey upon each other, carrying on eternal war since the world began. Consider all this; and then turn to the green, gentle, and most docile earth; consider them both, the sea and the land; and do you not find a strange analogy to something in yourself? For as this appalling ocean surrounds the verdant land, so in the soul of man there lies one insular Tahiti, full of peace and joy, but encompassed by all the horrors of the half-known life. God keep thee! Push not off from that isle, thou canst never return!

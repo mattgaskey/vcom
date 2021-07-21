@@ -1,0 +1,14 @@
+<div class="content-meta">
+  {% block content_meta_content %}
+    {% if content_meta.cite is not empty %}
+      {% include '@cite' with { cite: content_meta.cite } %} 
+      {% include '@sep' %}
+    {% endif %}
+    {% if content_meta.taxonomy is not empty %}
+      {% include '@taxonomy' with { taxonomy: content_meta.taxonomy }  %}
+    {% endif %}
+    {% if content_meta.datetime is not empty %}
+      {% include '@datetime' with { datetime: content_meta.datetime }  %}
+    {% endif %}
+  {% endblock %}
+</div>

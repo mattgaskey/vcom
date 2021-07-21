@@ -1,0 +1,15 @@
+name: tag-list
+label: Tag List
+status: wip
+context:
+  tag_list:
+    items:
+      - link:
+          label: Term One
+          url: http://www.example.com/
+      - link:
+          label: Term Two
+          url: http://www.example.com/
+      - link:
+          label: Term Three
+          url: http://www.example.com/

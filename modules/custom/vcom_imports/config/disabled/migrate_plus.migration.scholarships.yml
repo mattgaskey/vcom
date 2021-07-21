@@ -1,0 +1,157 @@
+id: scholarships
+label: Import scholarships
+migration_group: default
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'public://scholarships/scholarships.json'
+  item_selector: details
+  fields: 
+    - name: nid
+      label: 'Node ID'
+      selector: nid
+    - name: title
+      label: 'Title'
+      selector: title
+    - name: name
+      label: 'Name'
+      selector: name
+    - name: address1
+      label: 'Address Line 1'
+      selector: address1
+    - name: address2
+      label: 'Address Line 2'
+      selector: address2
+    - name: city
+      label: 'City'
+      selector: city
+    - name: state
+      label: 'State'
+      selector: state
+    - name: zip
+      label: 'Zip'
+      selector: zip
+    - name: fax
+      label: 'Fax'
+      selector: fax
+    - name: phone
+      label: 'Phone'
+      selector: phone
+    - name: email
+      label: 'Email'
+      selector: email
+    - name: websiteTitle
+      label: 'Website Title'
+      selector: website/title
+    - name: websiteUrl
+      label: 'Website URL'
+      selector: website/url
+    - name: amount
+      label: 'Amount'
+      selector: amount
+    - name: availability
+      label: 'Availability'
+      selector: avalability
+    - name: body
+      label: 'Body'
+      selector: body
+    - name: campus
+      label: 'Campus'
+      selector: campus
+    - name: deadline
+      label: 'Deadline'
+      selector: deadline
+    - name: renewable
+      label: 'Renewable'
+      selector: renewable
+    - name: scholarship_type
+      label: 'Type'
+      selector: scholarship_type
+    - name: sponsor
+      label: 'Sponsor'
+      selector: sponsor
+    - name: published
+      label: 'Published'
+      selector: published
+  ids:
+    nid:
+      type: integer
+
+destination:
+  plugin: entity:node
+  default_bundle: scholarship
+  overwrite_properties:
+    - field_scholarship_type
+
+process:
+  title: title
+  field_contact_info/address_line1: address1
+  field_contact_info/address_line2: address2
+  field_contact_info/locality: city
+  field_contact_info/postal_code: zip
+  field_contact_info/country_code: 
+    plugin: default_value
+    default_value: 'US'
+  field_contact_info/administrative_area:
+    plugin: concat
+    delimiter: '-'
+    source:
+      - '@field_address/country_code'
+      - state
+  field_amount: amount
+  field_email_addresses: email
+  field_contact_name: name
+  field_phones: phone
+  field_renewable_status: renewable
+  field_sponsor: sponsor
+  field_website/title: websiteTitle
+  field_website/url: websiteURL
+  body/value: body
+  body/format: 
+    plugin: default_value
+    default_value: 'basic_html'
+  field_deadline: 
+    - plugin: skip_on_empty
+      method: process
+      source: deadline
+    - plugin: format_date
+      from_format: 'Y-m-d'
+      to_format: 'Y-m-d'
+  field_campus:
+    - plugin: skip_on_empty
+      method: process
+      source: campus 
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      bundle: campus
+      ignore_case: true
+    - plugin: skip_on_empty
+      method: process
+  field_available_to:
+    - plugin: skip_on_empty
+      method: process
+      source: availability
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      ignore_case: true
+      bundle: class_type
+    - plugin: skip_on_empty
+      method: process
+  field_scholarship_type: 
+    - plugin: skip_on_empty
+      method: process
+      source: scholarship_type
+    - plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      entity_type: taxonomy_term
+      ignore_case: true
+      bundle: scholarship_type
+    - plugin: skip_on_empty
+      method: process
+  status: published

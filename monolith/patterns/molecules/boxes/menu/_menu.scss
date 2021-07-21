@@ -1,0 +1,19 @@
+.menu--vertical {
+  @include list-vertical;
+}
+
+.menu--horizontal {
+  @include list-horizontal;
+}
+
+.menu--columns {
+  @extend .list--columns;
+}
+
+.menu--piped {
+  @include list-piped;
+}
+
+.menu--heading {
+  @include list-vertical;
+}

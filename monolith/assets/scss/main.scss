@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+
+@import 'mixins/mixins';
+@import 'includes/inc';
+
+// Admin toolbar z-index adjustment
+// so dropdowns do not drop behind
+// the main site navigation
+
+#toolbar-administration {
+  z-index: 10000;
+}
+
+// Fix the header to the top of the screen only if
+// the admin toolbar is not present. (This is a 
+// drupal fix.)
+
+
+.typography-body {
+  font-kerning: normal;
+  font-variant: common-ligatures contextual oldstyle-nums proportional-nums;
+}
+
+.typography-display {
+  font-kerning: normal;
+  font-variant: common-ligatures contextual discretionary-ligatures;
+}
+
+.typography-small-caps {
+  font-kerning: normal;
+  font-variant: small-caps common-ligatures contextual oldstyle-nums proportional-nums;
+}
+
+body {
+  @apply font-sans typography-body;
+}
+
+.editorial .fluid-width-video-wrapper {
+  
+}
+
+@tailwind utilities;
+

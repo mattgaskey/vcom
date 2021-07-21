@@ -1,0 +1,12 @@
+name: daterange
+title: Date Range
+context:
+  daterange:
+    datestart:
+      when: now
+      format: F, j Y \a\t h:ia
+      machine: Y-m-d\TH:i:s
+    dateend:
+      when: now + 1 hour
+      format: F, j Y \a\t h:ia
+      machine: Y-m-d\TH:i:s

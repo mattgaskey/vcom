@@ -1,0 +1,45 @@
+name: Teaser Collection
+default: Four Across
+context:
+  teaser_collection:
+    items:
+      - teaser: "@teaser--with-image.teaser"
+      - teaser: "@teaser--with-image.teaser"
+      - teaser: "@teaser--with-image.teaser"
+      - teaser: "@teaser--with-image.teaser"
+variants:
+  - name: Three Across
+    context:
+      teaser_collection:
+        variant: 'teaser-collection--three-across'
+        items:
+          - teaser: "@teaser--card-with-image.teaser"
+          - teaser: "@teaser--card-with-image.teaser"
+          - teaser: "@teaser--card-with-image.teaser"
+  - name: Two Across
+    context:
+      teaser_collection:
+        variant: 'teaser-collection--two-across'
+        items:
+          - teaser: "@teaser--publication-with-image.teaser"
+          - teaser: "@teaser--publication-with-image.teaser"
+          - teaser: "@teaser--publication-with-image.teaser"
+          - teaser: "@teaser--publication-with-image.teaser"
+  - name: Full Width
+    context:
+      teaser_collection:
+        variant: 'teaser-collection--full'
+        items:
+          - teaser: '@teaser--archive-with-image.teaser'
+          - teaser: '@teaser--archive-with-image.teaser'
+          - teaser: '@teaser--archive-with-image.teaser'
+  - name: News Overlay Grid
+    context:
+      teaser_collection:
+        variant: 'teaser-collection--overlay'
+        items: 
+          - teaser: "@teaser--overlay-teaser.teaser"
+          - teaser: "@teaser--overlay-teaser.teaser"
+          - teaser: "@teaser--overlay-teaser.teaser"
+          - teaser: "@teaser--overlay-teaser.teaser"
+          - teaser: "@teaser--overlay-teaser.teaser"

@@ -1,0 +1,3 @@
+{% for item in items %}
+  <a href="{{ item.content|render|striptags|trim }}" class="download-cv button button--content">Download CV</a>
+{% endfor %}

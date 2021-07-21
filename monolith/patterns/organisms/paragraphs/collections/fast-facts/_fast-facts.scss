@@ -1,0 +1,15 @@
+.fast-facts {
+  @supports not (display: grid) {
+    @apply flex flex-wrap flex-col items-center justify-center;
+    @screen md {
+      @apply flex-row;
+    }
+    .fast-fact {
+      @apply px-20 mx-40;
+      width: 18.75rem;
+      &__stat {
+        @apply mb-20;
+      }
+    }
+  }
+}

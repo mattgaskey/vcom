@@ -1,0 +1,7 @@
+name: Person
+context:
+  banner:
+    image:
+      w: 2000
+      ratio: "3:2"
+    campus: carolinas

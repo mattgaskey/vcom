@@ -1,0 +1,5 @@
+{% for item in items %}
+  <div class="my-20">
+    <a class="link--default text-maroon underline" href="{{ item.content['#media'].field_media_file|file_url }}">View complete job description (PDF)</a>
+  </div>
+{% endfor %}

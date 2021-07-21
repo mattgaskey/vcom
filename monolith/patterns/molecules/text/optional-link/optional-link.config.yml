@@ -1,0 +1,10 @@
+default: Working Link
+collated: true
+context:
+  optional_link:
+    url: http://www.example.com
+    title: Example Web Site
+variants:
+  - name: Text Only
+    context:
+      optional_link: Plain text, no link

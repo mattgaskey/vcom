@@ -1,0 +1,10 @@
+<div class="js-accordion">
+	{% for pane in accordion.panes %}
+	<div class="js-accordion__panel">
+		{% include '@heading' with { heading: pane.heading } %}
+		<p>
+			{% include '@formatted-text' %}
+		</p>
+	</div>
+	{% endfor %}
+</div>

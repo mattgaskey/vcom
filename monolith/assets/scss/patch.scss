@@ -1,0 +1,16 @@
+/* this file is intended for drupal-specific fixes and other tweaks that should not necessarily be
+   part of the pattern library. */
+
+// Flag links that direct to example.com or are otherwise invalid; 
+// these are fine in the styleguide but errors on the main site.
+.logged-in {
+  [href*="example.com"],
+  [href=""],
+  [href="#"] {
+    &:before {
+      content: '\1f97a';
+    }
+  }  
+}
+
+

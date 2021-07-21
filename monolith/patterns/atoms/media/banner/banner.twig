@@ -1,0 +1,5 @@
+<div class="page__banner {{ banner.campus|default('virginia') }} {{ banner.variant }}">
+  {% block cover_image %}
+    {% include '@image' with { image: banner.image } %}
+  {% endblock %}
+</div>

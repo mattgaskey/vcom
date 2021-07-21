@@ -1,0 +1,18 @@
+name: ambient-video
+status: wip
+context:
+  ambient:
+    poster: '/images/video/ambient-demo-poster.jpg'
+    video: 'https://doc-0s-ak-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/uo2iuo64ravnp3vgm5nhf521ss4cldf5/1539352800000/14077601694291606858/*/1J3IWCz6bIojv3a_7UOJDinyTy5dzophN?e=download'
+    # small: https://doc-14-ak-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/g5uisql43q6edc5gm1a1sba05r0nb16i/1539360000000/14077601694291606858/*/1Ykt-ribN_OQijQd9i31srOmdz0C3AlBm?e=download
+    # large: https://doc-10-ak-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qmamots9lmjg96i36gnuvhrglq1drios/1539360000000/14077601694291606858/*/1ipvrWg0d9YAzsMUse_ufS6M-FbwdapbY?e=download
+    play_icon: 
+      glyph: play-triangle
+      label: Pause
+      variant: 'video-button__play icon--no-label'
+    pause_icon:
+      glyph: pause
+      label: Pause
+      variant: 'video-button__pause icon--no-label'
+
+

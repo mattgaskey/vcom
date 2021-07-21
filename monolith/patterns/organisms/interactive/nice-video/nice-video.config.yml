@@ -1,0 +1,11 @@
+name: nice-video
+status: wip
+context:
+  nice_video:
+    url: "https://www.youtube.com/watch?v=UKBvaOLDem0"
+  image:
+    w: 800
+    ratio: "16:9"
+  icon:
+    glyph: play-triangle
+    label: Video

@@ -1,0 +1,13 @@
+name: fast-fact
+context:
+  fast_fact:
+    variant: virginia
+    heading:
+      level: 2
+      headline: 23%
+    content: of VCOM students are from <a href="#" class="link--default">rural communities</a> with populations under 10,000
+    icon:
+      variant: icon--no-label
+      glyph: ic--doctor
+      label: doctor
+    

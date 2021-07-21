@@ -1,0 +1,14 @@
+display: 
+  max-width: 640px;
+  margin: 0 auto;
+context:
+  block:
+    pattern: \@placeholder
+    section_intro: "@section-intro--no-link.section_intro"
+    link: 
+      label: More Information
+variants:
+  - name: dark
+    context:
+      block: 
+        variant: block--newcity-black

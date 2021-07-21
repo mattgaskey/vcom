@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Display a feed based on configuration variables from the paragraph
+ *
+ * Available variables:
+ * - view_cat: comma-delimited list of category IDs requested
+ * - view_type: content type requested
+ * - view_order: order strategy requested
+ * - feed_position: Whether this feed is on the left or the right (for paired feeds only)
+ * - view_set: Which view to use (this is the main view)
+ * - view_block: Which view in the view set to use (these are the individual members of the view set)
+ */
+#}
+{% set classes = [
+  (feed_position is same as('full')) ? 'c-container',
+  'mb-60'
+ ] %}
+
+<div{{ attributes.addClass(classes) }}>
+{{ content.field_headline_group }}
+{{ content.field_description }}
+{{ drupal_view(view_set,view_block,view_type,view_cat,promoted) }}
+{{ content.field_link }}
+</div>

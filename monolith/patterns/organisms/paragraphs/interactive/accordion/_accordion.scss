@@ -1,0 +1,59 @@
+.accordion {
+  .accordion__header {
+    @apply bg-gray-100 text-maroon uppercase font-sans font-semibold w-full border-l-6 border-maroon text-left p-15 pr-40 mb-10;
+    &:last-child {
+      @apply mb-0;
+    }
+
+    &:hover {
+      @apply bg-gray-200;
+    }
+    
+  }
+
+  .accordion__title {
+    position: absolute;
+    left: -99999em;
+  }
+
+  .accordion__panel {
+    @apply block overflow-hidden opacity-100 visible m-0 p-45;
+    max-height: 100%;
+    transition: visibility 0s ease, max-height .3s ease, opacity .3s ease;
+    transition-delay: 0s;
+  }
+
+  [aria-hidden='true'].accordion__panel {
+    @apply block opacity-0 invisible m-0 p-0;
+    max-height: 0;
+    transition-delay: .3s, 0s, 0s;
+  }
+
+  button.accordion__header {
+    @apply block relative;
+
+    &:before, &:after {
+      @apply bg-white absolute h-5 w-20 bg-maroon;
+      content: '';
+      right: 15px;
+      top: 25px;
+    }
+    &:after {
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+    
+
+    &.active {
+      @apply bg-maroon text-white mb-0;
+      &:after {
+        @apply bg-white;
+        transform: rotate(0deg);
+      }
+      &:before {
+        @apply bg-white;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

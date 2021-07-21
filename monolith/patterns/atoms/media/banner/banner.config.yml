@@ -1,0 +1,59 @@
+default: Banner Virginia
+context:
+  banner:
+    campus: virginia
+    image:
+      w: 2000
+      ratio: "3:2"
+variants:
+  - name: Banner Carolinas
+    context:
+      banner:
+        campus: carolinas
+  - name: Banner Auburn
+    context:
+      banner:
+        campus: auburn
+  - name: Banner Louisiana
+    context:
+      banner:
+        campus: louisiana  
+  - name: Hero Default
+    context:
+      banner:
+        variant: image--hero image--hero-default
+        image:
+          w: 2000
+          ratio: "16:9"    
+  - name: Hero Virginia
+    context:
+      banner:
+        campus: virginia
+        variant: image--hero
+        image:
+          w: 2000
+          ratio: "16:9"
+  - name: Hero Carolinas
+    context:
+      banner:
+        campus: carolinas
+        variant: image--hero
+        image:
+          w: 2000
+          ratio: "16:9"
+  - name: Hero Auburn
+    context:
+      banner:
+        campus: auburn
+        variant: image--hero
+        image:
+          w: 2000
+          ratio: "16:9"
+  - name: Hero Louisiana
+    context:
+      banner:
+        campus: louisiana
+        variant: image--hero
+        image:
+          w: 2000
+          ratio: "16:9"

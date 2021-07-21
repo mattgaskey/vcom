@@ -1,0 +1,161 @@
+
+.form-item {
+  @apply py-10;
+  [type='text'], 
+  [type='password'], 
+  [type='email'], 
+  [type='number'], 
+  [type='date'], 
+  textarea {
+    @apply text-lg p-10 border-1 border-gray-200 w-full;
+  } 
+
+  label {
+    @apply inline-block min-w-100 font-bold mr-10 text-lg;
+  }
+
+  input, button {
+    
+  }
+
+  select {
+    @apply h-50 border-1 border-gray-200 bg-white w-full;
+  }
+
+  .description {
+    @apply italic my-5;
+  }
+
+  
+  .chosen-single {
+    height: 48px !important;
+    border-width: 1px !important;
+    border-color: #e2e2e3 !important;
+    background: none !important;
+    color: black !important;
+    padding: 10px !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    cursor: default !important;
+    text-decoration: none !important;
+    line-height: 24px !important;
+    div {
+      display: none !important
+    }
+      
+  }
+}
+
+.form-actions {
+  @apply py-10;
+
+  .button {
+    @apply text-white font-bold border-1 inline-block py-10 px-20 min-w-250 min-h-50 bg-maroon border-maroon cursor-pointer;
+    transition: all 0.25s;
+    &:hover {
+      @apply bg-white font-bold text-maroon;
+    }    
+  }
+}
+
+.webform-submission-form {
+  @apply max-w-full;
+  .form-item {
+    input,
+    textarea {
+      @screen md {
+        width: 600px;
+      }
+    }
+    label {
+      @apply block mb-10;
+    }
+  }
+}
+
+.views-exposed-form {
+  @apply mb-20;
+  .form-item {
+    @extend .grid;
+    label {
+      @apply self-center;
+    }
+    @screen md {
+      grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    }
+    @screen lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &[data-drupal-selector='views-exposed-form-directory-directory-full'],
+  &[data-drupal-selector='views-exposed-form-scholarships-page-1'],
+  &[data-drupal-selector='views-exposed-form-news-news-archive'] {
+    @extend .grid;
+    grid-row-gap: 0 !important;
+    .form-item {
+      @screen lg {
+        @extend .grid--full;
+        @extend .grid--narrow-gutters;
+      }
+    }
+  }
+  
+  &[data-drupal-selector='views-exposed-form-job-listings-page-1'] {
+    .form-item {
+      @screen lg {
+        @extend .grid--major-right;
+      }
+    }
+  }
+
+  &[data-drupal-selector='views-exposed-form-news-news-archive'] {
+    @extend .grid--major-left;
+  }
+
+  &[data-drupal-selector='views-exposed-form-scholarships-page-1'] {
+    @extend .grid--large;
+    .form-item-campus {
+      grid-area: campus;
+    }
+    .form-item-class {
+      grid-area: class;
+    }
+    .form-item-type {
+      grid-area: type;
+    }
+    .form-item-sort-by {
+      grid-area: sort;
+    }
+    .form-item-sort-order {
+      grid-area: order;
+    }
+    .form-actions {
+      grid-area: button;
+    }
+    grid-template-areas:
+      'campus'
+      'class'
+      'type'
+      'sort'
+      'order'
+      'button';
+    @screen md {
+      grid-template-areas: 
+        'campus class type'
+        'sort order .'
+        'button . .';
+    }
+  }
+}
+
+.user-login-form {
+  @extend .one-col;
+}
+
+.pager__item {
+  &.is-active {
+    @apply m-0 relative;
+    top: -3px;
+  }
+}

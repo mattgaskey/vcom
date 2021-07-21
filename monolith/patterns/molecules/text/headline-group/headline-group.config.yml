@@ -1,0 +1,60 @@
+status: wip
+collated: true
+default: Full Headline Group
+context:
+  hg:
+    super: Optional Superhead
+    headline: Headline
+    sub: Optional Subhead
+    tag: h2
+variants:
+  - name: Linked Full Headline Group
+    context:
+      hg:
+        super: Optional Superhead
+        headline:
+          url: http://www.example.com 
+          title: Headline
+        sub: Optional Subhead
+  - name: Headline Only
+    context:
+      hg:
+        super: 
+        headline: Headline
+        sub: 
+  - name: Linked Headline Only
+    context:
+      hg:
+        super:
+        headline:
+          url: http://www.example.com/
+          title: Linked Headline
+        sub:
+  - name: Superhead Only
+    context:
+      hg:
+        super: Optional Superhead
+        headline: Headline
+        sub:
+  - name: Linked Superhead Only
+    context:
+      hg:
+        super: Optional Superhead
+        headline:
+          url: http://www.example.com 
+          title: Linked Headline
+        sub:
+  - name: Subhead Only
+    context:
+      hg:
+        super: 
+        headline: Headline
+        sub: Optional Subhead 
+  - name: Linked Subhead Only
+    context:
+      hg:
+        super: 
+        headline: 
+          url: http://www.example.com
+          title: Linked Headline
+        sub: Optional Subhead       

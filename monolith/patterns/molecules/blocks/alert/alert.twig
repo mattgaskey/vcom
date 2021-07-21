@@ -1,0 +1,10 @@
+<div class="alert {{ alert.type.variant }} flex flex-row flex-no-wrap min-w-full">
+  <div class="alert__icon">
+    {% include '@icon' with { icon: alert.type.icon } %}
+  </div>
+  <div class="alert__message">
+    {% include '@heading' with { heading: alert.heading } %}
+    {% include '@p' with { p: alert.p } %}
+    <a class="link--default" href="#">{{ alert.type.link.label }}</a>
+  </div>
+</div> 

@@ -1,0 +1,12 @@
+{% for item in items %}
+<div>
+  <p>
+    {% if item.content.organization[0] %}
+    <span class="font-bold">Company Name</span>: {{ item.content.organization }}</br>
+    {% endif %}
+    {% if item.content.address_line1['#value'] is not empty %}
+    <span class="font-bold">Mailing Address</span>: {{ item.content.address_line1 }}{% if item.content.address_line2['#value'] is not empty %} - {{ item.content.address_line2 }}{% endif %} - {{ item.content.locality }}, {{ item.content.administrative_area }}, {{ item.content.country }} {{ item.content.postal_code }}</br>
+    {% endif %}
+  </p>
+</div>
+{% endfor %}

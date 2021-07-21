@@ -1,0 +1,188 @@
+name: Tabs
+default: Tabs with Single Color
+context:
+  tabs:
+    variant: single-color
+    items:
+      - id: tab-one
+        name: Tab One
+        pattern: \@body
+        pattern_context:
+          body:
+            items:
+              - pattern: \@p
+                pattern_context: 
+                  p:
+                    content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Curabitur non leo quis nunc dapibus sagittis. Quisque at efficitur massa. <a href="#">Curabitur volutpat ipsum ut sagittis vestibulum</a>. Nam neque elit, convallis eget augue sed, accumsan dapibus dui. Aenean scelerisque nisl ac tortor dignissim fringilla. Nulla eget risus eu lacus eleifend volutpat vel a turpis. Aenean tempor vestibulum dolor, non euismod ex.
+      - id: tab-two
+        name: Tab Two
+        pattern: \@body
+        pattern_context:
+          body:
+            items:
+              - pattern: \@p
+                pattern_context: 
+                  p:
+                    content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+      - id: tab-three
+        name: Tab Three
+        pattern: \@body
+        pattern_context:
+          body:
+            items:
+              - pattern: \@p
+                pattern_context: 
+                  p:
+                    content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Curabitur non leo quis nunc dapibus sagittis. Quisque at efficitur massa. <a href="#">Curabitur volutpat ipsum ut sagittis vestibulum</a>. Nam neque elit, convallis eget augue sed, accumsan dapibus dui. Aenean scelerisque nisl ac tortor dignissim fringilla. Nulla eget risus eu lacus eleifend volutpat vel a turpis. Aenean tempor vestibulum dolor, non euismod ex.
+              - pattern: \@p
+                pattern_context: 
+                  p:
+                    content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+      - id: tab-four
+        name: Tab Four
+        pattern: \@body
+        pattern_context:
+          body:
+            items:
+              - pattern: \@p
+                pattern_context: 
+                  p:
+                    content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+              - pattern: \@p
+                pattern_context: 
+                  p:
+                    content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+              - pattern: \@p
+                pattern_context: 
+                  p:
+                    content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+              - pattern: \@p
+                pattern_context:
+                  p:
+                    content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+variants:
+  - name: Tabs by Campus
+    context:
+      tabs:
+        variant: campuses
+        items:
+          - id: virginia
+            name: Virginia
+            pattern: \@body
+            pattern_context:
+              body:
+                items:
+                  - pattern: \@p
+                    pattern_context:
+                      p: 
+                        content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Curabitur non leo quis nunc dapibus sagittis. Quisque at efficitur massa. <a href="#">Curabitur volutpat ipsum ut sagittis vestibulum</a>. Nam neque elit, convallis eget augue sed, accumsan dapibus dui. Aenean scelerisque nisl ac tortor dignissim fringilla. Nulla eget risus eu lacus eleifend volutpat vel a turpis. Aenean tempor vestibulum dolor, non euismod ex.
+          - id: carolinas
+            name: Carolinas
+            pattern: \@body
+            pattern_context:
+              body:
+                items:
+                  - pattern: \@p
+                    pattern_context: 
+                      p:
+                        content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+          - id: auburn
+            name: Auburn
+            pattern: \@body
+            pattern_context:
+              body:
+                items:
+                  - pattern: \@p
+                    pattern_context: 
+                      p:
+                        content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Curabitur non leo quis nunc dapibus sagittis. Quisque at efficitur massa. <a href="#">Curabitur volutpat ipsum ut sagittis vestibulum</a>. Nam neque elit, convallis eget augue sed, accumsan dapibus dui. Aenean scelerisque nisl ac tortor dignissim fringilla. Nulla eget risus eu lacus eleifend volutpat vel a turpis. Aenean tempor vestibulum dolor, non euismod ex.
+                  - pattern: \@p
+                    pattern_context: 
+                      p:
+                        content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+          - id: louisiana
+            name: Louisiana
+            pattern: \@body
+            pattern_context:
+              body:
+                items:
+                  - pattern: \@p
+                    pattern_context: 
+                      p:
+                        content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+                  - pattern: \@p
+                    pattern_context: 
+                      p:
+                        content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.
+                  - pattern: \@p
+                    pattern_context: 
+                      p:
+                        content: Sed porta vitae magna at ultricies. Ut lacinia leo sit amet lorem <em>hendrerit luctus</em>. Proin feugiat condimentum cursus. Duis rhoncus finibus diam, <strong>a efficitur urna laoreet et</strong>. Vivamus et varius lorem, eu varius magna. Sed tincidunt massa id mi pulvinar suscipit. Sed sit amet erat euismod, maximus ipsum eu, ultrices mi. Cras risus massa, scelerisque vel efficitur ac, scelerisque vitae nunc. Donec id tristique ante, ut accumsan tortor. Cras consectetur vehicula molestie. Cras ipsum lorem, dictum ac augue nec, congue faucibus est.
+                  - pattern: \@p
+                    pattern_context:
+                      p:
+                        content: Maecenas bibendum sapien id consequat suscipit. Donec sollicitudin sit amet <a href="#">ipsum at facilisis</a>. Cras ullamcorper feugiat neque. Aliquam lorem nibh, pretium id enim vel, elementum finibus neque. Aenean justo ipsum, auctor malesuada imperdiet vel, sollicitudin eget nisl. Pellentesque tincidunt vel urna eu faucibus. Pellentesque egestas mauris vel magna lobortis vulputate. Mauris vitae mi et neque lobortis feugiat quis ut sem. Nam feugiat tortor non dui scelerisque sagittis. Donec eu est id justo rutrum vulputate. Vivamus rhoncus, magna posuere ullamcorper laoreet, nibh nulla sodales neque, sed elementum massa mauris in orci. Morbi tempor, metus vel rutrum facilisis, augue lacus vulputate quam, ut ultricies ante ipsum dignissim risus. Vestibulum vulputate vehicula dui quis placerat. Aliquam pulvinar vitae nisl vel consectetur. Mauris et dictum enim, sed volutpat dolor.

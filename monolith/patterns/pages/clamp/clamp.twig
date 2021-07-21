@@ -1,0 +1,25 @@
+{% include '@skip-link' %}
+<div class="page">
+{% include '@header' %}
+<div class="page__content  {{ campus }}">
+{% block hero %}
+{% include '@banner' with { 
+  banner: {
+    variant: 'full-bleed', 
+    image: { w: 2000, ratio: "3:2" } 
+  }
+} %}
+{% endblock %}
+{% block page_content %}
+  {% embed '@responsive-one-col' %}
+    {% block main_col %}
+      <div>
+      {% include '@page_title' %}
+      </div>
+    {% endblock %}
+  {% endembed %}
+  {% include '@responsive-one-col' %}
+{% endblock %}
+</div>
+{% include '@footer' %}
+</div>

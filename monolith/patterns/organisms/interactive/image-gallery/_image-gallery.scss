@@ -1,0 +1,174 @@
+.image-gallery {
+}
+
+.modal {
+  .modal__wrapper {
+    max-width: 80vw;
+    max-height: 80vh;
+
+    img {
+      max-width: 80vw;
+      max-height: 80vw;
+    }
+  }
+}
+
+.image-gallery__block {
+  a {
+    display: block;
+    overflow: hidden;
+    margin: 10px;
+    
+    &:hover,
+    &:focus {
+      figure {
+        img {
+          // Had to remove this to fix issue in Chrome related to content stretching:
+          // https://stackoverflow.com/questions/16687023/bug-with-transform-scale-and-overflow-hidden-in-chrome
+          // transform: scale(1.1);
+        }
+
+        &::before,
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  figure {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      transition: transform .6s ease-in-out;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transition: opacity .3s ease-in-out;
+      color: #fff;
+      font-family: 'iconfont';
+      font-size: 2.2em;
+      line-height: 1.2;
+      content: $icon-popup;
+      opacity: 0;
+      z-index: 10;
+    }
+
+    &::before {
+      $overlay-color: rgba(#83003f, .7);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: opacity .3s ease-in-out;
+      background-color: $overlay-color;
+      box-shadow: inset 0 0 0 .5rem #83003f;
+      content: '';
+      opacity: 0;
+      z-index: 10;
+    }
+  }
+
+  figcaption {
+    display: none;
+  }
+}
+
+.image-gallery__slide__title {
+  font-size: 1.1667rem;
+  line-height: 0;
+  font-weight: 500;
+}
+
+.image-gallery__block-sizer,
+.image-gallery__block {
+  width: 33.3333%;
+}
+
+.image-gallery__block--width2 {
+  width: 66.6666%;
+}
+
+// magnific popup 
+.mfp-bg {
+  background-color: #83003f;
+}
+
+button.mfp-close {
+  right: 0;
+  width: 1.4em !important; // sass-lint:disable-line no-important
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.mfp-image-holder {
+  .mfp-bottom-bar {
+    position: relative;
+    top: auto;
+    margin-top: 0;
+  }
+
+  .mfp-figure {
+    padding: 3rem;
+    background-color: #fff;
+  }
+
+  .mfp-figure::after {
+    display: none;
+  }
+
+  .mfp-title {
+    padding-right: 0;
+  }
+
+  .mfp-counter {
+    top: auto;
+    bottom: 100%;
+  }
+
+  .mfp-img {
+    padding: 0 0 1rem;
+  }
+
+  figure img {
+    max-width: 70vw;
+    height: 70vh;
+  }
+
+  @screen md {
+    .mfp-landscape figure {
+      figcaption {
+        margin: 2rem;
+      }
+    }
+
+    .mfp-portrait figure {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 70vw;
+
+      img {
+        flex: 1 1 50%;
+        max-width: 30vw;
+        margin-right: 2rem;
+      }
+
+      figcaption {
+        flex: 1 1 50%;
+        margin-right: 2rem;
+      }
+
+      .mfp-bottom-bar {
+        margin-top: 56px;
+      }
+    }
+  }
+}

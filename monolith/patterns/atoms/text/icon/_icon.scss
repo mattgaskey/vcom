@@ -1,0 +1,75 @@
+.icon__glyph {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.icon {
+  display: flex;
+  align-items: baseline;
+
+  .icon__glyph {
+    width: auto;
+    margin-right: .55em;
+    vertical-align: baseline;
+  }
+
+  .icon__label {
+    white-space: normal;
+  }
+}
+
+.icon--no-label {
+  .icon__label {
+    display: none;
+  }
+}
+
+.icon--stacked {
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+
+  .icon__glyph {
+    margin-right: 0;
+    font-size: 2.5em;
+  }
+
+  .icon__label {
+    font-size: .85em;
+  }
+}
+
+.icon--big {
+  font-size: 1.25rem;
+  line-height: 0;
+  align-items: center;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  .icon__glyph {
+    position: relative;
+    align-self: flex-start;
+    margin-right: .5em;
+    font-size: 2em;
+  }
+
+  @at-root button #{&},
+  .button #{&} {
+    .icon__label {
+      font-size: 1em;
+      line-height: 1.1;
+      text-align: left;
+    }
+  }
+}
+
+.icon--reversed {
+  .icon__glyph {
+      order: 2;
+      margin-right: 0;
+  }
+  .icon__label {
+      margin-right: .55em;
+  }
+}

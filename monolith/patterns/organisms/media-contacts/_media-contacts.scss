@@ -1,0 +1,8 @@
+.media-contacts {
+  .media-contact {
+    @apply border-b-1 border-orange-700 pb-20 mb-10;
+    &:last-of-type {
+      @apply border-b-0 pb-0 mb-0;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+context:
+  blockquote:
+    pattern: \@p
+  p: "@p.p"
+    

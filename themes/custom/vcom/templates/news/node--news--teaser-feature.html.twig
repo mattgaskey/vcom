@@ -1,0 +1,18 @@
+{% embed '@fractal/feature.twig' %}
+  {% block feature_image %}
+    <div class="feature__inset">
+      {{ content.field_cover_image }}
+    </div>
+  {% endblock %}
+  {% block feature_meta %}
+    <div class="feature__content">
+      {{ content.field_headline_group }}
+      {% if content.field_description|children %}
+        {{ content.field_description }}
+      {% else %}
+        {{ content.body }}
+      {% endif %}
+      <a href="{{url}}" class="button my-20">Read More</a>
+    </div>
+  {% endblock %}
+{% endembed %}

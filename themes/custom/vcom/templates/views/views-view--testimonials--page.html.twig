@@ -1,0 +1,48 @@
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+  {% embed '@fractal/slab.twig' with { slab: { variant: 'slab--no-top-padding editorial' } } %}
+    {% block slab_header %}
+      {% if header %}
+        <div>
+          {{ header }}
+        </div>
+      {% endif %}
+    {% endblock %}
+    {% block slab_content %}
+      {% embed '@fractal/with-sidebar.twig' %}
+        {% block with_sidebar_main %}
+          {{ attachment_before }}
+          
+          {{ exposed }}
+
+          {{ rows }}
+          {{ empty }}
+          {{ pager }}
+
+          {{ attachment_after }}
+          {{ more }}
+        {% endblock %}
+        {% block with_sidebar_aside %}
+          {{ drupal_region('sidebar_first') }}
+        {% endblock %}
+      {% endembed %}
+      
+
+      {% if footer %}
+        <div>
+          {{ footer }}
+        </div>
+      {% endif %}
+
+      {{ feed_icons }}
+      {% block slab_cta %}{% endblock %}
+    {% endblock %}
+  {% endembed %}
+</div>

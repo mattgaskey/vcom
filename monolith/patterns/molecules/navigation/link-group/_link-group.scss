@@ -1,0 +1,10 @@
+.link-group {
+
+}
+
+.link-group--invisible-header {
+  .headline-group {
+    position: absolute;
+    left: -999999em;
+  }
+}

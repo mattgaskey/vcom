@@ -1,0 +1,89 @@
+name: Location Detail
+default: Location Detail - Virginia
+context:
+  campus_variant: virginia
+  banner:
+    image:
+      w: 2000
+      ratio: "3:2"
+    campus: virginia
+  main_slab:
+    section_intro:
+      heading:
+        level: 1
+        headline: VCOM Virginia | Blacksburg
+    body:
+      items:
+        - pattern: \@heading
+          pattern_context:
+            heading:
+              level: 2
+              headline: Overview
+        - pattern: \@p
+          pattern_context:
+            p:
+              content: The New River Valley surrounding VCOM–Virginia is home to abundant wildlife, outdoor trails for all skill levels, and the New River where many activities such as tubing and fishing can be enjoyed. Local festivals such as Steppin’ Out, Claytor Lake Festival and many more create a year-round atmosphere of fun for everyone!
+        - pattern: \@image
+          pattern_context: 
+            image: "@image.image"
+        - pattern: \@button-collection
+          pattern_context:
+            button_collection:
+              variant: button-collection--left
+              items:
+                - button_text: Request Information
+                - button_text: Plan Your Visit
+  campus_info:
+    feature: "@feature--virginia-campus-dark.feature"
+  involved_slab:
+    teaser_collection:
+      variant: teaser-collection--four-across
+      items:
+        - teaser: "@teaser--card-without-heavy-border.teaser"
+        - teaser: "@teaser--card-without-heavy-border.teaser"
+        - teaser: "@teaser--card-without-heavy-border.teaser"
+        - teaser: "@teaser--card-without-heavy-border.teaser"
+  news_slab: 
+    teaser_collection:
+      variant: teaser-collection--two-across
+      items: 
+        - teaser: "@teaser--archive-with-image.teaser"
+        - teaser: "@teaser--archive-with-image.teaser"
+        - teaser: "@teaser--archive-with-image.teaser"
+        - teaser: "@teaser--archive-with-image.teaser"
+        - teaser: "@teaser--archive-with-image.teaser"
+        - teaser: "@teaser--archive-with-image.teaser"
+variants:
+  - name: Location Detail - Carolinas
+    context:
+      campus_variant: carolinas
+      banner:
+        campus: carolinas
+      main_slab:
+        section_intro:
+          heading:
+            headline: VCOM Carolinas | Spartanburg
+      campus_info:
+        feature: "@feature--carolinas-campus-dark.feature"
+  - name: Location Detail - Auburn
+    context:
+      campus_variant: auburn
+      banner:
+        campus: auburn
+      main_slab:
+        section_intro:
+          heading:
+            headline: VCOM Auburn
+      campus_info:
+        feature: "@feature--auburn-campus-dark.feature"
+  - name: Location Detail - Louisiana
+    context:
+      campus_variant: louisiana
+      banner:
+        campus: louisiana
+      main_slab:
+        section_intro:
+          heading:
+            headline: VCOM Louisiana | Monroe
+      campus_info:
+        feature: "@feature--louisiana-campus-dark.feature"

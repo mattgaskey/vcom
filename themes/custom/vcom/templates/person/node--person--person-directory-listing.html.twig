@@ -1,0 +1,26 @@
+<div class="faculty-info grid grid--large grid--narrow-gutters lg:grid--wide-gutters py-20">
+  <div class="faculty-info__name">
+    <a href="{{ url }}">{{ content.field_name }}</a>
+  </div>
+  <div class="faculty-info__title">
+    {{ content.field_job_title }}
+  </div>
+  <div class="faculty-info__contact">
+    {% if content.field_campus[0] %}
+    <div class="faculty-info__contact--campus">
+      {{ content.field_campus }}
+    </div>
+    {% endif %}
+    {% if content.field_mailing_address[0] %}
+    <div class="faculty-info__contact--office">
+      {{ content.field_mailing_address }}
+    </div>
+    {% endif %}
+    {% if content.field_phone[0] %}
+    <div class="faculty-info__contact--phone">
+      {{ content.field_phone }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+  

@@ -1,0 +1,68 @@
+.js-tabs {
+  .js-tablist {
+    display: none;
+    @screen md {
+      @apply c-container;
+    }
+  }
+  .js-tabcontent {
+    @apply mb-20;
+  }
+  [role='tablist'] {
+    @apply flex flex-row justify-center items-baseline h-auto;
+    li {
+      @apply h-full;
+    }
+    @screen md {
+      @apply h-50 mb-5;
+    }
+  }
+  [aria-hidden='true'] {
+    display: none;
+  }
+  [role='tabpanel'] {
+    @apply border-maroon border-t-1;
+  }
+  [role='presentation'] {
+    @apply w-full;
+    @screen md {
+      @apply w-1/4;
+    }
+  }
+  [role='tab'] {
+    @apply inline-block w-full text-center py-15 border-1 border-maroon text-maroon uppercase font-sans font-bold cursor-pointer;
+  }
+
+  &.single-color {
+    [role='tab'] {
+      &[aria-selected='false']{
+        &:hover {
+          @apply bg-maroon-100;
+        }
+      }
+      &[aria-selected='true'] {
+        @apply bg-maroon text-white cursor-text;
+      }
+    }
+  }
+  
+  &.campuses {
+    [role='tablist'] {
+      @screen md {
+        @apply mb-4;
+      }
+    }
+    [role='tab'] {
+      &[aria-selected='false'] {
+        @apply border-0 text-white;
+      }
+      &[aria-selected='true'] {
+        @apply bg-white border-1;
+        border-bottom: white;
+        &:hover {
+          @apply bg-white opacity-100;
+        }
+      }
+    }
+  }
+}

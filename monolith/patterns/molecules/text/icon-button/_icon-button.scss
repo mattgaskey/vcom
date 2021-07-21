@@ -1,0 +1,8 @@
+button {
+    &.small {
+        .icon__label,
+        .icon__glyph {
+            @apply text-base;
+        }
+    }
+}

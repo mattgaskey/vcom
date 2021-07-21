@@ -1,0 +1,22 @@
+<div class="campuses">
+  <div class="grid grid--narrow-gutters p-15">
+    {% for campus in campuses %}
+      <div class="p-15 {{ campus.variant }}">
+        {% include '@button' with { button: { label: campus.button.label } } %}
+        {% include '@button' with { button: { label: campus.button.label, variant: 'button--content' } } %}
+        {% include '@button' with { button: { label: campus.button.label, variant: 'button--grid' } } %}
+        {% include '@social-media-links' with { social_media_links: footer.social_media_links } %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="grid grid--narrow-gutters p-15 bg-gray-700">
+    {% for campus in campuses %}
+      <div class="p-15 {{ campus.variant }}">
+        {% include '@button' with { button: { label: campus.button.label, variant: 'button--ghost' } } %}
+        {% include '@button' with { button: { label: campus.button.label, variant: 'button--content button--ghost' } } %}
+        {% include '@button' with { button: { label: campus.button.label, variant: 'button--grid button--ghost' } } %}
+        {% include '@social-media-links' with { social_media_links: footer.social_media_links } %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

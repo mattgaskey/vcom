@@ -1,0 +1,6 @@
+<h1 class="presentation-header">Icon Catalog</h1>
+<ul class="list--columns pb-75 text-xl">
+	{% for item in icon_list() %}
+		<li>{% include '@icon' with { icon: { glyph: 'ic--' ~ item, label: item } }  %}</li>
+	{% endfor %}
+</ul>

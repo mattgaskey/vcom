@@ -1,0 +1,26 @@
+.skip-nav {
+  font-size: 1.25rem;
+  line-height: 2;
+  display: flex;
+  position: absolute;
+  top: -5rem;
+  justify-content: center;
+  width: 100%;
+  background-color: color(newcity-black);
+
+  &:link,
+  &:visited {
+    color: #fff;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: #83003f;
+  }
+
+  &:focus {
+    top: 0;
+    transition: top .5s;
+  }
+}

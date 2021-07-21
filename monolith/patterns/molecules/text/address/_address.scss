@@ -1,0 +1,26 @@
+.address {
+  &__location {
+    .adr {
+      @apply my-20;
+      .directions {
+        @apply order-5 pl-5;
+        &:before {
+          content: "(";
+          @apply no-underline font-normal inline-block;
+        }
+        &:after {
+          content: ")";
+          @apply no-underline font-normal inline-block;
+        }
+      }
+      .phone, .fax, .hours {
+        span {
+          @apply font-bold;
+        }
+      }
+      .phone {
+        @apply mt-20;
+      }
+    }
+  }
+}

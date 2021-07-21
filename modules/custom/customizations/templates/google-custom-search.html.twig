@@ -1,0 +1,11 @@
+{% embed "@fractal/slab.twig" with { slab: {
+  variant: 'slab--no-top-padding'
+} } %}
+  {% block slab_header %}{% endblock %}
+  {% block slab_content %}
+    {% embed "@fractal/google-custom-search.twig" %}
+      {% block results %}{% endblock %}
+    {% endembed %}
+  {% block slab_cta %}{% endblock %}
+  {% endblock %}
+{% endembed %}
